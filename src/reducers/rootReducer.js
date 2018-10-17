@@ -4,6 +4,17 @@ const initialState = {
   opponentChampions: []
 };
 
+function RemoveAtIndex(oldArray, index) {
+  var newArray = [];
+  for (var i = 0; i < oldArray.length; i++) {
+    if (i !== index) {
+      newArray.push(oldArray[i]);
+    }
+  }
+
+  return newArray;
+}
+
 const reducer = (state = initialState, action) => {
   if (action.type === "SEARCHTERMCHANGE") {
     console.log(action.payLoad.searchTerm);
@@ -33,11 +44,14 @@ const reducer = (state = initialState, action) => {
         };
       }
 
-      for (let i = 0; i < state.opponentChampions.length; i++) {
-        // checks for duplicates of champion in opponentChampion array
+      for (var i = 0; i < state.opponentChampions.length; i++) {
+        // checks for duplicates of champion in opponentChampions array
         if (state.opponentChampions[i].name === action.payLoad.name) {
           // if clicked champion already exists in the array opponentChampions, then dont add,
-          break;
+          return {
+            ...state,
+            opponentChampions: RemoveAtIndex(state.opponentChampions, i)
+          };
         } else {
           // else check if champion doesn't exist
           if (i === state.opponentChampions.length - 1) {
