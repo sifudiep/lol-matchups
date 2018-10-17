@@ -107,6 +107,10 @@
     &_img {
       width: 12rem;
       height: 12rem;
+      &:hover {
+        box-shadow: 0 0 0 0.25rem $color-alert;
+        filter: grayscale(100%);
+      }
     }
     &_text {
       text-align: center;
