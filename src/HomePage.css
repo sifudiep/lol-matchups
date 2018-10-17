@@ -112,6 +112,9 @@ body {
         width: 8rem;
         height: 8rem;
         border-radius: 10rem; }
+        .pickSection_champSelect_img_picked:hover {
+          box-shadow: 0 0 0 0.25rem #c69963;
+          border-radius: 10rem; }
     .pickSection_champSelect_img:hover {
       box-shadow: 0 0 0 0.25rem #c69963;
       border-radius: 10rem; }
@@ -144,6 +147,10 @@ body {
       width: 8rem;
       height: 8rem;
       border-radius: 10rem; }
+      .pickSection_opponentSide_img:hover {
+        box-shadow: 0 0 0 0.25rem #c69963;
+        border-radius: 10rem;
+        filter: grayscale(100%); }
     .pickSection_opponentSide_text {
       text-align: center;
       font-size: 1.5rem;
