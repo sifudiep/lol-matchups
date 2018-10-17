@@ -13,7 +13,7 @@ export class SearchBar extends React.Component {
         <input
           className="pickSection_searchBar_styling"
           value={this.props.searchTerm}
-          placeholder="search"
+          placeholder="search (don't use spaces)"
           onChange={e =>
             champSearch(e.target.value, this.props.onSearchTermChange)
           }
