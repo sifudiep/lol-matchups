@@ -55,8 +55,8 @@ const reducer = (state = initialState, action) => {
 
   if (action.type === actionVariables.ONOSCHAMPIONCLICK) {
     var newArray = [];
-    for (let i = 0; i < this.opponentChampions.length; i++) {
-      const element = this.opponentChampions[i];
+    for (let i = 0; i < state.opponentChampions.length; i++) {
+      const element = state.opponentChampions[i];
       if (action.payLoad.name === element.name) {
         newArray = RemoveAtIndex(state.opponentChampions, i);
       }
