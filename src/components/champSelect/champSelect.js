@@ -55,7 +55,7 @@ class ChampSelect extends React.Component {
           iconURL={champ.iconURL}
           key={champ.name}
           name={champ.name}
-          clicked={mapDispatchToProps}
+          clicked={this.props.onCSChampionClick}
         />
       );
     });
@@ -73,9 +73,9 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-  console.log(`hej`);
   return {
     onCSChampionClick: champ => {
+      console.log(`oncschampclick is clicked`);
       dispatch({
         type: actionVariables.ONCSCHAMPIONCLICK,
         payLoad: { name: champ.alt, iconURL: champ.src }

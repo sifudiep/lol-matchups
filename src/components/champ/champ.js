@@ -1,5 +1,4 @@
 import React from "react";
-import { connect } from "react-redux";
 
 class Champ extends React.Component {
   render() {
@@ -9,7 +8,9 @@ class Champ extends React.Component {
           className={this.props.imgClassNick}
           alt={this.props.name}
           onClick={e => {
-            this.props.clicked();
+            if (this.props.clicked) {
+              this.props.clicked(e.target);
+            }
           }}
           src={this.props.iconURL}
         />

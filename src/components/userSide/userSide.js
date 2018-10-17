@@ -13,6 +13,7 @@ class UserSide extends React.Component {
           name={champ.name}
           key={champ.name}
           iconURL={champ.iconURL}
+          clicked={this.props.onUSChampionClick}
         />
       );
     });

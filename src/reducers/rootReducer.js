@@ -27,7 +27,6 @@ const reducer = (state = initialState, action) => {
   }
 
   if (action.type === actionVariables.ONCSCHAMPIONCLICK) {
-    console.log(`INSIDE CS CHAMPION CLICKED`);
     if (state.practiceChampionSelected.length === 0) {
       // Adds champion clicked to userSide if the "practiceChampionSelected" array is empty
       return {
@@ -52,10 +51,7 @@ const reducer = (state = initialState, action) => {
         // checks for duplicates of champion in opponentChampions array
         if (state.opponentChampions[i].name === action.payLoad.name) {
           // if clicked champion already exists in the array opponentChampions, then dont add,
-          return {
-            ...state,
-            opponentChampions: RemoveAtIndex(state.opponentChampions, i)
-          };
+          break;
         } else {
           // else check if champion doesn't exist
           if (i === state.opponentChampions.length - 1) {
@@ -70,6 +66,14 @@ const reducer = (state = initialState, action) => {
         }
       }
     }
+  }
+
+  if (action.type === actionVariables.ONUSCHAMPIONCLICK) {
+    return {
+      ...state,
+      practiceChampionSelected: [],
+      opponentChampions: []
+    };
   }
 
   return state;

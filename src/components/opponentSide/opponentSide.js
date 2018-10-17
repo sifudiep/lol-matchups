@@ -13,7 +13,7 @@ class OpponentSide extends React.Component {
           name={champ.name}
           key={champ.name}
           iconURL={champ.iconURL}
-          clicked={mapDispatchToProps()}
+          clicked={this.props.onOSChampionClick}
         />
       );
     });
