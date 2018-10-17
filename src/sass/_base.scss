@@ -1,0 +1,74 @@
+// COLOR VARIABLES
+$color-alert: #c69963;
+$color-primary-dark: #b28451;
+
+$color-secondary: #101d2c;
+$color-secondary-light: #1c2734;
+
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: #aaa;
+
+$color-grey-dark-1: #54483a;
+$color-grey-dark-2: #6d5d4b;
+
+$color-scrollbar-background: #27282b;
+
+// FONT VARIABLES
+$font-primary: "Nunito", sans-serif;
+$font-display: "Josefin Sans", sans-serif;
+
+/// RESPONSIVE  BREAKPOINTS
+$bp-xl: 1400px;
+$bp-lg: 1000px;
+$bp-md: 750px;
+$bp-sm: 550px;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+
+  @media only screen and (max-width: $bp-md) {
+    font-size: 50%;
+  }
+
+  @media only screen and (max-width: $bp-sm) {
+    font-size: 40%;
+  }
+}
+
+body {
+  font-family: $font-primary;
+  color: $color-alert;
+  font-weight: 300;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+  background-color: $color-scrollbar-background;
+  box-shadow: -3px -3px 5px 0px rgba(0, 0, 0, 0.66);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $color-primary-dark;
+  border-radius: 3px;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 10vh 85vh 10vh;
+  grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
+  grid-template-areas:
+    "navBar navBar navBar navBar"
+    "pickSection pickSection pickSection pickSection"
+    "footer footer footer footer";
+}
