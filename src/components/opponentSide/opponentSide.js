@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import Champ from "../champ/champ";
+import actionVariables from "../../reducers/actionVariables";
 
 class OpponentSide extends React.Component {
   render() {
@@ -12,6 +13,7 @@ class OpponentSide extends React.Component {
           name={champ.name}
           key={champ.name}
           iconURL={champ.iconURL}
+          clicked={mapDispatchToProps()}
         />
       );
     });
@@ -25,4 +27,18 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(OpponentSide);
+const mapDispatchToProps = dispatch => {
+  return {
+    onOSChampionClick: champ => {
+      dispatch({
+        type: actionVariables.ONOSCHAMPIONCLICK,
+        payLoad: { name: champ.alt, iconURL: champ.src }
+      });
+    }
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(OpponentSide);

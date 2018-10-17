@@ -9,7 +9,7 @@ class Champ extends React.Component {
           className={this.props.imgClassNick}
           alt={this.props.name}
           onClick={e => {
-            this.props.onChampionClick(e.target);
+            this.props.clicked();
           }}
           src={this.props.iconURL}
         />
@@ -19,18 +19,4 @@ class Champ extends React.Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    onChampionClick: champ => {
-      dispatch({
-        type: "ONCHAMPIONCLICK",
-        payLoad: { name: champ.alt, iconURL: champ.src }
-      });
-    }
-  };
-};
-
-export default connect(
-  null,
-  mapDispatchToProps
-)(Champ);
+export default Champ;

@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import _ from "lodash";
+import actionVariables from "../../reducers/actionVariables";
 
 export class SearchBar extends React.Component {
   render() {
@@ -27,7 +28,7 @@ const mapDispatchToProps = dispatch => {
   return {
     onSearchTermChange: searchTerm =>
       dispatch({
-        type: "SEARCHTERMCHANGE",
+        type: actionVariables.ONSEARCHTERMCHANGE,
         payLoad: { searchTerm }
       })
   };

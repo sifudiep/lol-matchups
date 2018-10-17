@@ -1,3 +1,5 @@
+import actionVariables from "./actionVariables";
+
 const initialState = {
   searchTerm: "",
   practiceChampionSelected: [],
@@ -16,14 +18,16 @@ function RemoveAtIndex(oldArray, index) {
 }
 
 const reducer = (state = initialState, action) => {
-  if (action.type === "SEARCHTERMCHANGE") {
+  if (action.type === actionVariables.ONSEARCHTERMCHANGE) {
     console.log(action.payLoad.searchTerm);
     return {
       ...state,
       searchTerm: action.payLoad.searchTerm.toLowerCase()
     };
   }
-  if (action.type === "ONCHAMPIONCLICK") {
+
+  if (action.type === actionVariables.ONCSCHAMPIONCLICK) {
+    console.log(`INSIDE CS CHAMPION CLICKED`);
     if (state.practiceChampionSelected.length === 0) {
       // Adds champion clicked to userSide if the "practiceChampionSelected" array is empty
       return {

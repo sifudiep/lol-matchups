@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import allChamps from "./allChamps";
 import Champ from "../champ/champ";
+import actionVariables from "../../reducers/actionVariables";
 
 class ChampSelect extends React.Component {
   sortChampList(searchTerm) {
@@ -54,6 +55,7 @@ class ChampSelect extends React.Component {
           iconURL={champ.iconURL}
           key={champ.name}
           name={champ.name}
+          clicked={mapDispatchToProps}
         />
       );
     });
@@ -70,4 +72,19 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(ChampSelect);
+const mapDispatchToProps = dispatch => {
+  console.log(`hej`);
+  return {
+    onCSChampionClick: champ => {
+      dispatch({
+        type: actionVariables.ONCSCHAMPIONCLICK,
+        payLoad: { name: champ.alt, iconURL: champ.src }
+      });
+    }
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ChampSelect);

@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import Champ from "../champ/champ";
+import actionVariables from "../../reducers/actionVariables";
 
 class UserSide extends React.Component {
   render() {
@@ -25,4 +26,17 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(UserSide);
+const mapDispatchToProps = dispatch => {
+  return {
+    onUSChampionClick: champ => {
+      dispatch({
+        type: actionVariables.ONUSCHAMPIONCLICK,
+        payLoad: { name: champ.alt, iconURL: champ.src }
+      });
+    }
+  };
+};
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(UserSide);
