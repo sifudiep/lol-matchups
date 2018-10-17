@@ -36,35 +36,12 @@ const reducer = (state = initialState, action) => {
         ])
       };
     } else {
-      if (state.opponentChampions.length === 0) {
-        // Adds clicked champion to opponentChampions if opponentChampions array is empty,
-        // doesn't need to check for duplicates since array is empty
-        return {
-          ...state,
-          opponentChampions: state.opponentChampions.concat([
-            { name: action.payLoad.name, iconURL: action.payLoad.iconURL }
-          ])
-        };
-      }
-
-      for (var i = 0; i < state.opponentChampions.length; i++) {
-        // checks for duplicates of champion in opponentChampions array
-        if (state.opponentChampions[i].name === action.payLoad.name) {
-          // if clicked champion already exists in the array opponentChampions, then dont add,
-          break;
-        } else {
-          // else check if champion doesn't exist
-          if (i === state.opponentChampions.length - 1) {
-            // if whole array has been checked and no duplicates have been found, then add clicked champion
-            return {
-              ...state,
-              opponentChampions: state.opponentChampions.concat([
-                { name: action.payLoad.name, iconURL: action.payLoad.iconURL }
-              ])
-            };
-          }
-        }
-      }
+      return {
+        ...state,
+        opponentChampions: state.opponentChampions.concat([
+          { name: action.payLoad.name, iconURL: action.payLoad.iconURL }
+        ])
+      };
     }
   }
 
@@ -73,6 +50,21 @@ const reducer = (state = initialState, action) => {
       ...state,
       practiceChampionSelected: [],
       opponentChampions: []
+    };
+  }
+
+  if (action.type === actionVariables.ONOSCHAMPIONCLICK) {
+    var newArray = [];
+    for (let i = 0; i < this.opponentChampions.length; i++) {
+      const element = this.opponentChampions[i];
+      if (action.payLoad.name === element.name) {
+        newArray = RemoveAtIndex(state.opponentChampions, i);
+      }
+    }
+
+    return {
+      ...state,
+      opponentChampions: newArray
     };
   }
 
