@@ -5474,7 +5474,11 @@ const allChampProperties = [
 var allChamps = [];
 
 allChampProperties.forEach(champ => {
-  allChamps.push({ name: champ.id, iconURL: champ.icon });
+  allChamps.push({
+    name: champ.name,
+    iconURL: champ.icon,
+    searchName: champ.id
+  });
 });
 
 export default allChamps;

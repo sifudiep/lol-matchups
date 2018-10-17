@@ -12,7 +12,7 @@ class ChampSelect extends React.Component {
     } else {
       for (let i = 0; i < allChamps.length; i++) {
         for (let j = 0; j < searchTerm.length; j++) {
-          if (searchTerm[j] === allChamps[i].name[j]) {
+          if (searchTerm[j] === allChamps[i].searchName[j]) {
             if (j === searchTerm.length - 1) {
               sortedChampList.push(allChamps[i]);
             }
