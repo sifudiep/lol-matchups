@@ -1,26 +1,24 @@
-$pickSection_box_shadow : 1px 1px 5px 0px rgba(0,0,0,0.5);
+$pickSection_box_shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
 
 .pickSection {
   display: grid;
   grid-area: pickSection;
   grid-template-columns:
-    minmax(1rem, 3fr) minmax(min-content, 20rem) minmax(min-content, 60rem)
-    minmax(min-content, 20rem) minmax(1rem, 1fr);
+    minmax(1rem, 1fr) minmax(min-content, 5rem)
+    minmax(min-content, 20rem)
+    minmax(min-content, 60rem) minmax(1rem, 1.5fr);
   grid-template-rows: 8vh 18rem 45vh;
   grid-template-areas:
-    ". . pickSection_searchBar . ."
-    ". pickSection_userSide pickSection_champSelect . ."
-    ". pickSection_opponentSide pickSection_champSelect . .";
-
+    ". . . pickSection_searchBar ."
+    ". pickSection_userSide_title pickSection_userSide pickSection_champSelect ."
+    ". pickSection_opponentSide_title pickSection_opponentSide pickSection_champSelect .";
   grid-gap: 1rem;
   background-color: $color-secondary-light;
-
   &_champSelect {
     display: grid;
     grid-area: pickSection_champSelect;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(auto-fill, 11rem);
-
     // border: 0.3rem solid $color-secondary;
     // border-radius: 0.5rem;
     box-shadow: $pickSection_box_shadow;
@@ -28,7 +26,6 @@ $pickSection_box_shadow : 1px 1px 5px 0px rgba(0,0,0,0.5);
     background-color: $color-secondary;
     overflow-x: hidden;
     // box-shadow: 0 0 0 0.1rem black;
-
     &_img {
       width: 8rem;
       height: 8rem;
@@ -56,7 +53,6 @@ $pickSection_box_shadow : 1px 1px 5px 0px rgba(0,0,0,0.5);
       }
     }
   }
-
   &_opponentSide {
     grid-area: pickSection_opponentSide;
     display: grid;
@@ -66,12 +62,17 @@ $pickSection_box_shadow : 1px 1px 5px 0px rgba(0,0,0,0.5);
     overflow-x: hidden;
     background-color: $color-secondary;
     box-shadow: $pickSection_box_shadow;
-
     &_title {
       grid-area: pickSection_opponentSide_title;
-      justify-self: center;
-      align-self: end;
-      font-size: 3rem;
+      display: flex;
+      justify-content: start;
+      align-items: flex-end;
+
+      &_text {
+        font-size: 6rem;
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+      }
     }
     &_img {
       margin-top: 1rem;
@@ -84,29 +85,30 @@ $pickSection_box_shadow : 1px 1px 5px 0px rgba(0,0,0,0.5);
         filter: grayscale(100%);
       }
     }
-
     &_text {
       text-align: center;
       font-size: 1.5rem;
       font-weight: bold;
     }
   }
-
   &_userSide {
     grid-area: pickSection_userSide;
     background: $color-secondary;
     display: flex;
     justify-content: center;
     align-items: center;
-    
     // border: 2rem solid $color-secondary;
     // border-radius: 0.5rem;
     box-shadow: $pickSection_box_shadow;
     &_title {
       grid-area: pickSection_userSide_title;
       justify-self: center;
-      align-self: end;
-      font-size: 3rem;
+      align-self: center;
+      &_text {
+        font-size: 6rem;
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+      }
     }
     &_img {
       width: 12rem;
@@ -123,15 +125,18 @@ $pickSection_box_shadow : 1px 1px 5px 0px rgba(0,0,0,0.5);
       font-weight: bold;
     }
   }
-
   &_searchBar {
     grid-area: pickSection_searchBar;
-    display:grid;
-    grid-template-columns: minmax(min-content, 25rem) minmax(1rem, 1fr) minmax(min-content, 20rem);
+    display: grid;
+    grid-template-columns: minmax(min-content, 25rem) minmax(1rem, 1fr) minmax(
+        min-content,
+        20rem
+      );
     grid-template-rows: repeat(3, 1fr);
-    grid-template-areas: ". . ."
-                         ". . ."
-                         "searchBar . laneIcons";
+    grid-template-areas:
+      ". . ."
+      ". . ."
+      "searchBar . laneIcons";
     &_styling {
       grid-area: searchBar;
       border-radius: 0.2rem;
@@ -143,16 +148,13 @@ $pickSection_box_shadow : 1px 1px 5px 0px rgba(0,0,0,0.5);
       color: $color-alert;
       box-shadow: $pickSection_box_shadow;
     }
-
     &_icon {
       grid-area: laneIcons;
     }
   }
-
   &_champion {
     justify-self: center;
   }
-
   &_laneIcons {
     grid-area: pickSection_searchBar;
     justify-self: end;
