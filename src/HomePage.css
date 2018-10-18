@@ -24,8 +24,7 @@ body {
 
 ::-webkit-scrollbar {
   width: 0.5rem;
-  background-color: #27282b;
-  box-shadow: -3px -3px 5px 0px rgba(0, 0, 0, 0.66); }
+  background-color: #27282b; }
 
 ::-webkit-scrollbar-thumb {
   background-color: #b28451;
@@ -43,7 +42,7 @@ body {
   grid-area: navBar;
   grid-template-columns: minmax(1rem, 1fr) minmax(min-content, 30rem) 2fr minmax(min-content, 10rem) minmax(min-content, 10rem) minmax(1rem, 1fr);
   grid-template-areas: ". navBar_logo . navBar_login navBar_signUp .";
-  background-color: #101d2c; }
+  background-color: #1e222b; }
   .navBar_logo {
     grid-area: navBar_logo;
     justify-self: center;
@@ -87,22 +86,20 @@ body {
 .pickSection {
   display: grid;
   grid-area: pickSection;
-  grid-template-columns: minmax(1rem, 1fr) minmax(min-content, 15rem) minmax(min-content, 60rem) minmax(min-content, 20rem) minmax(1rem, 1fr);
+  grid-template-columns: minmax(1rem, 3fr) minmax(min-content, 20rem) minmax(min-content, 60rem) minmax(min-content, 20rem) minmax(1rem, 1fr);
   grid-template-rows: 8vh 18rem 45vh;
-  grid-template-areas: ". pickSection_userSide_title pickSection_searchBar pickSection_opponentSide_title ." ". pickSection_userSide pickSection_champSelect pickSection_opponentSide ." ". . pickSection_champSelect pickSection_opponentSide .";
+  grid-template-areas: ". . pickSection_searchBar . ." ". pickSection_userSide pickSection_champSelect . ." ". pickSection_opponentSide pickSection_champSelect . .";
   grid-gap: 1rem;
-  background-color: #1c2734; }
+  background-color: #242933; }
   .pickSection_champSelect {
     display: grid;
     grid-area: pickSection_champSelect;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(auto-fill, 11rem);
-    border: 0.3rem solid #101d2c;
-    border-radius: 0.5rem;
+    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
     overflow-y: auto;
-    background-color: #101d2c;
-    overflow-x: hidden;
-    box-shadow: 0 0 0 0.1rem black; }
+    background-color: #1e222b;
+    overflow-x: hidden; }
     .pickSection_champSelect_img {
       width: 8rem;
       height: 8rem;
@@ -131,16 +128,15 @@ body {
     grid-template-rows: repeat(auto-fit, 11rem);
     overflow-y: auto;
     overflow-x: hidden;
-    background-color: #101d2c;
-    border-radius: 0.5rem;
-    border: 0.3rem solid #101d2c;
-    box-shadow: 0 0 0 0.1rem black; }
+    background-color: #1e222b;
+    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5); }
     .pickSection_opponentSide_title {
       grid-area: pickSection_opponentSide_title;
       justify-self: center;
       align-self: end;
       font-size: 3rem; }
     .pickSection_opponentSide_img {
+      margin-top: 1rem;
       width: 8rem;
       height: 8rem;
       border-radius: 10rem; }
@@ -154,11 +150,11 @@ body {
       font-weight: bold; }
   .pickSection_userSide {
     grid-area: pickSection_userSide;
-    background: #101d2c;
-    display: grid;
-    border: 2rem solid #101d2c;
-    border-radius: 0.5rem;
-    box-shadow: 0 0 0 0.1rem black; }
+    background: #1e222b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5); }
     .pickSection_userSide_title {
       grid-area: pickSection_userSide_title;
       justify-self: center;
@@ -166,30 +162,33 @@ body {
       font-size: 3rem; }
     .pickSection_userSide_img {
       width: 12rem;
-      height: 12rem; }
+      height: 12rem;
+      margin-top: 3rem; }
       .pickSection_userSide_img:hover {
         box-shadow: 0 0 0 0.25rem #c69963;
         filter: grayscale(100%); }
     .pickSection_userSide_text {
       text-align: center;
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: bold; }
   .pickSection_searchBar {
     grid-area: pickSection_searchBar;
-    justify-self: start;
-    align-self: end; }
+    display: grid;
+    grid-template-columns: minmax(min-content, 25rem) minmax(1rem, 1fr) minmax(min-content, 20rem);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: ". . ." ". . ." "searchBar . laneIcons"; }
     .pickSection_searchBar_styling {
+      grid-area: searchBar;
       border-radius: 0.2rem;
-      background-color: #101d2c;
-      border: 1px solid black;
+      background-color: #1e222b;
+      border: 0;
       padding-left: 1rem;
-      width: 20rem;
-      height: 2.5rem;
-      color: #c69963; }
+      font-size: 2rem;
+      height: 3.5rem;
+      color: #c69963;
+      box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5); }
     .pickSection_searchBar_icon {
-      grid-area: pickSection_searchBar;
-      width: 2rem;
-      height: 2rem; }
+      grid-area: laneIcons; }
   .pickSection_champion {
     justify-self: center; }
   .pickSection_laneIcons {

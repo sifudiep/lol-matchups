@@ -2,9 +2,10 @@
 $color-alert: #c69963;
 $color-primary-dark: #b28451;
 
-$color-secondary: #101d2c;
-$color-secondary-light: #1c2734;
-
+$color-secondary: #1e222b;
+//101d2c
+$color-secondary-light: #242933;
+//#dee5ee
 $color-grey-light-1: #f9f7f6;
 $color-grey-light-2: #aaa;
 
@@ -55,7 +56,6 @@ body {
 ::-webkit-scrollbar {
   width: 0.5rem;
   background-color: $color-scrollbar-background;
-  box-shadow: -3px -3px 5px 0px rgba(0, 0, 0, 0.66);
 }
 
 ::-webkit-scrollbar-thumb {

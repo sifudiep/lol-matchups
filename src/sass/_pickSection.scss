@@ -1,14 +1,16 @@
+$pickSection_box_shadow : 1px 1px 5px 0px rgba(0,0,0,0.5);
+
 .pickSection {
   display: grid;
   grid-area: pickSection;
   grid-template-columns:
-    minmax(1rem, 1fr) minmax(min-content, 15rem) minmax(min-content, 60rem)
+    minmax(1rem, 3fr) minmax(min-content, 20rem) minmax(min-content, 60rem)
     minmax(min-content, 20rem) minmax(1rem, 1fr);
   grid-template-rows: 8vh 18rem 45vh;
   grid-template-areas:
-    ". pickSection_userSide_title pickSection_searchBar pickSection_opponentSide_title ."
-    ". pickSection_userSide pickSection_champSelect pickSection_opponentSide ."
-    ". . pickSection_champSelect pickSection_opponentSide .";
+    ". . pickSection_searchBar . ."
+    ". pickSection_userSide pickSection_champSelect . ."
+    ". pickSection_opponentSide pickSection_champSelect . .";
 
   grid-gap: 1rem;
   background-color: $color-secondary-light;
@@ -19,12 +21,13 @@
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(auto-fill, 11rem);
 
-    border: 0.3rem solid $color-secondary;
-    border-radius: 0.5rem;
+    // border: 0.3rem solid $color-secondary;
+    // border-radius: 0.5rem;
+    box-shadow: $pickSection_box_shadow;
     overflow-y: auto;
     background-color: $color-secondary;
     overflow-x: hidden;
-    box-shadow: 0 0 0 0.1rem black;
+    // box-shadow: 0 0 0 0.1rem black;
 
     &_img {
       width: 8rem;
@@ -62,9 +65,7 @@
     overflow-y: auto;
     overflow-x: hidden;
     background-color: $color-secondary;
-    border-radius: 0.5rem;
-    border: 0.3rem solid $color-secondary;
-    box-shadow: 0 0 0 0.1rem black;
+    box-shadow: $pickSection_box_shadow;
 
     &_title {
       grid-area: pickSection_opponentSide_title;
@@ -73,6 +74,7 @@
       font-size: 3rem;
     }
     &_img {
+      margin-top: 1rem;
       width: 8rem;
       height: 8rem;
       border-radius: 10rem;
@@ -93,11 +95,13 @@
   &_userSide {
     grid-area: pickSection_userSide;
     background: $color-secondary;
-    display: grid;
-    border: 2rem solid $color-secondary;
-    border-radius: 0.5rem;
-    box-shadow: 0 0 0 0.1rem black;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    // border: 2rem solid $color-secondary;
+    // border-radius: 0.5rem;
+    box-shadow: $pickSection_box_shadow;
     &_title {
       grid-area: pickSection_userSide_title;
       justify-self: center;
@@ -107,6 +111,7 @@
     &_img {
       width: 12rem;
       height: 12rem;
+      margin-top: 3rem;
       &:hover {
         box-shadow: 0 0 0 0.25rem $color-alert;
         filter: grayscale(100%);
@@ -114,29 +119,33 @@
     }
     &_text {
       text-align: center;
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: bold;
     }
   }
 
   &_searchBar {
     grid-area: pickSection_searchBar;
-    justify-self: start;
-    align-self: end;
+    display:grid;
+    grid-template-columns: minmax(min-content, 25rem) minmax(1rem, 1fr) minmax(min-content, 20rem);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: ". . ."
+                         ". . ."
+                         "searchBar . laneIcons";
     &_styling {
+      grid-area: searchBar;
       border-radius: 0.2rem;
       background-color: $color-secondary;
-      border: 1px solid black;
+      border: 0;
       padding-left: 1rem;
-      width: 20rem;
-      height: 2.5rem;
+      font-size: 2rem;
+      height: 3.5rem;
       color: $color-alert;
+      box-shadow: $pickSection_box_shadow;
     }
 
     &_icon {
-      grid-area: pickSection_searchBar;
-      width: 2rem;
-      height: 2rem;
+      grid-area: laneIcons;
     }
   }
 
@@ -148,7 +157,6 @@
     grid-area: pickSection_searchBar;
     justify-self: end;
     align-self: end;
-
     &_styling {
       width: 3rem;
       height: 3rem;
