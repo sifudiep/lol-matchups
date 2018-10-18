@@ -1,4 +1,17 @@
 .footer {
   display: grid;
+  grid-template-columns:
+    minmax(1rem, 1fr)
+    repeat(3, minmax(min-content, 10rem))
+    minmax(1rem, 1fr);
+  grid-template-rows:
+    minmax(1rem, 1fr)
+    minmax(min-content, 10rem)
+    minmax(1rem, 1fr);
+  grid-template-areas:
+    ". . . . ."
+    ". footer_about footer_contact footer_support ."
+    ". . . . .";
   grid-area: footer;
+  background-color: #242933;
 }

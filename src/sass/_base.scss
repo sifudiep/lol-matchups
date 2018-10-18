@@ -2,10 +2,15 @@
 $color-alert: #c69963;
 $color-primary-dark: #b28451;
 
-$color-secondary: #1e222b;
+$color-secondary: #283754;
 //101d2c
-$color-secondary-light: #242933;
+//1e222b
+//242933
+//1671ac
+$color-secondary-light: #232325;
 //#dee5ee
+//242933
+//#2c323d
 $color-grey-light-1: #f9f7f6;
 $color-grey-light-2: #aaa;
 
@@ -65,7 +70,7 @@ body {
 
 .container {
   display: grid;
-  grid-template-rows: 10vh 85vh 10vh;
+  grid-template-rows: 10vh 88vh 12vh;
   grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
   grid-template-areas:
     "navBar navBar navBar navBar"

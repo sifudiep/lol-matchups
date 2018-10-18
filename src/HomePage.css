@@ -32,7 +32,7 @@ body {
 
 .container {
   display: grid;
-  grid-template-rows: 10vh 85vh 10vh;
+  grid-template-rows: 10vh 88vh 12vh;
   grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
   grid-template-areas: "navBar navBar navBar navBar" "pickSection pickSection pickSection pickSection" "footer footer footer footer"; }
 
@@ -42,7 +42,7 @@ body {
   grid-area: navBar;
   grid-template-columns: minmax(1rem, 1fr) minmax(min-content, 30rem) 2fr minmax(min-content, 10rem) minmax(min-content, 10rem) minmax(1rem, 1fr);
   grid-template-areas: ". navBar_logo . navBar_login navBar_signUp .";
-  background-color: #1e222b; }
+  background-color: #283754; }
   .navBar_logo {
     grid-area: navBar_logo;
     justify-self: center;
@@ -59,9 +59,9 @@ body {
       height: 5rem;
       border-radius: 2px;
       border-radius: 2px;
-      background-color: #b1b8bf;
+      background-color: #e5e5e5;
       border: 0;
-      color: #0c3354;
+      color: #1671ac;
       font-size: 1.5rem;
       font-weight: bold; }
     .navBar_login_button:hover {
@@ -74,9 +74,9 @@ body {
       width: 8rem;
       height: 5rem;
       border-radius: 2px;
-      background-color: #0c3354;
+      background-color: #1671ac;
       border: 0;
-      color: #b1b8bf;
+      color: #e5e5e5;
       font-size: 1.5rem;
       font-weight: bold; }
     .navBar_signUp_button:hover {
@@ -86,11 +86,11 @@ body {
 .pickSection {
   display: grid;
   grid-area: pickSection;
-  grid-template-columns: minmax(1rem, 1fr) minmax(min-content, 5rem) minmax(min-content, 20rem) minmax(min-content, 60rem) minmax(1rem, 1.5fr);
-  grid-template-rows: 8vh 18rem 45vh;
+  grid-template-columns: minmax(1rem, 1fr) minmax(min-content, 3rem) minmax(min-content, 20rem) minmax(min-content, 60rem) minmax(1rem, 1.5fr);
+  grid-template-rows: 8vh 18rem 52vh;
   grid-template-areas: ". . . pickSection_searchBar ." ". pickSection_userSide_title pickSection_userSide pickSection_champSelect ." ". pickSection_opponentSide_title pickSection_opponentSide pickSection_champSelect .";
   grid-gap: 1rem;
-  background-color: #242933; }
+  background-color: #232325; }
   .pickSection_champSelect {
     display: grid;
     grid-area: pickSection_champSelect;
@@ -98,7 +98,7 @@ body {
     grid-template-rows: repeat(auto-fill, 11rem);
     box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
     overflow-y: auto;
-    background-color: #1e222b;
+    background-color: #283754;
     overflow-x: hidden; }
     .pickSection_champSelect_img {
       width: 8rem;
@@ -128,7 +128,7 @@ body {
     grid-template-rows: repeat(auto-fit, 11rem);
     overflow-y: auto;
     overflow-x: hidden;
-    background-color: #1e222b;
+    background-color: #283754;
     box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5); }
     .pickSection_opponentSide_title {
       grid-area: pickSection_opponentSide_title;
@@ -138,7 +138,8 @@ body {
       .pickSection_opponentSide_title_text {
         font-size: 6rem;
         writing-mode: vertical-rl;
-        transform: rotate(180deg); }
+        transform: rotate(180deg);
+        font-family: "Niramit", sans-serif; }
     .pickSection_opponentSide_img {
       margin-top: 1rem;
       width: 8rem;
@@ -154,7 +155,7 @@ body {
       font-weight: bold; }
   .pickSection_userSide {
     grid-area: pickSection_userSide;
-    background: #1e222b;
+    background: #283754;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -166,7 +167,8 @@ body {
       .pickSection_userSide_title_text {
         font-size: 6rem;
         writing-mode: vertical-rl;
-        transform: rotate(180deg); }
+        transform: rotate(180deg);
+        font-family: "Niramit", sans-serif; }
     .pickSection_userSide_img {
       width: 12rem;
       height: 12rem;
@@ -187,7 +189,7 @@ body {
     .pickSection_searchBar_styling {
       grid-area: searchBar;
       border-radius: 0.2rem;
-      background-color: #1e222b;
+      background-color: #283754;
       border: 0;
       padding-left: 1rem;
       font-size: 2rem;
@@ -208,4 +210,8 @@ body {
 
 .footer {
   display: grid;
-  grid-area: footer; }
+  grid-template-columns: minmax(1rem, 1fr) repeat(3, minmax(min-content, 10rem)) minmax(1rem, 1fr);
+  grid-template-rows: minmax(1rem, 1fr) minmax(min-content, 10rem) minmax(1rem, 1fr);
+  grid-template-areas: ". . . . ." ". footer_about footer_contact footer_support ." ". . . . .";
+  grid-area: footer;
+  background-color: #242933; }

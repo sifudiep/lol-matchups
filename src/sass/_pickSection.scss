@@ -4,10 +4,10 @@ $pickSection_box_shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
   display: grid;
   grid-area: pickSection;
   grid-template-columns:
-    minmax(1rem, 1fr) minmax(min-content, 5rem)
+    minmax(1rem, 1fr) minmax(min-content, 3rem)
     minmax(min-content, 20rem)
     minmax(min-content, 60rem) minmax(1rem, 1.5fr);
-  grid-template-rows: 8vh 18rem 45vh;
+  grid-template-rows: 8vh 18rem 52vh;
   grid-template-areas:
     ". . . pickSection_searchBar ."
     ". pickSection_userSide_title pickSection_userSide pickSection_champSelect ."
@@ -72,6 +72,7 @@ $pickSection_box_shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
         font-size: 6rem;
         writing-mode: vertical-rl;
         transform: rotate(180deg);
+        font-family: "Niramit", sans-serif;
       }
     }
     &_img {
@@ -108,6 +109,7 @@ $pickSection_box_shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
         font-size: 6rem;
         writing-mode: vertical-rl;
         transform: rotate(180deg);
+        font-family: "Niramit", sans-serif;
       }
     }
     &_img {
