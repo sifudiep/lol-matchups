@@ -10,6 +10,7 @@ import OpponentSide from "./components/opponentSide/opponentSide";
 import UserSideTitle from "./components/userSide/userSideTitle";
 import UserSide from "./components/userSide/userSide";
 import Footer from "./components/footer/footer";
+import FindMatch from "./components/findMatch/findMatch";
 import "./HomePage.css";
 
 class HomePage extends Component {
@@ -29,6 +30,7 @@ class HomePage extends Component {
           <OpponentSide />
           <UserSideTitle />
           <UserSide />
+          <FindMatch />
         </div>
         <Footer />
       </div>

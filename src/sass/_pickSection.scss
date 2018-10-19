@@ -1,4 +1,17 @@
-$pickSection_box_shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
+$pickSection_box_shadow: .1rem .1rem .5rem 0 black;
+$pickSection_box_shadow_elevate: .3rem .3rem .3rem 0 black;
+
+@keyframes pickSection_findMatch_button_animation_clicked {
+  0% {
+    transform: translateY(1rem);
+  }
+  50% {
+    transform: translateY(-1rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 
 .pickSection {
   display: grid;
@@ -7,11 +20,12 @@ $pickSection_box_shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
     minmax(1rem, 1fr) minmax(min-content, 3rem)
     minmax(min-content, 20rem)
     minmax(min-content, 60rem) minmax(1rem, 1.5fr);
-  grid-template-rows: 8vh 18rem 52vh;
+  grid-template-rows: 8vh 18rem 44vh 8vh;
   grid-template-areas:
     ". . . pickSection_searchBar ."
     ". pickSection_userSide_title pickSection_userSide pickSection_champSelect ."
-    ". pickSection_opponentSide_title pickSection_opponentSide pickSection_champSelect .";
+    ". pickSection_opponentSide_title pickSection_opponentSide pickSection_champSelect ."
+    ". . pickSection_findMatch_button pickSection_champSelect .";
   grid-gap: 1rem;
   background-color: $color-secondary-light;
   &_champSelect {
@@ -27,11 +41,13 @@ $pickSection_box_shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
     overflow-x: hidden;
     // box-shadow: 0 0 0 0.1rem black;
     &_img {
+      margin-top: 1rem;
       width: 8rem;
       height: 8rem;
       border-radius: 10rem;
       &_picked {
         filter: grayscale(100%);
+        margin-top: 1rem;
         width: 8rem;
         height: 8rem;
         border-radius: 10rem;
@@ -72,7 +88,7 @@ $pickSection_box_shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
         font-size: 6rem;
         writing-mode: vertical-rl;
         transform: rotate(180deg);
-        font-family: "Niramit", sans-serif;
+        font-family: $font-special;
       }
     }
     &_img {
@@ -109,7 +125,7 @@ $pickSection_box_shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
         font-size: 6rem;
         writing-mode: vertical-rl;
         transform: rotate(180deg);
-        font-family: "Niramit", sans-serif;
+        font-family: $font-special;
       }
     }
     &_img {
@@ -154,6 +170,7 @@ $pickSection_box_shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
       grid-area: laneIcons;
     }
   }
+
   &_champion {
     justify-self: center;
   }
@@ -166,4 +183,35 @@ $pickSection_box_shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
       height: 3rem;
     }
   }
+
+  &_findMatch {
+    -webkit-transition: transform 0.1s 0s;
+    grid-area: pickSection_findMatch_button;
+    &_button {
+      width: 20rem;
+      height: 7rem;
+      background-color: $color-alert;
+      box-shadow: $pickSection_box_shadow;
+      border: 0;
+      font-size: 3rem;
+      font-family: $font-special;
+      -webkit-transition: 0.2s 0s;
+
+
+      &:active {
+      }
+      &:focus {
+        outline: 0;
+        animation: pickSection_findMatch_button_animation_clicked 1s;  
+      }
+      &:hover {
+        transform: translateY(-.4rem);
+        box-shadow: $pickSection_box_shadow_elevate;
+  
+      }
+    }
+    
+  }
+
+
 }

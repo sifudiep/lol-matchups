@@ -42,7 +42,7 @@ body {
   grid-area: navBar;
   grid-template-columns: minmax(1rem, 1fr) minmax(min-content, 30rem) 2fr minmax(min-content, 10rem) minmax(min-content, 10rem) minmax(1rem, 1fr);
   grid-template-areas: ". navBar_logo . navBar_login navBar_signUp .";
-  background-color: #283754; }
+  background-color: #242933; }
   .navBar_logo {
     grid-area: navBar_logo;
     justify-self: center;
@@ -83,12 +83,20 @@ body {
       background-color: #b28451;
       color: #0c3354; }
 
+@keyframes pickSection_findMatch_button_animation_clicked {
+  0% {
+    transform: translateY(1rem); }
+  50% {
+    transform: translateY(-1rem); }
+  100% {
+    transform: translateY(0); } }
+
 .pickSection {
   display: grid;
   grid-area: pickSection;
   grid-template-columns: minmax(1rem, 1fr) minmax(min-content, 3rem) minmax(min-content, 20rem) minmax(min-content, 60rem) minmax(1rem, 1.5fr);
-  grid-template-rows: 8vh 18rem 52vh;
-  grid-template-areas: ". . . pickSection_searchBar ." ". pickSection_userSide_title pickSection_userSide pickSection_champSelect ." ". pickSection_opponentSide_title pickSection_opponentSide pickSection_champSelect .";
+  grid-template-rows: 8vh 18rem 44vh 8vh;
+  grid-template-areas: ". . . pickSection_searchBar ." ". pickSection_userSide_title pickSection_userSide pickSection_champSelect ." ". pickSection_opponentSide_title pickSection_opponentSide pickSection_champSelect ." ". . pickSection_findMatch_button pickSection_champSelect .";
   grid-gap: 1rem;
   background-color: #232325; }
   .pickSection_champSelect {
@@ -96,16 +104,18 @@ body {
     grid-area: pickSection_champSelect;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(auto-fill, 11rem);
-    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0.1rem 0.1rem 0.5rem 0 black;
     overflow-y: auto;
-    background-color: #283754;
+    background-color: #242933;
     overflow-x: hidden; }
     .pickSection_champSelect_img {
+      margin-top: 1rem;
       width: 8rem;
       height: 8rem;
       border-radius: 10rem; }
       .pickSection_champSelect_img_picked {
         filter: grayscale(100%);
+        margin-top: 1rem;
         width: 8rem;
         height: 8rem;
         border-radius: 10rem; }
@@ -128,8 +138,8 @@ body {
     grid-template-rows: repeat(auto-fit, 11rem);
     overflow-y: auto;
     overflow-x: hidden;
-    background-color: #283754;
-    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5); }
+    background-color: #242933;
+    box-shadow: 0.1rem 0.1rem 0.5rem 0 black; }
     .pickSection_opponentSide_title {
       grid-area: pickSection_opponentSide_title;
       display: flex;
@@ -155,11 +165,11 @@ body {
       font-weight: bold; }
   .pickSection_userSide {
     grid-area: pickSection_userSide;
-    background: #283754;
+    background: #242933;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5); }
+    box-shadow: 0.1rem 0.1rem 0.5rem 0 black; }
     .pickSection_userSide_title {
       grid-area: pickSection_userSide_title;
       justify-self: center;
@@ -189,13 +199,13 @@ body {
     .pickSection_searchBar_styling {
       grid-area: searchBar;
       border-radius: 0.2rem;
-      background-color: #283754;
+      background-color: #242933;
       border: 0;
       padding-left: 1rem;
       font-size: 2rem;
       height: 3.5rem;
       color: #c69963;
-      box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5); }
+      box-shadow: 0.1rem 0.1rem 0.5rem 0 black; }
     .pickSection_searchBar_icon {
       grid-area: laneIcons; }
   .pickSection_champion {
@@ -207,6 +217,24 @@ body {
     .pickSection_laneIcons_styling {
       width: 3rem;
       height: 3rem; }
+  .pickSection_findMatch {
+    -webkit-transition: transform 0.1s 0s;
+    grid-area: pickSection_findMatch_button; }
+    .pickSection_findMatch_button {
+      width: 20rem;
+      height: 7rem;
+      background-color: #c69963;
+      box-shadow: 0.1rem 0.1rem 0.5rem 0 black;
+      border: 0;
+      font-size: 3rem;
+      font-family: "Niramit", sans-serif;
+      -webkit-transition: 0.2s 0s; }
+      .pickSection_findMatch_button:focus {
+        outline: 0;
+        animation: pickSection_findMatch_button_animation_clicked 1s; }
+      .pickSection_findMatch_button:hover {
+        transform: translateY(-0.4rem);
+        box-shadow: 0.3rem 0.3rem 0.3rem 0 black; }
 
 .footer {
   display: grid;
