@@ -7,8 +7,7 @@ export class SearchBar extends React.Component {
   render() {
     const champSearch = _.debounce((term, search) => {
       search(term);
-    }, 300);
-
+    }, 0);
     return (
       <div className="pickSection_searchBar">
         <input
@@ -27,8 +26,8 @@ export class SearchBar extends React.Component {
 const mapStateToProps = state => {
   return {
     searchTerm: state.searchTerm
-  }
-}
+  };
+};
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -41,6 +40,6 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(SearchBar);

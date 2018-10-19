@@ -3,8 +3,7 @@ import actionVariables from "./actionVariables";
 const initialState = {
   searchTerm: "",
   practiceChampionSelected: [],
-  opponentChampions: [],
-  selectedLane: ""
+  opponentChampions: []
 };
 
 function RemoveAtIndex(oldArray, index) {
@@ -29,9 +28,8 @@ const reducer = (state = initialState, action) => {
   if (action.type === actionVariables.ONCLICKEDLANE) {
     return {
       ...state,
-      selectedLane: action.payLoad.laneName,
-      searchTerm : action.payLoad.laneName
-    }
+      searchTerm: action.payLoad.laneName
+    };
   }
 
   if (action.type === actionVariables.ONCSCHAMPIONCLICK) {

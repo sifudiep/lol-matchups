@@ -11,11 +11,32 @@ class ChampSelect extends React.Component {
     if (searchTerm === "") {
       return allChamps;
     } else if (searchTerm === "top") {
-      allChamps.forEach(champ => {
-        if (champ.lane === "top") {
-          sortedChampList.push(champ);
+      for (let i = 0; i < allChamps.length; i++) {
+        for (let k = 0; k < allChamps[i].lane.length; k++) {
+          if (allChamps[i].lane[k] === "top") {
+            sortedChampList.push(allChamps[i]);
+          }
         }
-      });
+      }
+      return sortedChampList;
+    } else if (searchTerm === "mid") {
+      for (let i = 0; i < allChamps.length; i++) {
+        for (let k = 0; k < allChamps[i].lane.length; k++) {
+          if (allChamps[i].lane[k] === "mid") {
+            sortedChampList.push(allChamps[i]);
+          }
+        }
+      }
+      return sortedChampList;
+    } else if (searchTerm === "adc") {
+      for (let i = 0; i < allChamps.length; i++) {
+        for (let k = 0; k < allChamps[i].lane.length; k++) {
+          if (allChamps[i].lane[k] === "adc") {
+            sortedChampList.push(allChamps[i]);
+          }
+        }
+      }
+      return sortedChampList;
     } else {
       for (let i = 0; i < allChamps.length; i++) {
         for (let j = 0; j < searchTerm.length; j++) {
@@ -34,7 +55,6 @@ class ChampSelect extends React.Component {
 
   render() {
     const sortedChampList = this.sortChampList(this.props.searchTerm);
-
     const JSXSortedChampList = sortedChampList.map(champ => {
       // returns every single object object in the array as jsx
       for (let i = 0; i < this.props.opponentChampions.length; i++) {
@@ -82,7 +102,6 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     onCSChampionClick: champ => {
-      console.log(`oncschampclick is clicked`);
       dispatch({
         type: actionVariables.ONCSCHAMPIONCLICK,
         payLoad: { name: champ.alt, iconURL: champ.src }
