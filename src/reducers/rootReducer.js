@@ -27,7 +27,6 @@ const reducer = (state = initialState, action) => {
   }
 
   if (action.type === actionVariables.ONCLICKEDLANE) {
-    console.log(`action.payLoad.laneName : ${action.payLoad.laneName}`);
     return {
       ...state,
       selectedLane: action.payLoad.laneName,
