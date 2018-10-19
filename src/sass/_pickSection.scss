@@ -181,6 +181,16 @@ $pickSection_box_shadow_elevate: .3rem .3rem .3rem 0 black;
     &_styling {
       width: 3rem;
       height: 3rem;
+      filter: grayscale(100%);
+      &:hover {
+        filter:grayscale(0);
+      }
+
+      &_picked {
+        width: 3rem;
+        height: 3rem;
+        filter: grayscale(0);
+      }
     }
   }
 
@@ -197,9 +207,6 @@ $pickSection_box_shadow_elevate: .3rem .3rem .3rem 0 black;
       font-family: $font-special;
       -webkit-transition: 0.2s 0s;
 
-
-      &:active {
-      }
       &:focus {
         outline: 0;
         animation: pickSection_findMatch_button_animation_clicked 1s;  

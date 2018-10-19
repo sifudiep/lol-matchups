@@ -10,6 +10,12 @@ class ChampSelect extends React.Component {
     var sortedChampList = [];
     if (searchTerm === "") {
       return allChamps;
+    } else if (searchTerm === "top") {
+      allChamps.forEach(champ => {
+        if (champ.lane === "top") {
+          sortedChampList.push(champ);
+        }
+      });
     } else {
       for (let i = 0; i < allChamps.length; i++) {
         for (let j = 0; j < searchTerm.length; j++) {
@@ -68,7 +74,8 @@ const mapStateToProps = state => {
   return {
     searchTerm: state.searchTerm,
     practiceChampionSelected: state.practiceChampionSelected,
-    opponentChampions: state.opponentChampions
+    opponentChampions: state.opponentChampions,
+    selectedLane: state.selectedLane
   };
 };
 

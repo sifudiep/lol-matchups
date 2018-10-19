@@ -216,7 +216,14 @@ body {
     align-self: end; }
     .pickSection_laneIcons_styling {
       width: 3rem;
-      height: 3rem; }
+      height: 3rem;
+      filter: grayscale(100%); }
+      .pickSection_laneIcons_styling:hover {
+        filter: grayscale(0); }
+      .pickSection_laneIcons_styling_picked {
+        width: 3rem;
+        height: 3rem;
+        filter: grayscale(0); }
   .pickSection_findMatch {
     -webkit-transition: transform 0.1s 0s;
     grid-area: pickSection_findMatch_button; }

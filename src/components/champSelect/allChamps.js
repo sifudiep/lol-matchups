@@ -1,5 +1,6 @@
 const allChampProperties = [
   {
+    lane: ["top", "mid"],
     id: "aatrox",
     key: "266",
     name: "Aatrox",
@@ -39,6 +40,7 @@ const allChampProperties = [
       "One of the ancient darkin, Aatrox was once a peerless swordmaster who reveled in the bloody chaos of the battlefield. Trapped within his own blade by the magic of his foes, he waited out the millennia for a suitable host to wield him—this mortal warrior..."
   },
   {
+    lane: ["mid"],
     id: "ahri",
     key: "103",
     name: "Ahri",
@@ -77,6 +79,7 @@ const allChampProperties = [
       "Innately connected to the latent power of Runeterra, Ahri is a vastaya who can reshape magic into orbs of raw energy. She revels in toying with her prey by manipulating their emotions before devouring their life essence. Despite her predatory nature..."
   },
   {
+    lane: ["top", "mid"],
     id: "akali",
     key: "84",
     name: "Akali",
@@ -116,6 +119,7 @@ const allChampProperties = [
       "A prodigy in the fighting arts, Akali is a member of the martial order known as the Kinkou. She succeeds her mother as the Fist of Shadow, entrusted with the sacred duty to end those who would bring imbalance to her homeland. While some find her methods..."
   },
   {
+    lane: ["support"],
     id: "alistar",
     key: "12",
     name: "Alistar",
@@ -194,6 +198,7 @@ const allChampProperties = [
       "Legend claims that Amumu is a lonely and melancholy soul from ancient Shurima, roaming the world in search of a friend. Doomed by an ancient curse to remain alone forever, his touch is death, his affection ruin. Those who claim to have seen him describe..."
   },
   {
+    lane: ["mid"],
     id: "anivia",
     key: "34",
     name: "Anivia",
@@ -233,6 +238,7 @@ const allChampProperties = [
       "Anivia is a benevolent winged spirit who endures endless cycles of life, death, and rebirth to protect the Freljord. A demigod born of unforgiving ice and bitter winds, she wields those elemental powers to thwart any who dare disturb her homeland..."
   },
   {
+    lane: ["mid"],
     id: "annie",
     key: "1",
     name: "Annie",
@@ -272,6 +278,7 @@ const allChampProperties = [
       "Dangerous, yet disarmingly precocious, Annie is a child mage with immense pyromantic power. Even in the shadows of the mountains north of Noxus, she is a magical outlier. Her natural affinity for fire manifested early in life through unpredictable..."
   },
   {
+    lane: ["adc"],
     id: "ashe",
     key: "22",
     name: "Ashe",
@@ -310,6 +317,7 @@ const allChampProperties = [
       "Iceborn warmother of the Avarosan tribe, Ashe commands the most populous horde in the north. Stoic, intelligent, and idealistic, yet uncomfortable with her role as leader, she taps into the ancestral magics of her lineage to wield a bow of True Ice..."
   },
   {
+    lane: ["mid"],
     id: "aurelionsol",
     key: "136",
     name: "Aurelion Sol",
@@ -349,6 +357,7 @@ const allChampProperties = [
       "Aurelion Sol once graced the vast emptiness of the cosmos with celestial wonders of his own devising. Now, he is forced to wield his awesome power at the behest of a space-faring empire that tricked him into servitude. Desiring a return to his..."
   },
   {
+    lane: ["mid"],
     id: "azir",
     key: "268",
     name: "Azir",
@@ -387,6 +396,7 @@ const allChampProperties = [
       "Azir was a mortal emperor of Shurima in a far distant age, a proud man who stood at the cusp of immortality. His hubris saw him betrayed and murdered at the moment of his greatest triumph, but now, millennia later, he has been reborn as an Ascended..."
   },
   {
+    lane: ["support"],
     id: "bard",
     key: "432",
     name: "Bard",
@@ -425,6 +435,7 @@ const allChampProperties = [
       "A traveler from beyond the stars, Bard is an agent of serendipity who fights to maintain a balance where life can endure the indifference of chaos. Many Runeterrans sing songs that ponder his extraordinary nature, yet they all agree that the cosmic..."
   },
   {
+    lane: ["support"],
     id: "blitzcrank",
     key: "53",
     name: "Blitzcrank",
@@ -464,6 +475,7 @@ const allChampProperties = [
       "Blitzcrank is an enormous, near-indestructible automaton from Zaun, originally built to dispose of hazardous waste. However, he found this primary purpose too restricting, and modified his own form to better serve the fragile people of the Sump..."
   },
   {
+    lane: ["support"],
     id: "brand",
     key: "63",
     name: "Brand",
@@ -503,6 +515,7 @@ const allChampProperties = [
       "Once a tribesman of the icy Freljord named Kegan Rodhe, the creature known as Brand is a lesson in the temptation of greater power. Seeking one of the legendary World Runes, Kegan betrayed his companions and seized it for himself—and, in an instant, the..."
   },
   {
+    lane: ["support"],
     id: "braum",
     key: "201",
     name: "Braum",
@@ -542,6 +555,7 @@ const allChampProperties = [
       "Blessed with massive biceps and an even bigger heart, Braum is a beloved hero of the Freljord. Every mead hall north of Frostheld toasts his legendary strength, said to have felled a forest of oaks in a single night, and punched an entire mountain into..."
   },
   {
+    lane: ["adc"],
     id: "caitlyn",
     key: "51",
     name: "Caitlyn",
@@ -581,6 +595,7 @@ const allChampProperties = [
       "Renowned as its finest peacekeeper, Caitlyn is also Piltover's best shot at ridding the city of its elusive criminal elements. She is often paired with Vi, acting as a cool counterpoint to her partner's more impetuous nature. Even though she carries a..."
   },
   {
+    lane: ["top"],
     id: "camille",
     key: "164",
     name: "Camille",
@@ -620,6 +635,7 @@ const allChampProperties = [
       "Weaponized to operate outside the boundaries of the law, Camille is the Principal Intelligencer of Clan Ferros—an elegant and elite agent who ensures the Piltover machine and its Zaunite underbelly runs smoothly. Adaptable and precise, she views sloppy..."
   },
   {
+    lane: ["mid", "top"],
     id: "cassiopeia",
     key: "69",
     name: "Cassiopeia",
@@ -659,6 +675,7 @@ const allChampProperties = [
       "Cassiopeia is a deadly creature bent on manipulating others to her sinister will. Youngest and most beautiful daughter of the noble Du Couteau family of Noxus, she ventured deep into the crypts beneath Shurima in search of ancient power. There, she was..."
   },
   {
+    lane: ["top"],
     id: "chogath",
     key: "31",
     name: "Cho'Gath",
@@ -698,6 +715,7 @@ const allChampProperties = [
       "From the moment Cho'Gath first emerged into the harsh light of Runeterra's sun, the beast was driven by the most pure and insatiable hunger. A perfect expression of the Void's desire to consume all life, Cho'Gath's complex biology quickly converts..."
   },
   {
+    lane: ["mid"],
     id: "corki",
     key: "42",
     name: "Corki",
@@ -737,6 +755,7 @@ const allChampProperties = [
       "The yordle pilot Corki loves two things above all others: flying, and his glamorous mustache... though not necessarily in that order. After leaving Bandle City, he settled in Piltover and fell in love with the wondrous machines he found there. He..."
   },
   {
+    lane: ["top"],
     id: "darius",
     key: "122",
     name: "Darius",
@@ -776,6 +795,7 @@ const allChampProperties = [
       "There is no greater symbol of Noxian might than Darius, the nation's most feared and battle-hardened commander. Rising from humble origins to become the Hand of Noxus, he cleaves through the empire's enemies—many of them Noxians themselves. Knowing that..."
   },
   {
+    lane: ["mid", "top"],
     id: "diana",
     key: "131",
     name: "Diana",
@@ -815,6 +835,7 @@ const allChampProperties = [
       "Bearing her crescent moonblade, Diana fights as a warrior of the Lunari—a faith all but quashed in the lands around Mount Targon. Clad in shimmering armor the color of winter snow at night, she is a living embodiment of the silver moon's power. Imbued..."
   },
   {
+    lane: ["adc"],
     id: "draven",
     key: "119",
     name: "Draven",
@@ -854,6 +875,7 @@ const allChampProperties = [
       "In Noxus, warriors known as Reckoners face one another in arenas where blood is spilled and strength tested—but none has ever been as celebrated as Draven. A former soldier, he found that the crowds uniquely appreciated his flair for the dramatic, and..."
   },
   {
+    lane: ["top"],
     id: "drmundo",
     key: "36",
     name: "Dr. Mundo",
@@ -893,6 +915,7 @@ const allChampProperties = [
       "Utterly insane, unrepentantly homicidal, and horrifyingly purple, Dr. Mundo is what keeps many of Zaun's citizens indoors on particularly dark nights. This monosyllabic monstrosity seems to want nothing more than pain—both the giving of it, and the..."
   },
   {
+    lane: ["mid"],
     id: "ekko",
     key: "245",
     name: "Ekko",
@@ -1009,6 +1032,7 @@ const allChampProperties = [
       "Within the dark seams of Runeterra, the demon Evelynn searches for her next victim. She lures in prey with the voluptuous façade of a human female, but once a person succumbs to her charms, Evelynn's true form is unleashed. She then subjects her victim..."
   },
   {
+    lane: ["adc"],
     id: "ezreal",
     key: "81",
     name: "Ezreal",
@@ -1048,6 +1072,7 @@ const allChampProperties = [
       "A self-assured Piltovan explorer with an uncanny ability to find his way into and out of trouble, Ezreal travels Runeterra in search of adventure. Armed with a magical gauntlet procured from the ruins of ancient Shurima, he seeks out the world's most..."
   },
   {
+    lane: ["support"],
     id: "fiddlesticks",
     key: "9",
     name: "Fiddlesticks",
@@ -1087,6 +1112,7 @@ const allChampProperties = [
       "Fiddlesticks is a ghastly, living scarecrow who stalks the darkness, wielding a cruel scythe and preying upon the unwary. Once a lonely man accused of bringing famine to his village, he was tied up and left to starve in his own barren field. Resurrected..."
   },
   {
+    lane: ["top"],
     id: "fiora",
     key: "114",
     name: "Fiora",
@@ -1126,6 +1152,7 @@ const allChampProperties = [
       "The most feared duelist in all Valoran, Fiora is as renowned for her brusque manner and cunning mind as she is for the speed of her bluesteel rapier. Born to House Laurent in the kingdom of Demacia, Fiora took control of the family from her father in..."
   },
   {
+    lane: ["mid"],
     id: "fizz",
     key: "105",
     name: "Fizz",
@@ -1164,6 +1191,7 @@ const allChampProperties = [
       "Fizz is an amphibious yordle, who dwells among the reefs surrounding Bilgewater. He often retrieves and returns the tithes cast into the sea by superstitious captains, but even the saltiest of sailors know better than to cross him—for many are the tales..."
   },
   {
+    lane: ["top", "mid"],
     id: "galio",
     key: "3",
     name: "Galio",
@@ -1203,6 +1231,7 @@ const allChampProperties = [
       "Outside the gleaming city of Demacia, the stone colossus Galio keeps vigilant watch. Built as a bulwark against enemy mages, he often stands motionless for decades until the presence of powerful magic stirs him to life. Once activated, Galio makes the..."
   },
   {
+    lane: ["top", "mid"],
     id: "gangplank",
     key: "41",
     name: "Gangplank",
@@ -1242,6 +1271,7 @@ const allChampProperties = [
       "As unpredictable as he is brutal, the dethroned reaver king Gangplank is feared far and wide. Once, he ruled the port city of Bilgewater, and while his reign is over, there are those who believe this has only made him more dangerous. Gangplank would see..."
   },
   {
+    lane: ["top"],
     id: "garen",
     key: "86",
     name: "Garen",
@@ -1281,6 +1311,7 @@ const allChampProperties = [
       "A proud and noble warrior, Garen fights as one of the Dauntless Vanguard. He is popular among his fellows, and respected well enough by his enemies—not least as a scion of the prestigious Crownguard family, entrusted with defending Demacia and its..."
   },
   {
+    lane: ["top"],
     id: "gnar",
     key: "150",
     name: "Gnar",
@@ -1319,6 +1350,7 @@ const allChampProperties = [
       "Gnar is a primeval yordle whose playful antics can erupt into a toddler's outrage in an instant, transforming him into a massive beast bent on destruction. Frozen in True Ice for millennia, the curious creature broke free and now hops about a changed..."
   },
   {
+    lane: ["top"],
     id: "gragas",
     key: "79",
     name: "Gragas",
@@ -1436,6 +1468,7 @@ const allChampProperties = [
       "Hecarim is a spectral fusion of man and beast, cursed to ride down the souls of the living for all eternity. When the Blessed Isles fell into shadow, this proud knight was obliterated by the destructive energies of the Ruination, along with all his..."
   },
   {
+    lane: ["mid", "top", "adc"],
     id: "heimerdinger",
     key: "74",
     name: "Heimerdinger",
@@ -1475,6 +1508,7 @@ const allChampProperties = [
       "A brilliant yet eccentric yordle scientist, Professor Cecil B. Heimerdinger is one of the most innovative and esteemed inventors Piltover has ever known. Relentless in his work to the point of neurotic obsession, he thrives on answering the universe's..."
   },
   {
+    lane: ["top"],
     id: "illaoi",
     key: "420",
     name: "Illaoi",
@@ -1514,6 +1548,7 @@ const allChampProperties = [
       "Illaoi's powerful physique is dwarfed only by her indomitable faith. As the prophet of the Great Kraken, she uses a huge, golden idol to rip her foes' spirits from their bodies and shatter their perception of reality. All who challenge the “Truth Bearer..."
   },
   {
+    lane: ["mid", "top"],
     id: "irelia",
     key: "39",
     name: "Irelia",
@@ -1592,6 +1627,7 @@ const allChampProperties = [
       "Ivern Bramblefoot, known to many as the Green Father, is a peculiar half man, half tree who roams Runeterra's forests, cultivating life everywhere he goes. He knows the secrets of the natural world, and holds deep friendships with all things that grow..."
   },
   {
+    lane: ["support"],
     id: "janna",
     key: "40",
     name: "Janna",
@@ -1631,6 +1667,7 @@ const allChampProperties = [
       "Armed with the power of Runeterra's gales, Janna is a mysterious, elemental wind spirit who protects the dispossessed of Zaun. Some believe she was brought into existence by the pleas of Runeterra's sailors who prayed for fair winds as they navigated..."
   },
   {
+    lane: ["top"],
     id: "jarvaniv",
     key: "59",
     name: "Jarvan IV",
@@ -1670,6 +1707,7 @@ const allChampProperties = [
       "Prince Jarvan, scion of the Lightshield dynasty, is heir apparent to the throne of Demacia. Raised to be a paragon of his nation's greatest virtues, he is forced to balance the heavy expectations placed upon him with his own desire to fight on the front..."
   },
   {
+    lane: ["top"],
     id: "jax",
     key: "24",
     name: "Jax",
@@ -1708,6 +1746,7 @@ const allChampProperties = [
       "Unmatched in both his skill with unique armaments and his biting sarcasm, Jax is the last known weapons master of Icathia. After his homeland was laid low by its own hubris in unleashing the Void, Jax and his kind vowed to protect what little remained..."
   },
   {
+    lane: ["mid", "top"],
     id: "jayce",
     key: "126",
     name: "Jayce",
@@ -1747,6 +1786,7 @@ const allChampProperties = [
       "Jayce is a brilliant inventor who has pledged his life to the defense of Piltover and its unyielding pursuit of progress. With his transforming hextech hammer in hand, Jayce uses his strength, courage, and considerable intelligence to protect his..."
   },
   {
+    lane: ["adc"],
     id: "jhin",
     key: "202",
     name: "Jhin",
@@ -1785,6 +1825,7 @@ const allChampProperties = [
       "Jhin is a meticulous criminal psychopath who believes murder is art. Once an Ionian prisoner, but freed by shadowy elements within Ionia's ruling council, the serial killer now works as their cabal's assassin. Using his gun as his paintbrush, Jhin..."
   },
   {
+    lane: ["adc"],
     id: "jinx",
     key: "222",
     name: "Jinx",
@@ -1823,6 +1864,7 @@ const allChampProperties = [
       "A manic and impulsive criminal from Zaun, Jinx lives to wreak havoc without care for the consequences. With an arsenal of deadly weapons, she unleashes the loudest blasts and brightest explosions to leave a trail of mayhem and panic in her wake. Jinx..."
   },
   {
+    lane: ["adc"],
     id: "kaisa",
     key: "145",
     name: "Kai'Sa",
@@ -1862,6 +1904,7 @@ const allChampProperties = [
       "Claimed by the Void when she was only a child, Kai'Sa managed to survive through sheer tenacity and strength of will. Her experiences have made her a deadly hunter and, to some, the harbinger of a future they would rather not live to see. Having entered..."
   },
   {
+    lane: ["adc"],
     id: "kalista",
     key: "429",
     name: "Kalista",
@@ -1901,6 +1944,7 @@ const allChampProperties = [
       "A specter of wrath and retribution, Kalista is the undying spirit of vengeance, an armored nightmare summoned from the Shadow Isles to hunt deceivers and traitors. The betrayed may cry out in blood to be avenged, but Kalista only answers those willing..."
   },
   {
+    lane: ["support", "mid"],
     id: "karma",
     key: "43",
     name: "Karma",
@@ -1940,6 +1984,7 @@ const allChampProperties = [
       "No champion exemplifies the spiritual traditions of Ionia more than Karma. She is the living embodiment of an ancient soul reincarnated countless times, carrying all her accumulated memories into each new life. With this insight, she serves as a..."
   },
   {
+    lane: ["mid", "top"],
     id: "karthus",
     key: "30",
     name: "Karthus",
@@ -1979,6 +2024,7 @@ const allChampProperties = [
       "The harbinger of oblivion, Karthus is an undying spirit whose haunting songs are a prelude to the horror of his nightmarish appearance. The living fear the eternity of undeath, but Karthus sees only beauty and purity in its embrace, a perfect union of..."
   },
   {
+    lane: ["mid"],
     id: "kassadin",
     key: "38",
     name: "Kassadin",
@@ -2018,6 +2064,7 @@ const allChampProperties = [
       "Cutting a burning swath through the darkest places of the world, Kassadin knows his days are numbered. A widely traveled Shuriman guide and adventurer, he had chosen to raise a family among the peaceful southern tribes—until the day his village was..."
   },
   {
+    lane: ["mid"],
     id: "katarina",
     key: "55",
     name: "Katarina",
@@ -2057,6 +2104,7 @@ const allChampProperties = [
       "Decisive in judgment and lethal in combat, Katarina is a Noxian assassin of the highest caliber. Eldest daughter to the legendary General Du Couteau, she made her talents known with swift kills against unsuspecting enemies. Her fiery ambition has driven..."
   },
   {
+    lane: ["mid", "top"],
     id: "kayle",
     key: "10",
     name: "Kayle",
@@ -2096,6 +2144,7 @@ const allChampProperties = [
       "A great hero and the strongest among her kind, Kayle is an angelic warrior dedicated to purging those beyond redemption. After conflict divided her people, she took up her enchanted armor and flaming sword in the name of order, disowning her very flesh..."
   },
   {
+    lane: ["top"],
     id: "kayn",
     key: "141",
     name: "Kayn",
@@ -2134,6 +2183,7 @@ const allChampProperties = [
       "A peerless practitioner of lethal shadow magic, Shieda Kayn battles to achieve his true destiny—to one day lead the Order of the Shadow into a new era of Ionian supremacy. He audaciously wields the sentient darkin weapon Rhaast, undeterred by its..."
   },
   {
+    lane: ["top", "mid"],
     id: "kennen",
     key: "85",
     name: "Kennen",
@@ -2251,6 +2301,7 @@ const allChampProperties = [
       "Separate, but never parted, Kindred represents the twin essences of death. Lamb's bow offers a swift release from the mortal realm for those who accept their fate. Wolf hunts down those who run from their end, delivering violent finality within his..."
   },
   {
+    lane: ["top"],
     id: "kled",
     key: "240",
     name: "Kled",
@@ -2289,6 +2340,7 @@ const allChampProperties = [
       "A warrior as fearless as he is ornery, the yordle Kled embodies the furious bravado of Noxus. He is an icon beloved by the empire's soldiers, distrusted by its officers, and loathed by the nobility. Many claim Kled has fought in every campaign the..."
   },
   {
+    lane: ["adc"],
     id: "kogmaw",
     key: "96",
     name: "Kog'Maw",
@@ -2328,6 +2380,7 @@ const allChampProperties = [
       "Belched forth from a rotting Void incursion deep in the wastelands of Icathia, Kog'Maw is an inquisitive yet putrid creature with a caustic, gaping mouth. This particular Void-spawn needs to gnaw and drool on anything within reach to truly understand it..."
   },
   {
+    lane: ["mid"],
     id: "leblanc",
     key: "7",
     name: "LeBlanc",
@@ -2406,6 +2459,7 @@ const allChampProperties = [
       "A master of Ionia's ancient martial arts, Lee Sin is a principled fighter who channels the essence of the dragon spirit to face any challenge. Though he lost his sight many years ago, the warrior-monk has devoted his life to protecting his homeland..."
   },
   {
+    lane: ["support"],
     id: "leona",
     key: "89",
     name: "Leona",
@@ -2445,6 +2499,7 @@ const allChampProperties = [
       "Imbued with the fire of the sun, Leona is a holy warrior of the Solari who defends Mount Targon with her Zenith Blade and the Shield of Daybreak. Her skin shimmers with starfire while her eyes burn with the power of the celestial Aspect within her..."
   },
   {
+    lane: ["mid", "top"],
     id: "lissandra",
     key: "127",
     name: "Lissandra",
@@ -2484,6 +2539,7 @@ const allChampProperties = [
       "Lissandra's magic twists the pure power of ice into something dark and terrible. With the force of her black ice, she does more than freeze—she impales and crushes those who oppose her. To the terrified denizens of the north, she is known only as ''The..."
   },
   {
+    lane: ["mid", "top", "adc"],
     id: "lucian",
     key: "236",
     name: "Lucian",
@@ -2523,6 +2579,7 @@ const allChampProperties = [
       "Once a Sentinel of Light, Lucian is a grim hunter of undying spirits, pursuing them relentlessly and annihilating them with his twin relic pistols. Consumed by the need to avenge his dead wife, he will not rest until Thresh, the specter who holds her..."
   },
   {
+    lane: ["support", "mid"],
     id: "lulu",
     key: "117",
     name: "Lulu",
@@ -2561,6 +2618,7 @@ const allChampProperties = [
       "The yordle mage Lulu is known for conjuring dreamlike illusions and fanciful creatures as she roams Runeterra with her fairy companion Pix. Lulu shapes reality on a whim, warping the fabric of the world, and what she views as the constraints of this..."
   },
   {
+    lane: ["mid", "support"],
     id: "lux",
     key: "99",
     name: "Lux",
@@ -2599,6 +2657,7 @@ const allChampProperties = [
       "Luxanna Crownguard hails from Demacia, an insular realm where magical abilities are viewed with fear and suspicion. Able to bend light to her will, she grew up dreading discovery and exile, and was forced to keep her power secret, in order to preserve..."
   },
   {
+    lane: ["top"],
     id: "malphite",
     key: "54",
     name: "Malphite",
@@ -2638,6 +2697,7 @@ const allChampProperties = [
       "A massive creature of living stone, Malphite struggles to impose blessed order on a chaotic world. Birthed as a servitor-shard to an otherworldly obelisk known as the Monolith, he used his tremendous elemental strength to maintain and protect his..."
   },
   {
+    lane: ["mid", "top"],
     id: "malzahar",
     key: "90",
     name: "Malzahar",
@@ -2677,6 +2737,7 @@ const allChampProperties = [
       "A zealous seer dedicated to the unification of all life, Malzahar truly believes the newly emergent Void to be the path to Runeterra's salvation. In the desert wastes of Shurima, he followed the voices that whispered in his mind, all the way to ancient..."
   },
   {
+    lane: ["top"],
     id: "maokai",
     key: "57",
     name: "Maokai",
@@ -2755,6 +2816,7 @@ const allChampProperties = [
       "Master Yi has tempered his body and sharpened his mind, so that thought and action have become almost as one. Though he chooses to enter into violence only as a last resort, the grace and speed of his blade ensures resolution is always swift. As one of..."
   },
   {
+    lane: ["adc"],
     id: "missfortune",
     key: "21",
     name: "Miss Fortune",
@@ -2794,6 +2856,7 @@ const allChampProperties = [
       "A Bilgewater captain famed for her looks but feared for her ruthlessness, Sarah Fortune paints a stark figure among the hardened criminals of the port city. As a child, she witnessed the reaver king Gangplank murder her family—an act she brutally..."
   },
   {
+    lane: ["top"],
     id: "monkeyking",
     key: "62",
     name: "Wukong",
@@ -2833,6 +2896,7 @@ const allChampProperties = [
       "Wukong is a vastayan trickster who uses his strength, agility, and intelligence to confuse his opponents and gain the upper hand. After finding a lifelong friend in the warrior known as Master Yi, Wukong became the last student of the ancient martial..."
   },
   {
+    lane: ["adc", "top"],
     id: "mordekaiser",
     key: "82",
     name: "Mordekaiser",
@@ -2872,6 +2936,7 @@ const allChampProperties = [
       "The baleful revenant Mordekaiser is among the most terrifying and hateful spirits haunting the Shadow Isles. He has existed for countless centuries, shielded from true death by necromantic sorcery and the force of his own dark will. Those who dare face..."
   },
   {
+    lane: ["support"],
     id: "morgana",
     key: "25",
     name: "Morgana",
@@ -2911,6 +2976,7 @@ const allChampProperties = [
       "Driven by vindictive obsession, Morgana is a potent mistress of suffering and the black arts. Once a being of grace and light, she was ripped from her kind during an ancient conflict that broke her soul, turning her into the cruel tormentor she is today..."
   },
   {
+    lane: ["support"],
     id: "nami",
     key: "267",
     name: "Nami",
@@ -2949,6 +3015,7 @@ const allChampProperties = [
       "A headstrong young vastaya of the seas, Nami was the first of the Marai tribe to leave the waves and venture onto dry land, when their ancient accord with the Targonians was broken. With no other option, she took it upon herself to complete the sacred..."
   },
   {
+    lane: ["top"],
     id: "nasus",
     key: "75",
     name: "Nasus",
@@ -2988,6 +3055,7 @@ const allChampProperties = [
       "Nasus is an imposing, jackal-headed Ascended being from ancient Shurima, a heroic figure regarded as a demigod by the people of the desert. Fiercely intelligent, he was a guardian of knowledge and peerless strategist whose wisdom guided the ancient..."
   },
   {
+    lane: ["top", "support"],
     id: "nautilus",
     key: "111",
     name: "Nautilus",
@@ -3181,6 +3249,7 @@ const allChampProperties = [
       "An unstoppable force of destruction, the axe-wielding Olaf wants nothing but to die in glorious combat. Hailing from the brutal Freljordian peninsula of Lokfar, he once received a prophecy foretelling his peaceful passing—a coward's fate, and a great..."
   },
   {
+    lane: ["mid"],
     id: "orianna",
     key: "61",
     name: "Orianna",
@@ -3220,6 +3289,7 @@ const allChampProperties = [
       "Once a curious girl of flesh and blood, Orianna is now a technological marvel comprised entirely of clockwork. She became gravely ill after an accident in the lower districts of Zaun, and her failing body had to be replaced with exquisite artifice..."
   },
   {
+    lane: ["top"],
     id: "ornn",
     key: "516",
     name: "Ornn",
@@ -3258,6 +3328,7 @@ const allChampProperties = [
       "Ornn is the Freljordian spirit of forging and craftsmanship. He works in the solitude of a massive smithy, hammered out from the lava caverns beneath the volcano Hearth-Home. There he stokes bubbling cauldrons of molten rock to purify ores and fashion..."
   },
   {
+    lane: ["top", "mid"],
     id: "pantheon",
     key: "80",
     name: "Pantheon",
@@ -3297,6 +3368,7 @@ const allChampProperties = [
       "The peerless warrior known as Pantheon is a nigh-unstoppable paragon of battle. He was born among the Rakkor, a warlike people living on the flanks of Mount Targon, and after climbing the mountain's treacherous peak and being deemed worthy, he was..."
   },
   {
+    lane: ["top"],
     id: "poppy",
     key: "78",
     name: "Poppy",
@@ -3336,6 +3408,7 @@ const allChampProperties = [
       "Runeterra has no shortage of valiant champions, but few are as tenacious as Poppy. Bearing the legendary hammer of Orlon, a weapon twice her size, this determined yordle has spent untold years searching in secret for the fabled “Hero of Demacia,” said..."
   },
   {
+    lane: ["support"],
     id: "pyke",
     key: "555",
     name: "Pyke",
@@ -3374,6 +3447,7 @@ const allChampProperties = [
       "A renowned harpooner from the slaughter docks of Bilgewater, Pyke should have met his death in the belly of a gigantic jaull-fish… and yet, he returned. Now, stalking the dank alleys and backways of his former hometown, he uses his new supernatural..."
   },
   {
+    lane: ["top", "adc"],
     id: "quinn",
     key: "133",
     name: "Quinn",
@@ -3413,6 +3487,7 @@ const allChampProperties = [
       "Quinn is an elite ranger-knight of Demacia, who undertakes dangerous missions deep in enemy territory. She and her legendary eagle, Valor, share an unbreakable bond, and their foes are often slain before they realize they are fighting not one, but two..."
   },
   {
+    lane: ["support"],
     id: "rakan",
     key: "497",
     name: "Rakan",
@@ -3452,6 +3527,7 @@ const allChampProperties = [
       "As mercurial as he is charming, Rakan is an infamous vastayan troublemaker and the greatest battle-dancer in Lhotlan tribal history. To the humans of the Ionian highlands, his name has long been synonymous with wild festivals, uncontrollable parties..."
   },
   {
+    lane: ["top"],
     id: "rammus",
     key: "33",
     name: "Rammus",
@@ -3530,6 +3606,7 @@ const allChampProperties = [
       "An apex predator, Rek'Sai is a merciless Void-spawn that tunnels beneath the ground to ambush and devour unsuspecting prey. Her insatiable hunger has laid waste to entire regions of the once-great empire of Shurima—merchants, traders, even armed..."
   },
   {
+    lane: ["top"],
     id: "renekton",
     key: "58",
     name: "Renekton",
@@ -3569,6 +3646,7 @@ const allChampProperties = [
       "Renekton is a terrifying, rage-fueled Ascended being from the scorched deserts of Shurima. Once, he was his empire's most esteemed warrior, leading the nation's armies to countless victories. However, after the empire's fall, Renekton was entombed..."
   },
   {
+    lane: ["top"],
     id: "rengar",
     key: "107",
     name: "Rengar",
@@ -3608,6 +3686,7 @@ const allChampProperties = [
       "Rengar is a ferocious vastayan trophy hunter who lives for the thrill of tracking down and killing dangerous creatures. He scours the world for the most fearsome beasts he can find, especially seeking any trace of Kha'Zix, the void creature who..."
   },
   {
+    lane: ["top"],
     id: "riven",
     key: "92",
     name: "Riven",
@@ -3647,6 +3726,7 @@ const allChampProperties = [
       "Once a swordmaster in the warhosts of Noxus, Riven is an expatriate in a land she previously tried to conquer. She rose through the ranks on the strength of her conviction and brutal efficiency, and was rewarded with a legendary runic blade and a..."
   },
   {
+    lane: ["top"],
     id: "rumble",
     key: "68",
     name: "Rumble",
@@ -3686,6 +3766,7 @@ const allChampProperties = [
       "Rumble is a young inventor with a temper. Using nothing more than his own two hands and a heap of scrap, the feisty yordle constructed a colossal mech suit outfitted with an arsenal of electrified harpoons and incendiary rockets. Though others may scoff..."
   },
   {
+    lane: ["mid", "top"],
     id: "ryze",
     key: "13",
     name: "Ryze",
@@ -3802,6 +3883,7 @@ const allChampProperties = [
       "Crafted long ago as a plaything for a lonely prince, the enchanted marionette Shaco now delights in murder and mayhem. Corrupted by dark magic and the loss of his beloved charge, the once-kind puppet finds pleasure only in the misery of the poor souls..."
   },
   {
+    lane: ["top"],
     id: "shen",
     key: "98",
     name: "Shen",
@@ -3879,6 +3961,7 @@ const allChampProperties = [
       "Shyvana is a creature with the magic of a rune shard burning within her heart. Though she often appears humanoid, she can take her true form as a fearsome dragon, incinerating her foes with fiery breath. Having saved the life of the crown prince Jarvan..."
   },
   {
+    lane: ["top"],
     id: "singed",
     key: "27",
     name: "Singed",
@@ -3918,6 +4001,7 @@ const allChampProperties = [
       "Singed is a Zaunite alchemist of unmatched intellect, who has devoted his life to pushing the boundaries of knowledge—with no price, even his own sanity, too high to pay. Is there a method to his madness? His concoctions rarely fail, but it appears to..."
   },
   {
+    lane: ["top", "mid"],
     id: "sion",
     key: "14",
     name: "Sion",
@@ -3956,6 +4040,7 @@ const allChampProperties = [
       "A war hero from a bygone era, Sion was revered in Noxus for choking the life out of a Demacian king with his bare hands—but, denied oblivion, he was resurrected to serve his empire even in death. His indiscriminate slaughter claimed all who stood in his..."
   },
   {
+    lane: ["adc"],
     id: "sivir",
     key: "15",
     name: "Sivir",
@@ -4111,6 +4196,7 @@ const allChampProperties = [
       "A wanderer from the celestial dimensions beyond Mount Targon, Soraka gave up her immortality to protect the mortal races from their own more violent instincts. She endeavors to spread the virtues of compassion and mercy to everyone she meets—even..."
   },
   {
+    lane: ["mid", "top"],
     id: "swain",
     key: "50",
     name: "Swain",
@@ -4150,6 +4236,7 @@ const allChampProperties = [
       "Jericho Swain is the visionary ruler of Noxus, an expansionist nation that reveres only strength. Though he was cast down and crippled in the Ionian wars, his left arm severed, he seized control of the empire with ruthless determination… and a new..."
   },
   {
+    lane: ["mid"],
     id: "syndra",
     key: "134",
     name: "Syndra",
@@ -4189,6 +4276,7 @@ const allChampProperties = [
       "Syndra is a fearsome dark mage with incredible power at her command. As a child of Ionia, she disturbed the village elders with her prodigious but reckless use of magic. They sent her away to be trained under strict supervision, but she quickly..."
   },
   {
+    lane: ["top"],
     id: "tahmkench",
     key: "223",
     name: "Tahm Kench",
@@ -4228,6 +4316,7 @@ const allChampProperties = [
       "Known by many names throughout history, the demon Tahm Kench travels the waterways of Runeterra, feeding his insatiable appetite with the misery of others. Though he may appear singularly charming and proud, he swaggers through the physical realm like a..."
   },
   {
+    lane: ["mid"],
     id: "taliyah",
     key: "163",
     name: "Taliyah",
@@ -4267,6 +4356,7 @@ const allChampProperties = [
       "Taliyah is a nomadic mage from Shurima, torn between teenage wonder and adult responsibility. She has crossed nearly all of Valoran on a journey to learn the true nature of her growing powers, though more recently she has returned to protect her tribe..."
   },
   {
+    lane: ["mid"],
     id: "talon",
     key: "91",
     name: "Talon",
@@ -4345,6 +4435,7 @@ const allChampProperties = [
       "Taric is the Aspect of the Protector, wielding incredible power as Runeterra's guardian of life, love, and beauty. Shamed by a dereliction of duty and exiled from his homeland Demacia, Taric ascended Mount Targon to find redemption, only to discover a..."
   },
   {
+    lane: ["top"],
     id: "teemo",
     key: "17",
     name: "Teemo",
@@ -4423,6 +4514,7 @@ const allChampProperties = [
       "Sadistic and cunning, Thresh is an ambitious and restless spirit of the Shadow Isles. Once the custodian of countless arcane secrets, he sought a power greater than life or death, and now sustains himself by tormenting and breaking others with slow..."
   },
   {
+    lane: ["adc"],
     id: "tristana",
     key: "18",
     name: "Tristana",
@@ -4462,6 +4554,7 @@ const allChampProperties = [
       "While many other yordles channel their energy into discovery, invention, or just plain mischief-making, Tristana was always inspired by the adventures of great warriors. She had heard much about Runeterra, its factions, and its wars, and believed her..."
   },
   {
+    lane: ["top"],
     id: "trundle",
     key: "48",
     name: "Trundle",
@@ -4501,6 +4594,7 @@ const allChampProperties = [
       "Trundle is a hulking and devious troll with a particularly vicious streak, and there is nothing he cannot bludgeon into submission—not even the Freljord itself. Fiercely territorial, he chases down anyone foolish enough to enter his domain. Then, his..."
   },
   {
+    lane: ["top"],
     id: "tryndamere",
     key: "23",
     name: "Tryndamere",
@@ -4540,6 +4634,7 @@ const allChampProperties = [
       "Fueled by unbridled fury and rage, Tryndamere once carved his way through the Freljord, openly challenging the greatest warriors of the north to prepare himself for even darker days ahead. The wrathful barbarian has long sought revenge for the..."
   },
   {
+    lane: ["mid"],
     id: "twistedfate",
     key: "4",
     name: "Twisted Fate",
@@ -4579,6 +4674,7 @@ const allChampProperties = [
       "Twisted Fate is an infamous cardsharp and swindler who has gambled and charmed his way across much of the known world, earning the enmity and admiration of the rich and foolish alike. He rarely takes things seriously, greeting each day with a mocking..."
   },
   {
+    lane: ["adc"],
     id: "twitch",
     key: "29",
     name: "Twitch",
@@ -4656,6 +4752,7 @@ const allChampProperties = [
       "Udyr is more than a man; he is a vessel for the untamed power of four primal animal spirits. When tapping into the spirits' bestial natures, Udyr can harness their unique strengths: The tiger grants him speed and ferocity, the turtle resilience, the..."
   },
   {
+    lane: ["top"],
     id: "urgot",
     key: "6",
     name: "Urgot",
@@ -4695,6 +4792,7 @@ const allChampProperties = [
       "Once a powerful Noxian headsman, Urgot was betrayed by the empire for which he had killed so many. Bound in iron chains, he was forced to learn the true meaning of strength in the Dredge—a prison mine deep beneath Zaun. Emerging in a disaster that..."
   },
   {
+    lane: ["adc"],
     id: "varus",
     key: "110",
     name: "Varus",
@@ -4734,6 +4832,7 @@ const allChampProperties = [
       "One of the ancient race of darkin, Varus was a deadly killer who loved to torment his foes, driving them almost to insanity before delivering the killing arrow. He was imprisoned at the end of the Darkin War, but escaped centuries later in the remade..."
   },
   {
+    lane: ["adc", "top"],
     id: "vayne",
     key: "67",
     name: "Vayne",
@@ -4773,6 +4872,7 @@ const allChampProperties = [
       "Shauna Vayne is a deadly, remorseless Demacian monster hunter, who has dedicated her life to finding and destroying the demon that murdered her family. Armed with a wrist-mounted crossbow and a heart full of vengeance, she is only truly happy when..."
   },
   {
+    lane: ["mid"],
     id: "veigar",
     key: "45",
     name: "Veigar",
@@ -4812,6 +4912,7 @@ const allChampProperties = [
       "An enthusiastic master of dark sorcery, Veigar has embraced powers that few mortals dare approach. As a free-spirited inhabitant of Bandle City, he longed to push beyond the limitations of yordle magic, and turned instead to arcane texts that had been..."
   },
   {
+    lane: ["mid"],
     id: "velkoz",
     key: "161",
     name: "Vel'Koz",
@@ -4889,6 +4990,7 @@ const allChampProperties = [
       "Once a criminal from the mean streets of Zaun, Vi is a hotheaded, impulsive, and fearsome woman with only a very loose respect for authority figures. Growing up all but alone, Vi developed finely honed survival instincts as well as a wickedly abrasive..."
   },
   {
+    lane: ["mid"],
     id: "viktor",
     key: "112",
     name: "Viktor",
@@ -4928,6 +5030,7 @@ const allChampProperties = [
       "The herald of a new age of technology, Viktor has devoted his life to the advancement of humankind. An idealist who seeks to lift the people of Zaun to a new level of understanding, he believes that only by embracing a glorious evolution of technology..."
   },
   {
+    lane: ["mid", "top"],
     id: "vladimir",
     key: "8",
     name: "Vladimir",
@@ -4967,6 +5070,7 @@ const allChampProperties = [
       "A fiend with a thirst for mortal blood, Vladimir has influenced the affairs of Noxus since the empire's earliest days. In addition to unnaturally extending his life, his mastery of hemomancy allows him to control the minds and bodies of others as easily..."
   },
   {
+    lane: ["top"],
     id: "volibear",
     key: "106",
     name: "Volibear",
@@ -5045,6 +5149,7 @@ const allChampProperties = [
       "Warwick is a monster who hunts the gray alleys of Zaun. Transformed by agonizing experiments, his body is fused with an intricate system of chambers and pumps, machinery filling his veins with alchemical rage. Bursting out of the shadows, he preys upon..."
   },
   {
+    lane: ["adc"],
     id: "xayah",
     key: "498",
     name: "Xayah",
@@ -5084,6 +5189,7 @@ const allChampProperties = [
       "Deadly and precise, Xayah is a vastayan revolutionary waging a personal war to save her people. She uses her speed, guile, and razor-sharp feather blades to cut down anyone who stands in her way. Xayah fights alongside her partner and lover, Rakan, to..."
   },
   {
+    lane: ["mid"],
     id: "xerath",
     key: "101",
     name: "Xerath",
@@ -5123,6 +5229,7 @@ const allChampProperties = [
       "Xerath is an Ascended Magus of ancient Shurima, a being of arcane energy writhing in the broken shards of a magical sarcophagus. For millennia, he was trapped beneath the desert sands, but the rise of Shurima freed him from his ancient prison. Driven..."
   },
   {
+    lane: ["top"],
     id: "xinzhao",
     key: "5",
     name: "Xin Zhao",
@@ -5162,6 +5269,7 @@ const allChampProperties = [
       "Xin Zhao is a resolute warrior loyal to the ruling Lightshield dynasty. Once condemned to the fighting pits of Noxus, he survived countless gladiatorial bouts, but after being freed by Demacian forces, he swore his life and allegiance to these brave..."
   },
   {
+    lane: ["mid", "top"],
     id: "yasuo",
     key: "157",
     name: "Yasuo",
@@ -5201,6 +5309,7 @@ const allChampProperties = [
       "An Ionian of deep resolve, Yasuo is an agile swordsman who wields the air itself against his enemies. As a proud young man, he was falsely accused of murdering his master—unable to prove his innocence, he was forced to slay his own brother in self..."
   },
   {
+    lane: ["top"],
     id: "yorick",
     key: "83",
     name: "Yorick",
@@ -5278,6 +5387,7 @@ const allChampProperties = [
       "Zac is the product of a toxic spill that ran through a chemtech seam and pooled in an isolated cavern deep in Zaun's Sump. Despite such humble origins, Zac has grown from primordial ooze into a thinking being who dwells in the city's pipes, occasionally..."
   },
   {
+    lane: ["mid"],
     id: "zed",
     key: "238",
     name: "Zed",
@@ -5316,6 +5426,7 @@ const allChampProperties = [
       "Utterly ruthless and without mercy, Zed is the leader of the Order of Shadow, an organization he created with the intent of militarizing Ionia's martial arts traditions to drive out Noxian invaders. During the war, desperation led him to unlock the..."
   },
   {
+    lane: ["mid"],
     id: "ziggs",
     key: "115",
     name: "Ziggs",
@@ -5355,6 +5466,7 @@ const allChampProperties = [
       "With a love of big bombs and short fuses, the yordle Ziggs is an explosive force of nature. As an inventor's assistant in Piltover, he was bored by his predictable life and befriended a mad, blue-haired bomber named Jinx. After a wild night on the town..."
   },
   {
+    lane: ["mid"],
     id: "zilean",
     key: "26",
     name: "Zilean",
@@ -5394,6 +5506,7 @@ const allChampProperties = [
       "Once a powerful Icathian mage, Zilean became obsessed with the passage of time after witnessing his homeland's destruction by the Void. Unable to spare even a minute to grieve the catastrophic loss, he called upon ancient temporal magic to divine all..."
   },
   {
+    lane: ["mid"],
     id: "zoe",
     key: "142",
     name: "Zoe",
@@ -5432,6 +5545,7 @@ const allChampProperties = [
       "As the embodiment of mischief, imagination, and change, Zoe acts as the cosmic messenger of Targon, heralding major events that reshape worlds. Her mere presence warps the arcane mathematics governing realities, sometimes causing cataclysms without..."
   },
   {
+    lane: ["support"],
     id: "zyra",
     key: "143",
     name: "Zyra",
@@ -5477,7 +5591,8 @@ allChampProperties.forEach(champ => {
   allChamps.push({
     name: champ.name,
     iconURL: champ.icon,
-    searchName: champ.id
+    searchName: champ.id,
+    lane: champ.lane
   });
 });
 

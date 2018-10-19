@@ -24,6 +24,12 @@ export class SearchBar extends React.Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    searchTerm: state.searchTerm
+  }
+}
+
 const mapDispatchToProps = dispatch => {
   return {
     onSearchTermChange: searchTerm =>
