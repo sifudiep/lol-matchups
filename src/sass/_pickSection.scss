@@ -1,5 +1,5 @@
-$pickSection_box_shadow: .1rem .1rem .5rem 0 black;
-$pickSection_box_shadow_elevate: .3rem .3rem .3rem 0 black;
+$pickSection_box_shadow: 0.1rem 0.1rem 0.5rem 0 black;
+$pickSection_box_shadow_elevate: 0.3rem 0.3rem 0.3rem 0 black;
 
 @keyframes pickSection_findMatch_button_animation_clicked {
   0% {
@@ -27,19 +27,17 @@ $pickSection_box_shadow_elevate: .3rem .3rem .3rem 0 black;
     ". pickSection_opponentSide_title pickSection_opponentSide pickSection_champSelect ."
     ". . pickSection_findMatch_button pickSection_champSelect .";
   grid-gap: 1rem;
-  background-color: $color-secondary-light;
+  background-color: $color-background-majority;
+
   &_champSelect {
     display: grid;
     grid-area: pickSection_champSelect;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(auto-fill, 11rem);
-    // border: 0.3rem solid $color-secondary;
-    // border-radius: 0.5rem;
     box-shadow: $pickSection_box_shadow;
     overflow-y: auto;
-    background-color: $color-secondary;
+    background-color: $color-background-minority;
     overflow-x: hidden;
-    // box-shadow: 0 0 0 0.1rem black;
     &_img {
       margin-top: 1rem;
       width: 8rem;
@@ -54,7 +52,7 @@ $pickSection_box_shadow_elevate: .3rem .3rem .3rem 0 black;
       }
     }
     &_img:hover {
-      box-shadow: 0 0 0 0.25rem $color-alert;
+      box-shadow: 0 0 0 0.25rem $color-foreground;
       border-radius: 10rem;
     }
     &_text {
@@ -69,6 +67,7 @@ $pickSection_box_shadow_elevate: .3rem .3rem .3rem 0 black;
       }
     }
   }
+
   &_opponentSide {
     grid-area: pickSection_opponentSide;
     display: grid;
@@ -76,7 +75,7 @@ $pickSection_box_shadow_elevate: .3rem .3rem .3rem 0 black;
     grid-template-rows: repeat(auto-fit, 11rem);
     overflow-y: auto;
     overflow-x: hidden;
-    background-color: $color-secondary;
+    background-color: $color-background-minority;
     box-shadow: $pickSection_box_shadow;
     &_title {
       grid-area: pickSection_opponentSide_title;
@@ -97,7 +96,7 @@ $pickSection_box_shadow_elevate: .3rem .3rem .3rem 0 black;
       height: 8rem;
       border-radius: 10rem;
       &:hover {
-        box-shadow: 0 0 0 0.25rem $color-alert;
+        box-shadow: 0 0 0 0.25rem $color-foreground;
         border-radius: 10rem;
         filter: grayscale(100%);
       }
@@ -108,13 +107,14 @@ $pickSection_box_shadow_elevate: .3rem .3rem .3rem 0 black;
       font-weight: bold;
     }
   }
+
   &_userSide {
     grid-area: pickSection_userSide;
-    background: $color-secondary;
+    background: $color-background-minority;
     display: flex;
     justify-content: center;
     align-items: center;
-    // border: 2rem solid $color-secondary;
+    // border: 2rem solid $color-background-minority;
     // border-radius: 0.5rem;
     box-shadow: $pickSection_box_shadow;
     &_title {
@@ -133,7 +133,7 @@ $pickSection_box_shadow_elevate: .3rem .3rem .3rem 0 black;
       height: 12rem;
       margin-top: 3rem;
       &:hover {
-        box-shadow: 0 0 0 0.25rem $color-alert;
+        box-shadow: 0 0 0 0.25rem $color-foreground;
         filter: grayscale(100%);
       }
     }
@@ -158,19 +158,18 @@ $pickSection_box_shadow_elevate: .3rem .3rem .3rem 0 black;
     &_styling {
       grid-area: searchBar;
       border-radius: 0.2rem;
-      background-color: $color-secondary;
+      background-color: $color-background-minority;
       border: 0;
       padding-left: 1rem;
       font-size: 2rem;
       height: 3.5rem;
-      color: $color-alert;
+      color: $color-foreground;
       box-shadow: $pickSection_box_shadow;
     }
     &_icon {
       grid-area: laneIcons;
     }
   }
-
   &_champion {
     justify-self: center;
   }
@@ -183,9 +182,8 @@ $pickSection_box_shadow_elevate: .3rem .3rem .3rem 0 black;
       height: 3rem;
       filter: grayscale(100%);
       &:hover {
-        filter:grayscale(0);
+        filter: grayscale(0);
       }
-
       &_picked {
         width: 3rem;
         height: 3rem;
@@ -193,32 +191,26 @@ $pickSection_box_shadow_elevate: .3rem .3rem .3rem 0 black;
       }
     }
   }
-
   &_findMatch {
     -webkit-transition: transform 0.1s 0s;
     grid-area: pickSection_findMatch_button;
     &_button {
       width: 20rem;
       height: 7rem;
-      background-color: $color-alert;
+      background-color: $color-foreground;
       box-shadow: $pickSection_box_shadow;
       border: 0;
       font-size: 3rem;
       font-family: $font-special;
       -webkit-transition: 0.2s 0s;
-
       &:focus {
         outline: 0;
-        animation: pickSection_findMatch_button_animation_clicked 1s;  
+        animation: pickSection_findMatch_button_animation_clicked 1s;
       }
       &:hover {
-        transform: translateY(-.4rem);
+        transform: translateY(-0.4rem);
         box-shadow: $pickSection_box_shadow_elevate;
-  
       }
     }
-    
   }
-
-
 }

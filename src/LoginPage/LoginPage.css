@@ -1,0 +1,94 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+  @media only screen and (max-width: 750px) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (max-width: 550px) {
+    html {
+      font-size: 40%; } }
+
+body {
+  font-family: "Nunito", sans-serif;
+  color: #c69963;
+  font-weight: 300;
+  line-height: 1.6;
+  overflow-x: hidden; }
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+  background-color: #27282b; }
+
+::-webkit-scrollbar-thumb {
+  background-color: #b28451;
+  border-radius: 3px; }
+
+.homePage_container {
+  display: grid;
+  grid-template-rows: 10vh 88vh 10vh;
+  grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
+  grid-template-areas: "navBar navBar navBar navBar" "pickSection pickSection pickSection pickSection" "footer footer footer footer"; }
+
+.loginPage_container {
+  display: grid;
+  grid-template-rows: 10vh 80vh 10vh;
+  grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
+  grid-template-areas: "navBar navBar navBar navBar" "loginSection loginSection loginSection loginSection" "footer footer footer footer"; }
+
+.navBar {
+  display: grid;
+  grid-gap: 0.2rem;
+  grid-area: navBar;
+  grid-template-columns: minmax(1rem, 1fr) minmax(min-content, 30rem) 2fr minmax(min-content, 10rem) minmax(min-content, 10rem) minmax(1rem, 1fr);
+  grid-template-areas: ". navBar_logo . navBar_login navBar_signUp .";
+  background-color: #242933; }
+  .navBar_logo {
+    grid-area: navBar_logo;
+    justify-self: center;
+    align-self: center; }
+    .navBar_logo_text {
+      font-size: 3.8rem;
+      font-family: "Niramit", sans-serif; }
+  .navBar_login {
+    grid-area: navBar_login;
+    justify-self: end;
+    align-self: center; }
+    .navBar_login_button {
+      width: 6rem;
+      height: 5rem;
+      border-radius: 2px;
+      border-radius: 2px;
+      background-color: #e5e5e5;
+      border: 0;
+      color: #1671ac;
+      font-size: 1.5rem;
+      font-weight: bold; }
+    .navBar_login_button:hover {
+      background-color: #b28451; }
+  .navBar_signUp {
+    grid-area: navBar_signUp;
+    justify-self: start;
+    align-self: center; }
+    .navBar_signUp_button {
+      width: 8rem;
+      height: 5rem;
+      border-radius: 2px;
+      background-color: #1671ac;
+      border: 0;
+      color: #e5e5e5;
+      font-size: 1.5rem;
+      font-weight: bold; }
+    .navBar_signUp_button:hover {
+      background-color: #b28451;
+      color: #0c3354; }
+
+.loginSection {
+  grid-area: loginSection;
+  background-color: #232325; }

@@ -1,22 +1,9 @@
 // COLOR VARIABLES
-$color-alert: #c69963;
-$color-primary-dark: #b28451;
+$color-foreground: #c69963;
+$color-foreground-dark: #b28451;
 
-$color-secondary: #242933;
-//101d2c
-//1e222b
-//242933
-//1671ac
-//283754
-$color-secondary-light: #232325;
-//#dee5ee
-//242933
-//#2c323d
-$color-grey-light-1: #f9f7f6;
-$color-grey-light-2: #aaa;
-
-$color-grey-dark-1: #54483a;
-$color-grey-dark-2: #6d5d4b;
+$color-background-minority: #242933;
+$color-background-majority: #232325;
 
 $color-scrollbar-background: #27282b;
 
@@ -54,7 +41,7 @@ html {
 
 body {
   font-family: $font-primary;
-  color: $color-alert;
+  color: $color-foreground;
   font-weight: 300;
   line-height: 1.6;
   overflow-x: hidden;
@@ -66,16 +53,26 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: $color-primary-dark;
+  background-color: $color-foreground-dark;
   border-radius: 3px;
 }
 
-.container {
+.homePage_container {
   display: grid;
-  grid-template-rows: 10vh 88vh 12vh;
+  grid-template-rows: 10vh 88vh 10vh;
   grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
   grid-template-areas:
     "navBar navBar navBar navBar"
     "pickSection pickSection pickSection pickSection"
+    "footer footer footer footer";
+}
+
+.loginPage_container {
+  display: grid;
+  grid-template-rows: 10vh 80vh 10vh;
+  grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
+  grid-template-areas:
+    "navBar navBar navBar navBar"
+    "loginSection loginSection loginSection loginSection"
     "footer footer footer footer";
 }

@@ -3,15 +3,25 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
-import HomePage from "./HomePage";
 import * as serviceWorker from "./serviceWorker";
 import rootReducer from "./reducers/rootReducer";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+
+import HomePage from "./HomePage/HomePage";
+import LoginPage from "./LoginPage/LoginPage";
 
 const store = createStore(rootReducer);
 
 ReactDOM.render(
   <Provider store={store}>
-    <HomePage />
+    <BrowserRouter>
+      <div>
+        <Switch>
+          <Route path="/login" component={LoginPage} />
+          <Route path="/" component={HomePage} />
+        </Switch>
+      </div>
+    </BrowserRouter>
   </Provider>,
   document.getElementById("root")
 );

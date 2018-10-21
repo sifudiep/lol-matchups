@@ -6,6 +6,7 @@
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
     "react-scripts": "2.0.4",
     "redux": "^4.0.0",
     "request": "^2.88.0"
@@ -15,7 +16,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "compile:sass": "node-sass --watch src/sass/mainPage.scss src/HomePage.css"
+    "compile:sass:homePage": "node-sass --watch src/sass/HomePage.scss src/HomePage/HomePage.css",
+    "compile:sass:loginPage": "node-sass --watch src/sass/LoginPage.scss src/LoginPage/LoginPage.css"
   },
   "eslintConfig": {
     "extends": "react-app"

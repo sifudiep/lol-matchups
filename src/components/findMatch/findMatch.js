@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 export default class FindMatch extends React.Component {
   render() {
@@ -6,6 +6,6 @@ export default class FindMatch extends React.Component {
       <div className="pickSection_findMatch">
         <button className="pickSection_findMatch_button">Find Match!</button>
       </div>
-    )
+    );
   }
 }

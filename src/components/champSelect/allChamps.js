@@ -796,7 +796,7 @@ const allChampProperties = [
       "There is no greater symbol of Noxian might than Darius, the nation's most feared and battle-hardened commander. Rising from humble origins to become the Hand of Noxus, he cleaves through the empire's enemies—many of them Noxians themselves. Knowing that..."
   },
   {
-    lane: ["mid", "top"],
+    lane: ["mid"],
     id: "diana",
     key: "131",
     name: "Diana",
@@ -1990,7 +1990,7 @@ const allChampProperties = [
       "No champion exemplifies the spiritual traditions of Ionia more than Karma. She is the living embodiment of an ancient soul reincarnated countless times, carrying all her accumulated memories into each new life. With this insight, she serves as a..."
   },
   {
-    lane: ["mid", "top"],
+    lane: ["mid"],
     id: "karthus",
     key: "30",
     name: "Karthus",
@@ -2150,7 +2150,7 @@ const allChampProperties = [
       "A great hero and the strongest among her kind, Kayle is an angelic warrior dedicated to purging those beyond redemption. After conflict divided her people, she took up her enchanted armor and flaming sword in the name of order, disowning her very flesh..."
   },
   {
-    lane: ["top"],
+    lane: [],
     id: "kayn",
     key: "141",
     name: "Kayn",
@@ -2508,7 +2508,7 @@ const allChampProperties = [
       "Imbued with the fire of the sun, Leona is a holy warrior of the Solari who defends Mount Targon with her Zenith Blade and the Shield of Daybreak. Her skin shimmers with starfire while her eyes burn with the power of the celestial Aspect within her..."
   },
   {
-    lane: ["mid", "top"],
+    lane: ["mid"],
     id: "lissandra",
     key: "127",
     name: "Lissandra",
@@ -2548,7 +2548,7 @@ const allChampProperties = [
       "Lissandra's magic twists the pure power of ice into something dark and terrible. With the force of her black ice, she does more than freeze—she impales and crushes those who oppose her. To the terrified denizens of the north, she is known only as ''The..."
   },
   {
-    lane: ["mid", "top", "adc"],
+    lane: ["mid", "adc"],
     id: "lucian",
     key: "236",
     name: "Lucian",
@@ -2706,7 +2706,7 @@ const allChampProperties = [
       "A massive creature of living stone, Malphite struggles to impose blessed order on a chaotic world. Birthed as a servitor-shard to an otherworldly obelisk known as the Monolith, he used his tremendous elemental strength to maintain and protect his..."
   },
   {
-    lane: ["mid", "top"],
+    lane: ["mid"],
     id: "malzahar",
     key: "90",
     name: "Malzahar",
@@ -3541,7 +3541,7 @@ const allChampProperties = [
       "As mercurial as he is charming, Rakan is an infamous vastayan troublemaker and the greatest battle-dancer in Lhotlan tribal history. To the humans of the Ionian highlands, his name has long been synonymous with wild festivals, uncontrollable parties..."
   },
   {
-    lane: ["top"],
+    lane: [],
     id: "rammus",
     key: "33",
     name: "Rammus",
@@ -4856,7 +4856,7 @@ const allChampProperties = [
       "One of the ancient race of darkin, Varus was a deadly killer who loved to torment his foes, driving them almost to insanity before delivering the killing arrow. He was imprisoned at the end of the Darkin War, but escaped centuries later in the remade..."
   },
   {
-    lane: ["adc", "top"],
+    lane: ["adc"],
     id: "vayne",
     key: "67",
     name: "Vayne",
@@ -5095,7 +5095,7 @@ const allChampProperties = [
       "A fiend with a thirst for mortal blood, Vladimir has influenced the affairs of Noxus since the empire's earliest days. In addition to unnaturally extending his life, his mastery of hemomancy allows him to control the minds and bodies of others as easily..."
   },
   {
-    lane: ["top"],
+    lane: [],
     id: "volibear",
     key: "106",
     name: "Volibear",
@@ -5255,7 +5255,7 @@ const allChampProperties = [
       "Xerath is an Ascended Magus of ancient Shurima, a being of arcane energy writhing in the broken shards of a magical sarcophagus. For millennia, he was trapped beneath the desert sands, but the rise of Shurima freed him from his ancient prison. Driven..."
   },
   {
-    lane: ["top"],
+    lane: [],
     id: "xinzhao",
     key: "5",
     name: "Xin Zhao",

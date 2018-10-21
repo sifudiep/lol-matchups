@@ -1,8 +1,9 @@
 .footer {
+  grid-area: footer;
   display: grid;
   grid-template-columns:
     minmax(1rem, 1fr)
-    repeat(3, minmax(min-content, 10rem))
+    repeat(4, minmax(min-content, 20rem))
     minmax(1rem, 1fr);
   grid-template-rows:
     minmax(1rem, 1fr)
@@ -10,8 +11,26 @@
     minmax(1rem, 1fr);
   grid-template-areas:
     ". . . . ."
-    ". footer_about footer_contact footer_support ."
+    ". footer_business footer_suggestions footer_bugReport footer_reportPlayer ."
     ". . . . .";
-  grid-area: footer;
   background-color: #242933;
+
+  &_business {
+    grid-area: footer_business;
+  }
+  &_suggestions {
+    grid-area: footer_suggestions;
+  }
+  &_bugReports {
+    grid-area: footer_bug-report;
+  }
+  &_reportPlayer {
+    grid-area: footer_report-player;
+  }
+
+  &_link {
+    &_styles {
+      font-size: 1.1rem;
+    }
+  }
 }
