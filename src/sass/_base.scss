@@ -18,6 +18,10 @@ $bp-lg: 1000px;
 $bp-md: 750px;
 $bp-sm: 550px;
 
+// BOX-SHADOWS
+$pickSection_box_shadow: 0.1rem 0.1rem 0.5rem 0 black;
+$pickSection_box_shadow_elevate: 0.3rem 0.3rem 0.3rem 0 black;
+
 *,
 *::before,
 *::after {

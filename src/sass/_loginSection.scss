@@ -1,4 +1,52 @@
 .loginSection {
   grid-area: loginSection;
+  display: grid;
+  grid-template-columns:
+    minmax(1rem, 1fr)
+    minmax(min-content, 40rem)
+    minmax(1rem, 1fr);
+  grid-template-rows: 20vh 50vh 25vh;
+  grid-template-areas:
+    ". . ."
+    ". loginForm ."
+    ". . .";
   background-color: $color-background-majority;
+  &_loginForm {
+    display: grid;
+    grid-area: loginForm;
+    grid-template-columns:
+      minmax(1rem, 1fr)
+      minmax(min-content, 30rem)
+      minmax(1rem, 1fr);
+    grid-template-rows: 10vh 5vh 5vh 5vh 3vh 3vh;
+    grid-template-areas:
+      ". . ."
+      ". loginSection_loginForm_accountInput ."
+      ". loginSection_loginForm_passInput ."
+      ". loginSection_loginForm_loginButton ."
+      ". loginSection_loginForm_signUpText ."
+      ". . .";
+
+    background-color: $color-background-minority;
+    box-shadow: $pickSection_box_shadow;
+
+    &_accountInput {
+      grid-area: loginSection_loginForm_accountInput;
+      font-size: 2rem;
+      margin-left: 4rem;
+    }
+
+    &_passInput {
+      grid-area: loginSection_loginForm_passInput;
+    }
+
+    &_loginButton {
+      grid-area: loginSection_loginForm_loginButton;
+      margin-top: 1rem;
+    }
+
+    &_signUpText {
+      grid-area: loginSection_loginForm_signUpText;
+    }
+  }
 }

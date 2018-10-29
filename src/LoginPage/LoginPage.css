@@ -91,4 +91,27 @@ body {
 
 .loginSection {
   grid-area: loginSection;
+  display: grid;
+  grid-template-columns: minmax(1rem, 1fr) minmax(min-content, 40rem) minmax(1rem, 1fr);
+  grid-template-rows: 20vh 50vh 25vh;
+  grid-template-areas: ". . ." ". loginForm ." ". . .";
   background-color: #232325; }
+  .loginSection_loginForm {
+    display: grid;
+    grid-area: loginForm;
+    grid-template-columns: minmax(1rem, 1fr) minmax(min-content, 30rem) minmax(1rem, 1fr);
+    grid-template-rows: 10vh 5vh 5vh 5vh 3vh 3vh;
+    grid-template-areas: ". . ." ". loginSection_loginForm_accountInput ." ". loginSection_loginForm_passInput ." ". loginSection_loginForm_loginButton ." ". loginSection_loginForm_signUpText ." ". . .";
+    background-color: #242933;
+    box-shadow: 0.1rem 0.1rem 0.5rem 0 black; }
+    .loginSection_loginForm_accountInput {
+      grid-area: loginSection_loginForm_accountInput;
+      font-size: 2rem;
+      margin-left: 4rem; }
+    .loginSection_loginForm_passInput {
+      grid-area: loginSection_loginForm_passInput; }
+    .loginSection_loginForm_loginButton {
+      grid-area: loginSection_loginForm_loginButton;
+      margin-top: 1rem; }
+    .loginSection_loginForm_signUpText {
+      grid-area: loginSection_loginForm_signUpText; }
