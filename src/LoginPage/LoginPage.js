@@ -10,6 +10,7 @@ import "./LoginPage.css";
 
 class LoginPage extends Component {
   render() {
+    console.log(`localStorage: ${localStorage.jwtToken}`);
     return (
       <div className="loginPage_container">
         <div className="navBar">

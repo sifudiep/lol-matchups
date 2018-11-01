@@ -1,4 +1,5 @@
 import actionVariables from "./actionVariables";
+import axios from "axios";
 
 const initialState = {
   searchTerm: "",
@@ -74,8 +75,26 @@ const reducer = (state = initialState, action) => {
     };
   }
 
+  // login(data) {
+  //   return axios.post('/api/login', data).then(res => {
+  //     const token = res.data.token;
+  //     localStorage.setItem('jwtToken', token);
+  //   })
+  // }
+
   if (action.type === actionVariables.ONLOGIN) {
-    console.log(`inside onlogin action reducer`);
+    axios
+      .post("http://localhost:2000/api/login", {
+        email: action.payLoad.account.email,
+        password: action.payLoad.account.password
+      })
+      .then(res => {
+        const token = res.data;
+        localStorage.setItem("jwtToken", token);
+      })
+      .catch(err => {
+        console.log(`error : ${err}`);
+      });
   }
 
   return state;
