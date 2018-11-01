@@ -74,6 +74,10 @@ const reducer = (state = initialState, action) => {
     };
   }
 
+  if (action.type === actionVariables.ONLOGIN) {
+    console.log(`inside onlogin action reducer`);
+  }
+
   return state;
 };
 

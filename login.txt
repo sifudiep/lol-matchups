@@ -1,0 +1,3 @@
+1. Create RESTful api with Express that handles post request to login and signup.
+2. Send a post request with email and password from LoginForm component.
+3. Connect to MongoDB and save / compare post request.
