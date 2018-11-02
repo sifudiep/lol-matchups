@@ -12,6 +12,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "bcrypt": "^3.0.2",
+    "cookie-parser": "^1.4.3",
     "cookie-session": "^2.0.0-beta.3",
     "express": "^4.16.4",
     "joi": "^14.0.3",

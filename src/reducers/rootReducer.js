@@ -4,7 +4,8 @@ import axios from "axios";
 const initialState = {
   searchTerm: "",
   practiceChampionSelected: [],
-  opponentChampions: []
+  opponentChampions: [],
+  jwt: localStorage.getItem("jwt")
 };
 
 function RemoveAtIndex(oldArray, index) {
@@ -75,13 +76,6 @@ const reducer = (state = initialState, action) => {
     };
   }
 
-  // login(data) {
-  //   return axios.post('/api/login', data).then(res => {
-  //     const token = res.data.token;
-  //     localStorage.setItem('jwtToken', token);
-  //   })
-  // }
-
   if (action.type === actionVariables.ONLOGIN) {
     axios
       .post("http://localhost:2000/api/login", {
@@ -90,7 +84,7 @@ const reducer = (state = initialState, action) => {
       })
       .then(res => {
         const token = res.data;
-        localStorage.setItem("jwtToken", token);
+        localStorage.setItem("jwt", token);
       })
       .catch(err => {
         console.log(`error : ${err}`);

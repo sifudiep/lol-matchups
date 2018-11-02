@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import Logo from "../components/logo/logo";
-import Login from "../components/login/login";
-import SignUp from "../components/signUp/signUp";
+import NavBar from "../components/navBar/navBar";
+import { connect } from "react-redux";
 
 import LoginForm from "../components/loginForm/loginForm";
 
@@ -10,14 +9,9 @@ import "./LoginPage.css";
 
 class LoginPage extends Component {
   render() {
-    console.log(`localStorage: ${localStorage.jwtToken}`);
     return (
       <div className="loginPage_container">
-        <div className="navBar">
-          <Logo />
-          <Login />
-          <SignUp />
-        </div>
+        <NavBar />
         <div className="loginSection">
           <LoginForm />
         </div>
@@ -27,4 +21,10 @@ class LoginPage extends Component {
   }
 }
 
-export default LoginPage;
+const mapStateToProps = state => {
+  return {
+    jwt: state.jwt
+  };
+};
+
+export default connect(mapStateToProps)(LoginPage);
