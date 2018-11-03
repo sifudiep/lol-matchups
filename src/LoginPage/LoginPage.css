@@ -46,8 +46,8 @@ body {
   display: grid;
   grid-gap: 0.2rem;
   grid-area: navBar;
-  grid-template-columns: minmax(1rem, 1fr) minmax(min-content, 30rem) 2fr minmax(min-content, 10rem) minmax(min-content, 10rem) minmax(1rem, 1fr);
-  grid-template-areas: ". navBar_logo . navBar_login navBar_signUp .";
+  grid-template-columns: minmax(1rem, 1fr) minmax(min-content, 30rem) 2fr minmax(min-content, 10rem) minmax(min-content, 10rem) minmax(min-content, 10rem) minmax(1rem, 1fr);
+  grid-template-areas: ". navBar_logo . navBar_alert navBar_login navBar_signUp .";
   background-color: #242933; }
   .navBar_logo {
     grid-area: navBar_logo;
@@ -88,6 +88,24 @@ body {
     .navBar_signUp_button:hover {
       background-color: #b28451;
       color: #0c3354; }
+  .navBar_logout {
+    grid-area: navBar_signUp;
+    font-size: 3rem;
+    justify-self: start;
+    align-self: center; }
+  .navBar_accountInfo {
+    grid-area: navBar_login;
+    font-size: 3rem;
+    justify-self: center;
+    align-self: center;
+    color: green; }
+    .navBar_accountInfo_glyph {
+      color: #b28451; }
+  .navBar_alert {
+    grid-area: navBar_alert;
+    font-size: 3rem;
+    justify-self: end;
+    align-self: center; }
 
 .loginSection {
   grid-area: loginSection;

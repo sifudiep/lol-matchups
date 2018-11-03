@@ -4,8 +4,8 @@
   grid-area: navBar;
   grid-template-columns:
     minmax(1rem, 1fr) minmax(min-content, 30rem) 2fr minmax(min-content, 10rem)
-    minmax(min-content, 10rem) minmax(1rem, 1fr);
-  grid-template-areas: ". navBar_logo . navBar_login navBar_signUp .";
+    minmax(min-content, 10rem) minmax(min-content, 10rem) minmax(1rem, 1fr);
+  grid-template-areas: ". navBar_logo . navBar_alert navBar_login navBar_signUp .";
 
   background-color: $color-background-minority;
   &_logo {
@@ -56,5 +56,27 @@
       background-color: $color-foreground-dark;
       color: #0c3354;
     }
+  }
+  &_logout {
+    grid-area: navBar_signUp;
+    font-size: 3rem;
+    justify-self: start;
+    align-self: center;
+  }
+  &_accountInfo {
+    grid-area: navBar_login;
+    font-size: 3rem;
+    justify-self: center;
+    align-self: center;
+    color: green;
+    &_glyph {
+      color: $color-foreground-dark;
+    }
+  }
+  &_alert {
+    grid-area: navBar_alert;
+    font-size: 3rem;
+    justify-self: end;
+    align-self: center;
   }
 }

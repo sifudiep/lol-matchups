@@ -1,5 +1,13 @@
 import actionVariables from "./actionVariables";
 import axios from "axios";
+import { Redirect } from "react-router-dom";
+
+const rootURL = "http://localhost:3000";
+const URL = {
+  home: rootURL + "/",
+  login: rootURL + "/login",
+  signup: rootURL + "/signup"
+};
 
 const initialState = {
   searchTerm: "",
@@ -85,10 +93,16 @@ const reducer = (state = initialState, action) => {
       .then(res => {
         const token = res.data;
         localStorage.setItem("jwt", token);
+        window.location.href = URL.home;
       })
       .catch(err => {
         console.log(`error : ${err}`);
       });
+  }
+
+  if (action.type === actionVariables.ONLOGOUT) {
+    localStorage.removeItem("jwt");
+    window.location.href = URL.home;
   }
 
   return state;

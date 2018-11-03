@@ -3,10 +3,8 @@ import React, { Component } from "react";
 class Alert extends Component {
   render() {
     return (
-      <div>
-        <div className="navBar_alert">
-          <a>Alert</a>
-        </div>
+      <div className="navBar_alert">
+        <i className="fas fa-exclamation-triangle" />
       </div>
     );
   }

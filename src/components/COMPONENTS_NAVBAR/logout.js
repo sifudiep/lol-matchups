@@ -1,15 +1,32 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import actionVariables from "../../reducers/actionVariables";
 
 class Logout extends Component {
   render() {
     return (
-      <div>
-        <div className="navBar_logout">
-          <a>logout</a>
-        </div>
+      <div className="navBar_logout">
+        <i
+          onClick={() => {
+            this.props.onLogout();
+          }}
+          className="fas fa-sign-out-alt"
+        />
       </div>
     );
   }
 }
+const mapDispatchToProps = dispatch => {
+  return {
+    onLogout: () => {
+      dispatch({
+        type: actionVariables.ONLOGOUT
+      });
+    }
+  };
+};
 
-export default Logout;
+export default connect(
+  null,
+  mapDispatchToProps
+)(Logout);

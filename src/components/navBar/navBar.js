@@ -26,12 +26,15 @@ class NavBar extends Component {
       })
       .catch(err => {
         console.log(`err: ${err}`);
+        this.setState({
+          verified: false,
+          user: ""
+        });
       });
   }
 
   render() {
-    if (this.props.jwt) {
-      console.log(`verified!`);
+    if (this.state.verified) {
       return (
         <div className="navBar">
           <Logo />
@@ -41,7 +44,6 @@ class NavBar extends Component {
         </div>
       );
     } else {
-      console.log(`not verified with ${this.props}`);
       return (
         <div className="navBar">
           <Logo />

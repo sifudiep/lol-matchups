@@ -21,10 +21,4 @@ class LoginPage extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    jwt: state.jwt
-  };
-};
-
-export default connect(mapStateToProps)(LoginPage);
+export default LoginPage;
