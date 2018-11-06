@@ -3,7 +3,6 @@
 # dependencies
 /node_modules
 /src/backend/node_modules
-/src/backend/services/keys.js
 
 # testing
 /coverage
