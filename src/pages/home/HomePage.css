@@ -42,6 +42,12 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
   grid-template-areas: "navBar navBar navBar navBar" "loginSection loginSection loginSection loginSection" "footer footer footer footer"; }
 
+.signupPage__container {
+  display: grid;
+  grid-template-rows: 10vh 80vh 10vh;
+  grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
+  grid-template-areas: "navBar navBar navBar navBar" "signupSection signupSection signupSection signupSection" "footer footer footer footer"; }
+
 .navBar {
   display: grid;
   grid-gap: 0.2rem;

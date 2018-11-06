@@ -1,20 +1,20 @@
 import React, { Component } from "react";
 
 import NavBar from "../../components/reuse/navbar/NavBar";
-import LoginSection from "../../components/login_section/LoginSection";
+import SignupSection from "../../components/signup_section/SignupSection";
 import Footer from "../../components/reuse/footer/Footer";
-import "./LoginPage.css";
+import "./SignupPage.css";
 
-class LoginPage extends Component {
+class SignupPage extends Component {
   render() {
     return (
-      <div className="loginPage__container">
+      <div className="signupPage__container">
         <NavBar />
-        <LoginSection />
+        <SignupSection />
         <Footer />
       </div>
     );
   }
 }
 
-export default LoginPage;
+export default SignupPage;
