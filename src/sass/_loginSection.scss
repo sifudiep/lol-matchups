@@ -11,7 +11,7 @@
     ". loginForm ."
     ". . .";
   background-color: $color-background-majority;
-  &_loginForm {
+  &__loginForm {
     display: grid;
     grid-area: loginForm;
     grid-template-columns:
@@ -21,36 +21,36 @@
     grid-template-rows: 10vh 5vh 5vh 5vh 3vh 3vh;
     grid-template-areas:
       ". . ."
-      ". loginSection_loginForm_accountInput ."
-      ". loginSection_loginForm_passInput ."
-      ". loginSection_loginForm_loginButton ."
-      ". loginSection_loginForm_signUpText ."
+      ". loginSection__loginForm__accountInput ."
+      ". loginSection__loginForm__passInput ."
+      ". loginSection__loginForm__loginButton ."
+      ". loginSection__loginForm__signUpText ."
       ". . .";
 
     background-color: $color-background-minority;
-    box-shadow: $pickSection_box_shadow;
+    box-shadow: $pickSection-boxShadow;
 
-    &_accountInput {
-      grid-area: loginSection_loginForm_accountInput;
+    &__accountInput {
+      grid-area: loginSection__loginForm__accountInput;
       font-size: 2rem;
       margin-left: 4rem;
     }
 
-    &_passInput {
-      grid-area: loginSection_loginForm_passInput;
+    &__passInput {
+      grid-area: loginSection__loginForm__passInput;
     }
 
-    &_loginButton {
-      grid-area: loginSection_loginForm_loginButton;
+    &__loginButton {
+      grid-area: loginSection__loginForm__loginButton;
       margin-top: 1rem;
       background-color: $color-foreground-dark;
       border: 0;
-      box-shadow: $pickSection_box_shadow;
+      box-shadow: $pickSection-boxShadow;
       border-radius: 0.5rem;
       outline: none;
       transition: transform 0.1s 0s;
       &:hover {
-        box-shadow: $pickSection_box_shadow_elevate;
+        box-shadow: $pickSection-boxShadow-elevate;
         transform: translateY(-0.1rem);
       }
       &:active {
@@ -58,8 +58,8 @@
       }
     }
 
-    &_signUpText {
-      grid-area: loginSection_loginForm_signUpText;
+    &__signUpText {
+      grid-area: loginSection__loginForm__signUpText;
     }
   }
 }

@@ -30,7 +30,7 @@ body {
   background-color: #b28451;
   border-radius: 3px; }
 
-.homePage_container {
+.homePage__container {
   display: grid;
   grid-template-rows: 10vh 88vh 10vh;
   grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
@@ -137,7 +137,7 @@ body {
   background-color: #232325; }
   .pickSection__champSelect {
     display: grid;
-    grid-area: pickSection_champSelect;
+    grid-area: pickSection__champSelect;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(auto-fill, 11rem);
     box-shadow: 0.1rem 0.1rem 0.5rem 0 black;
@@ -256,7 +256,7 @@ body {
       filter: grayscale(100%); }
       .pickSection__laneIcons__styling:hover {
         filter: grayscale(0); }
-      .pickSection__laneIcons__styling_picked {
+      .pickSection__laneIcons__styling--picked {
         width: 3rem;
         height: 3rem;
         filter: grayscale(0); }

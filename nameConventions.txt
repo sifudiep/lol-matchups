@@ -1,0 +1,10 @@
+Javascript
+    Components - PascalCase
+    Variables - camelCase
+    Non Component files - camelCase
+
+CSS
+    BEM - Block Element Modifier 
+    block__element--modifier
+
+FolderStructure - snake_case

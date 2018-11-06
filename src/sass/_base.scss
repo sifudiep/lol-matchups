@@ -21,8 +21,8 @@ $bp-md: 750px;
 $bp-sm: 550px;
 
 // BOX-SHADOWS
-$pickSection_box_shadow: 0.1rem 0.1rem 0.5rem 0 black;
-$pickSection_box_shadow_elevate: 0.3rem 0.3rem 0.3rem 0 black;
+$pickSection-boxShadow: 0.1rem 0.1rem 0.5rem 0 black;
+$pickSection-boxShadow-elevate: 0.3rem 0.3rem 0.3rem 0 black;
 
 *,
 *::before,
@@ -63,7 +63,7 @@ body {
   border-radius: 3px;
 }
 
-.homePage_container {
+.homePage__container {
   display: grid;
   grid-template-rows: 10vh 88vh 10vh;
   grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
@@ -73,7 +73,7 @@ body {
     "footer footer footer footer";
 }
 
-.loginPage_container {
+.loginPage__container {
   display: grid;
   grid-template-rows: 10vh 80vh 10vh;
   grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));

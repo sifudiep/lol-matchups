@@ -7,8 +7,8 @@ import * as serviceWorker from "./serviceWorker";
 import rootReducer from "./reducers/rootReducer";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import HomePage from "./HomePage/HomePage";
-import LoginPage from "./LoginPage/LoginPage";
+import HomePage from "./pages/home/HomePage";
+import LoginPage from "./pages/login/LoginPage";
 
 const store = createStore(rootReducer);
 

@@ -8,21 +8,21 @@
   grid-template-areas: ". navBar_logo . navBar_alert navBar_login navBar_signUp .";
 
   background-color: $color-background-minority;
-  &_logo {
+  &__logo {
     grid-area: navBar_logo;
     justify-self: center;
     align-self: center;
-    &_text {
+    &__text {
       font-size: 3.8rem;
       font-family: $font-special;
     }
   }
-  &_login {
+  &__login {
     grid-area: navBar_login;
     justify-self: end;
     align-self: center;
 
-    &_button {
+    &__button {
       width: 6rem;
       height: 5rem;
       border-radius: 2px;
@@ -34,15 +34,15 @@
       font-weight: bold;
     }
 
-    &_button:hover {
+    &__button:hover {
       background-color: $color-foreground-dark;
     }
   }
-  &_signUp {
+  &__signUp {
     grid-area: navBar_signUp;
     justify-self: start;
     align-self: center;
-    &_button {
+    &__button {
       width: 8rem;
       height: 5rem;
       border-radius: 2px;
@@ -52,17 +52,17 @@
       font-size: 1.5rem;
       font-weight: bold;
     }
-    &_button:hover {
+    &__button:hover {
       background-color: $color-foreground-dark;
       color: #0c3354;
     }
   }
-  &_logout {
+  &__logout {
     grid-area: navBar_signUp;
     font-size: 3rem;
     justify-self: start;
     align-self: center;
-    &_glyph {
+    &__glyph {
       color: $color-unhovered-item;
       &:hover {
         color: $color-foreground-dark;
@@ -70,12 +70,12 @@
       }
     }
   }
-  &_accountInfo {
+  &__accountInfo {
     grid-area: navBar_login;
     font-size: 3rem;
     justify-self: center;
     align-self: center;
-    &_glyph {
+    &__glyph {
       color: $color-unhovered-item;
       &:hover {
         color: $color-foreground-dark;
@@ -83,12 +83,12 @@
       }
     }
   }
-  &_alert {
+  &__alert {
     grid-area: navBar_alert;
     font-size: 3rem;
     justify-self: end;
     align-self: center;
-    &_glyph {
+    &__glyph {
       color: $color-unhovered-item;
       &:hover {
         color: $color-foreground-dark;

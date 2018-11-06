@@ -11,26 +11,20 @@
     minmax(1rem, 1fr);
   grid-template-areas:
     ". . . . ."
-    ". footer_business footer_suggestions footer_bugReport footer_reportPlayer ."
+    ". footer__business footer__suggestions footer__bugReport footer__reportPlayer ."
     ". . . . .";
   background-color: #242933;
 
-  &_business {
-    grid-area: footer_business;
+  &__business {
+    grid-area: footer__business;
   }
-  &_suggestions {
-    grid-area: footer_suggestions;
+  &__suggestions {
+    grid-area: footer__suggestions;
   }
-  &_bugReports {
-    grid-area: footer_bug-report;
+  &__bugReports {
+    grid-area: footer__bugReport;
   }
-  &_reportPlayer {
-    grid-area: footer_report-player;
-  }
-
-  &_link {
-    &_styles {
-      font-size: 1.1rem;
-    }
+  &__reportPlayer {
+    grid-area: footer__reportPlayer;
   }
 }

@@ -17,8 +17,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "compile:sass:homePage": "node-sass --watch src/sass/HomePage.scss src/HomePage/HomePage.css",
-    "compile:sass:loginPage": "node-sass --watch src/sass/LoginPage.scss src/LoginPage/LoginPage.css"
+    "compile:sass:homePage": "node-sass --watch src/sass/HomePage.scss src/pages/home/HomePage.css",
+    "compile:sass:loginPage": "node-sass --watch src/sass/LoginPage.scss src/pages/login/LoginPage.css"
   },
   "eslintConfig": {
     "extends": "react-app"

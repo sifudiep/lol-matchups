@@ -19,28 +19,28 @@
     minmax(min-content, 60rem) minmax(1rem, 1.5fr);
   grid-template-rows: 8vh 18rem 44vh 8vh;
   grid-template-areas:
-    ". . . pickSection_searchBar ."
-    ". pickSection_userSide_title pickSection_userSide pickSection_champSelect ."
-    ". pickSection_opponentSide_title pickSection_opponentSide pickSection_champSelect ."
-    ". . pickSection_findMatch_button pickSection_champSelect .";
+    ". . . pickSection__searchBar ."
+    ". pickSection__userSide__title pickSection__userSide pickSection__champSelect ."
+    ". pickSection__opponentSide__title pickSection__opponentSide pickSection__champSelect ."
+    ". . pickSection__findMatch__button pickSection__champSelect .";
   grid-gap: 1rem;
   background-color: $color-background-majority;
 
-  &_champSelect {
+  &__champSelect {
     display: grid;
-    grid-area: pickSection_champSelect;
+    grid-area: pickSection__champSelect;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(auto-fill, 11rem);
-    box-shadow: $pickSection_box_shadow;
+    box-shadow: $pickSection-boxShadow;
     overflow-y: auto;
     background-color: $color-background-minority;
     overflow-x: hidden;
-    &_img {
+    &__img {
       margin-top: 1rem;
       width: 8rem;
       height: 8rem;
       border-radius: 10rem;
-      &_picked {
+      &--picked {
         filter: grayscale(100%);
         margin-top: 1rem;
         width: 8rem;
@@ -48,15 +48,15 @@
         border-radius: 10rem;
       }
     }
-    &_img:hover {
+    &__img:hover {
       box-shadow: 0 0 0 0.25rem $color-foreground;
       border-radius: 10rem;
     }
-    &_text {
+    &__text {
       text-align: center;
       font-size: 1.5rem;
       font-weight: bold;
-      &_picked {
+      &--picked {
         text-align: center;
         font-size: 1.5rem;
         font-weight: bold;
@@ -65,29 +65,29 @@
     }
   }
 
-  &_opponentSide {
-    grid-area: pickSection_opponentSide;
+  &__opponentSide {
+    grid-area: pickSection__opponentSide;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(auto-fit, 11rem);
     overflow-y: auto;
     overflow-x: hidden;
     background-color: $color-background-minority;
-    box-shadow: $pickSection_box_shadow;
-    &_title {
-      grid-area: pickSection_opponentSide_title;
+    box-shadow: $pickSection-boxShadow;
+    &__title {
+      grid-area: pickSection__opponentSide__title;
       display: flex;
       justify-content: start;
       align-items: flex-end;
 
-      &_text {
+      &__text {
         font-size: 6rem;
         writing-mode: vertical-rl;
         transform: rotate(180deg);
         font-family: $font-special;
       }
     }
-    &_img {
+    &__img {
       margin-top: 1rem;
       width: 8rem;
       height: 8rem;
@@ -98,34 +98,34 @@
         filter: grayscale(100%);
       }
     }
-    &_text {
+    &__text {
       text-align: center;
       font-size: 1.5rem;
       font-weight: bold;
     }
   }
 
-  &_userSide {
-    grid-area: pickSection_userSide;
+  &__userSide {
+    grid-area: pickSection__userSide;
     background: $color-background-minority;
     display: flex;
     justify-content: center;
     align-items: center;
     // border: 2rem solid $color-background-minority;
     // border-radius: 0.5rem;
-    box-shadow: $pickSection_box_shadow;
-    &_title {
-      grid-area: pickSection_userSide_title;
+    box-shadow: $pickSection-boxShadow;
+    &__title {
+      grid-area: pickSection__userSide__title;
       justify-self: center;
       align-self: center;
-      &_text {
+      &__text {
         font-size: 6rem;
         writing-mode: vertical-rl;
         transform: rotate(180deg);
         font-family: $font-special;
       }
     }
-    &_img {
+    &__img {
       width: 12rem;
       height: 12rem;
       margin-top: 3rem;
@@ -134,14 +134,14 @@
         filter: grayscale(100%);
       }
     }
-    &_text {
+    &__text {
       text-align: center;
       font-size: 1.8rem;
       font-weight: bold;
     }
   }
-  &_searchBar {
-    grid-area: pickSection_searchBar;
+  &__searchBar {
+    grid-area: pickSection__searchBar;
     display: grid;
     grid-template-columns: minmax(min-content, 25rem) minmax(1rem, 1fr) minmax(
         min-content,
@@ -152,7 +152,7 @@
       ". . ."
       ". . ."
       "searchBar . laneIcons";
-    &_styling {
+    &__styling {
       grid-area: searchBar;
       border-radius: 0.2rem;
       background-color: $color-background-minority;
@@ -161,52 +161,52 @@
       font-size: 2rem;
       height: 3.5rem;
       color: $color-foreground;
-      box-shadow: $pickSection_box_shadow;
+      box-shadow: $pickSection-boxShadow;
     }
-    &_icon {
+    &__icon {
       grid-area: laneIcons;
     }
   }
-  &_champion {
+  &__champion {
     justify-self: center;
   }
-  &_laneIcons {
-    grid-area: pickSection_searchBar;
+  &__laneIcons {
+    grid-area: pickSection__searchBar;
     justify-self: end;
     align-self: end;
-    &_styling {
+    &__styling {
       width: 3rem;
       height: 3rem;
       filter: grayscale(100%);
       &:hover {
         filter: grayscale(0);
       }
-      &_picked {
+      &--picked {
         width: 3rem;
         height: 3rem;
         filter: grayscale(0);
       }
     }
   }
-  &_findMatch {
+  &__findMatch {
     transition: transform 0.1s 0s;
-    grid-area: pickSection_findMatch_button;
-    &_button {
+    grid-area: pickSection__findMatch__button;
+    &__button {
       width: 20rem;
       height: 7rem;
       background-color: $color-foreground;
-      box-shadow: $pickSection_box_shadow;
+      box-shadow: $pickSection-boxShadow;
       border: 0;
       font-size: 3rem;
       font-family: $font-special;
       transition: 0.2s 0s;
       &:focus {
         outline: 0;
-        animation: pickSection_findMatch_button_animation_clicked 1s;
+        animation: pickSection__findMatch__button__animation__clicked 1s;
       }
       &:hover {
         transform: translateY(-0.4rem);
-        box-shadow: $pickSection_box_shadow_elevate;
+        box-shadow: $pickSection-boxShadow-elevate;
       }
     }
   }
