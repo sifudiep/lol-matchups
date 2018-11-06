@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const keys = require("../services/keys");
 
 const userSchema = new mongoose.Schema({
-  opggURI: {
+  summonerName: {
     type: String,
     required: true
   },
@@ -21,12 +21,11 @@ const userSchema = new mongoose.Schema({
     minlength: 5,
     maxlength: 255
   },
-  active: {
-    type: Boolean,
-    default: false,
+  region: {
+    type: String,
     required: true
   },
-  isAdmin: {
+  active: {
     type: Boolean,
     default: false,
     required: true
@@ -53,7 +52,14 @@ function validateUser(user) {
       .min(5)
       .max(255)
       .required(),
-    opggURI: Joi.string().required()
+    summonerName: Joi.string()
+      .max(255)
+      .required(),
+    region: Joi.string()
+      .min(3)
+      .max(3)
+      .required(),
+    active: Joi.boolean().required()
   };
 
   return Joi.validate(user, schema);

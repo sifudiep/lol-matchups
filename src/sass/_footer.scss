@@ -13,7 +13,7 @@
     ". . . . ."
     ". footer__business footer__suggestions footer__bugReport footer__reportPlayer ."
     ". . . . .";
-  background-color: #242933;
+  background-color: $color-background-majority;
 
   &__business {
     grid-area: footer__business;

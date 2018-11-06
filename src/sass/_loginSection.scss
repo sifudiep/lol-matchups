@@ -18,9 +18,10 @@
       minmax(1rem, 1fr)
       minmax(min-content, 30rem)
       minmax(1rem, 1fr);
-    grid-template-rows: 10vh 5vh 5vh 5vh 3vh 3vh;
+    grid-template-rows: 3vh 10vh 5vh 5vh 5vh 3vh 3vh;
     grid-template-areas:
       ". . ."
+      ". loginSection__loginForm__loginText ."
       ". loginSection__loginForm__accountInput ."
       ". loginSection__loginForm__passInput ."
       ". loginSection__loginForm__loginButton ."
@@ -30,14 +31,37 @@
     background-color: $color-background-minority;
     box-shadow: $pickSection-boxShadow;
 
+    &__loginText {
+      grid-area: loginSection__loginForm__loginText;
+      text-align: center;
+      align-self: center;
+      font-size: 4rem;
+      font-family: $font-special;
+    }
+
     &__accountInput {
       grid-area: loginSection__loginForm__accountInput;
       font-size: 2rem;
-      margin-left: 4rem;
+      border-radius: 0.5rem 0.5rem 0 0;
+      border: none;
+      border-bottom-style: solid;
+      border-bottom-width: 0.1rem;
+      border-bottom-color: grey;
+      padding-left: 1rem;
+      &:focus {
+        outline: none;
+      }
     }
 
     &__passInput {
       grid-area: loginSection__loginForm__passInput;
+      border-radius: 0 0 0.5rem 0.5rem;
+      border: none;
+      padding-left: 1rem;
+      font-size: 2rem;
+      &:focus {
+        outline: none;
+      }
     }
 
     &__loginButton {
@@ -45,6 +69,7 @@
       margin-top: 1rem;
       background-color: $color-foreground-dark;
       border: 0;
+      font-size: 2rem;
       box-shadow: $pickSection-boxShadow;
       border-radius: 0.5rem;
       outline: none;

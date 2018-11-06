@@ -32,6 +32,14 @@ $pickSection-boxShadow-elevate: 0.3rem 0.3rem 0.3rem 0 black;
   box-sizing: inherit;
 }
 
+button,
+a,
+input {
+  &:focus {
+    outline: none;
+  }
+}
+
 html {
   box-sizing: border-box;
   font-size: 62.5%;

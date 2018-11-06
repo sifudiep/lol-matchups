@@ -104,6 +104,30 @@ const reducer = (state = initialState, action) => {
     window.location.href = URL.home;
   }
 
+  if (action.type === actionVariables.ONSIGNUP) {
+    var account = action.payLoad.account;
+    if (account.password === account.confirmPassword) {
+      axios
+        .post("http://localhost:2000/api/signup", {
+          summonerName: account.summonerName,
+          email: account.email,
+          password: account.password,
+          region: account.region,
+          active: false
+        })
+        .then(res => {
+          window.location.href = URL.home;
+          alert("successful register!");
+        })
+        .catch(err => {
+          console.log(`err: `);
+          console.log(err);
+        });
+    } else {
+      alert("password did not match!");
+    }
+  }
+
   return state;
 };
 

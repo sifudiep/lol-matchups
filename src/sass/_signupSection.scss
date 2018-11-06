@@ -1,4 +1,127 @@
+@mixin form-input-title {
+  font-size: 2.5rem;
+  font-family: $font-special;
+}
+
+@mixin form-input {
+  font-size: 3rem;
+  font-family: $font-primary;
+  border: none;
+  border-radius: 0.5rem 0 0 0;
+  padding-left: 1rem;
+  &:focus {
+    outline: none;
+  }
+}
+
 .signupSection {
   grid-area: signupSection;
-  background-color: $color-background-minority;
+  background-color: $color-background-majority;
+  display: grid;
+  grid-template-columns:
+    minmax(1rem, 1fr)
+    minmax(min-content, 50rem)
+    minmax(1rem, 1fr);
+  grid-template-rows: 5vh 70vh 5vh;
+  grid-template-areas:
+    ". . ."
+    ". signupSection__form ."
+    ". . .";
+  &__form {
+    background-color: $color-background-minority;
+    box-shadow: $pickSection-boxShadow;
+    grid-area: signupSection__form;
+    display: grid;
+    grid-row-gap: 1rem;
+    grid-template-columns:
+      minmax(1rem, 1fr)
+      minmax(1rem, 13rem)
+      minmax(1rem, 19rem)
+      minmax(1rem, 13rem)
+      minmax(1rem, 1fr);
+    grid-template-rows: 10vh 3vh 6vh 3vh 6vh 3vh 6vh 3vh 6vh 1vh 6vh;
+    grid-template-areas:
+      ". signupSection__form__signupText signupSection__form__signupText signupSection__form__signupText ."
+      ". signupSection__form__summonerName signupSection__form__summonerName signupSection__form__summonerName ."
+      ". signupSection__form__summonerName__input signupSection__form__summonerName__input signupSection__form__region ."
+      ". signupSection__form__email signupSection__form__email signupSection__form__email ."
+      ". signupSection__form__email__input signupSection__form__email__input signupSection__form__email__input ."
+      ". signupSection__form__password signupSection__form__password signupSection__form__password ."
+      ". signupSection__form__password__input signupSection__form__password__input signupSection__form__password__input ."
+      ". signupSection__form__confirmPassword signupSection__form__confirmPassword signupSection__form__confirmPassword ."
+      ". signupSection__form__confirmPassword__input signupSection__form__confirmPassword__input signupSection__form__confirmPassword__input ."
+      ". . . . ."
+      ". . signupSection__form__register . .";
+
+    &__signupText {
+      grid-area: signupSection__form__signupText;
+      text-align: center;
+      align-self: center;
+      font-size: 4.5rem;
+      font-family: $font-special;
+    }
+
+    &__summonerName {
+      grid-area: signupSection__form__summonerName;
+      @include form-input-title;
+      &__input {
+        grid-area: signupSection__form__summonerName__input;
+        @include form-input;
+      }
+    }
+
+    &__region {
+      grid-area: signupSection__form__region;
+      border-radius: 0 0.25rem 0.25rem 0;
+      text-align: center;
+      background-color: $color-foreground-dark;
+      font-family: $font-special;
+      font-size: 3rem;
+      border: none;
+      border-left-width: 0.1rem;
+      border-left-color: grey;
+      border-left-style: solid;
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &__email {
+      grid-area: signupSection__form__email;
+      @include form-input-title;
+      &__input {
+        grid-area: signupSection__form__email__input;
+        @include form-input;
+      }
+    }
+
+    &__password {
+      @include form-input-title;
+      grid-area: signupSection__form__password;
+      &__input {
+        grid-area: signupSection__form__password__input;
+        @include form-input;
+      }
+    }
+
+    &__confirmPassword {
+      @include form-input-title;
+      grid-area: signupSection__form__confirmPassword;
+      &__input {
+        grid-area: signupSection__form__confirmPassword__input;
+        @include form-input;
+      }
+    }
+
+    &__register {
+      grid-area: signupSection__form__register;
+      border: none;
+      font-size: 2rem;
+      border-radius: 0.5rem 0.25rem 0.5rem 0.25rem;
+      background-color: $color-unhovered-item;
+      &:hover {
+        background-color: $color-foreground-dark;
+      }
+    }
+  }
 }

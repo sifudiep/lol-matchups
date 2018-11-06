@@ -8,7 +8,7 @@ class LoginForm extends Component {
     password: ""
   };
 
-  onSubmit = e => {
+  onLogin = e => {
     e.preventDefault();
     this.props.onLogin(this.state);
   };
@@ -17,6 +17,8 @@ class LoginForm extends Component {
     return (
       <div className="loginSection">
         <form className="loginSection__loginForm">
+          <h1 className="loginSection__loginForm__loginText">Login</h1>
+
           <input
             className="loginSection__loginForm__accountInput"
             placeholder="Email"
@@ -32,7 +34,7 @@ class LoginForm extends Component {
           />
           <button
             className="loginSection__loginForm__loginButton"
-            onClick={e => this.onSubmit(e)}
+            onClick={e => this.onLogin(e)}
           >
             Submit!
           </button>

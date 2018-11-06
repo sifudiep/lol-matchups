@@ -54,7 +54,7 @@ body {
   grid-area: navBar;
   grid-template-columns: minmax(1rem, 1fr) minmax(min-content, 30rem) 2fr minmax(min-content, 10rem) minmax(min-content, 10rem) minmax(min-content, 10rem) minmax(1rem, 1fr);
   grid-template-areas: ". navBar_logo . navBar_alert navBar_login navBar_signUp .";
-  background-color: #242933; }
+  background-color: #232325; }
   .navBar__logo {
     grid-area: navBar_logo;
     justify-self: center;
@@ -291,7 +291,7 @@ body {
   grid-template-columns: minmax(1rem, 1fr) repeat(4, minmax(min-content, 20rem)) minmax(1rem, 1fr);
   grid-template-rows: minmax(1rem, 1fr) minmax(min-content, 10rem) minmax(1rem, 1fr);
   grid-template-areas: ". . . . ." ". footer__business footer__suggestions footer__bugReport footer__reportPlayer ." ". . . . .";
-  background-color: #242933; }
+  background-color: #232325; }
   .footer__business {
     grid-area: footer__business; }
   .footer__suggestions {

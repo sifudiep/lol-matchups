@@ -14,11 +14,11 @@ router.post("/signup", async (req, res) => {
   if (user) return res.status(400).send("User already registered.");
 
   user = new User({
-    opggURI: req.body.opggURI,
+    summonerName: req.body.summonerName,
     email: req.body.email,
     password: req.body.password,
-    active: req.body.active,
-    isAdmin: req.body.isAdmin
+    region: req.body.region,
+    active: req.body.active
   });
   const salt = await bcrypt.genSalt(10);
   user.password = await bcrypt.hash(user.password, salt);

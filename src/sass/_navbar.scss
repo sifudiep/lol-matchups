@@ -7,7 +7,7 @@
     minmax(min-content, 10rem) minmax(min-content, 10rem) minmax(1rem, 1fr);
   grid-template-areas: ". navBar_logo . navBar_alert navBar_login navBar_signUp .";
 
-  background-color: $color-background-minority;
+  background-color: $color-background-majority;
   &__logo {
     grid-area: navBar_logo;
     justify-self: center;

@@ -5,6 +5,11 @@
   padding: 0;
   box-sizing: inherit; }
 
+button:focus,
+a:focus,
+input:focus {
+  outline: none; }
+
 html {
   box-sizing: border-box;
   font-size: 62.5%; }
@@ -50,7 +55,99 @@ body {
 
 .signupSection {
   grid-area: signupSection;
-  background-color: #242933; }
+  background-color: #232325;
+  display: grid;
+  grid-template-columns: minmax(1rem, 1fr) minmax(min-content, 50rem) minmax(1rem, 1fr);
+  grid-template-rows: 5vh 70vh 5vh;
+  grid-template-areas: ". . ." ". signupSection__form ." ". . ."; }
+  .signupSection__form {
+    background-color: #242933;
+    box-shadow: 0.1rem 0.1rem 0.5rem 0 black;
+    grid-area: signupSection__form;
+    display: grid;
+    grid-row-gap: 1rem;
+    grid-template-columns: minmax(1rem, 1fr) minmax(1rem, 13rem) minmax(1rem, 19rem) minmax(1rem, 13rem) minmax(1rem, 1fr);
+    grid-template-rows: 10vh 3vh 6vh 3vh 6vh 3vh 6vh 3vh 6vh 1vh 6vh;
+    grid-template-areas: ". signupSection__form__signupText signupSection__form__signupText signupSection__form__signupText ." ". signupSection__form__summonerName signupSection__form__summonerName signupSection__form__summonerName ." ". signupSection__form__summonerName__input signupSection__form__summonerName__input signupSection__form__region ." ". signupSection__form__email signupSection__form__email signupSection__form__email ." ". signupSection__form__email__input signupSection__form__email__input signupSection__form__email__input ." ". signupSection__form__password signupSection__form__password signupSection__form__password ." ". signupSection__form__password__input signupSection__form__password__input signupSection__form__password__input ." ". signupSection__form__confirmPassword signupSection__form__confirmPassword signupSection__form__confirmPassword ." ". signupSection__form__confirmPassword__input signupSection__form__confirmPassword__input signupSection__form__confirmPassword__input ." ". . . . ." ". . signupSection__form__register . ."; }
+    .signupSection__form__signupText {
+      grid-area: signupSection__form__signupText;
+      text-align: center;
+      align-self: center;
+      font-size: 4.5rem;
+      font-family: "Niramit", sans-serif; }
+    .signupSection__form__summonerName {
+      grid-area: signupSection__form__summonerName;
+      font-size: 2.5rem;
+      font-family: "Niramit", sans-serif; }
+      .signupSection__form__summonerName__input {
+        grid-area: signupSection__form__summonerName__input;
+        font-size: 3rem;
+        font-family: "Nunito", sans-serif;
+        border: none;
+        border-radius: 0.5rem 0 0 0;
+        padding-left: 1rem; }
+        .signupSection__form__summonerName__input:focus {
+          outline: none; }
+    .signupSection__form__region {
+      grid-area: signupSection__form__region;
+      border-radius: 0 0.25rem 0.25rem 0;
+      text-align: center;
+      background-color: #b28451;
+      font-family: "Niramit", sans-serif;
+      font-size: 3rem;
+      border: none;
+      border-left-width: 0.1rem;
+      border-left-color: grey;
+      border-left-style: solid; }
+      .signupSection__form__region:focus {
+        outline: none; }
+    .signupSection__form__email {
+      grid-area: signupSection__form__email;
+      font-size: 2.5rem;
+      font-family: "Niramit", sans-serif; }
+      .signupSection__form__email__input {
+        grid-area: signupSection__form__email__input;
+        font-size: 3rem;
+        font-family: "Nunito", sans-serif;
+        border: none;
+        border-radius: 0.5rem 0 0 0;
+        padding-left: 1rem; }
+        .signupSection__form__email__input:focus {
+          outline: none; }
+    .signupSection__form__password {
+      font-size: 2.5rem;
+      font-family: "Niramit", sans-serif;
+      grid-area: signupSection__form__password; }
+      .signupSection__form__password__input {
+        grid-area: signupSection__form__password__input;
+        font-size: 3rem;
+        font-family: "Nunito", sans-serif;
+        border: none;
+        border-radius: 0.5rem 0 0 0;
+        padding-left: 1rem; }
+        .signupSection__form__password__input:focus {
+          outline: none; }
+    .signupSection__form__confirmPassword {
+      font-size: 2.5rem;
+      font-family: "Niramit", sans-serif;
+      grid-area: signupSection__form__confirmPassword; }
+      .signupSection__form__confirmPassword__input {
+        grid-area: signupSection__form__confirmPassword__input;
+        font-size: 3rem;
+        font-family: "Nunito", sans-serif;
+        border: none;
+        border-radius: 0.5rem 0 0 0;
+        padding-left: 1rem; }
+        .signupSection__form__confirmPassword__input:focus {
+          outline: none; }
+    .signupSection__form__register {
+      grid-area: signupSection__form__register;
+      border: none;
+      font-size: 2rem;
+      border-radius: 0.5rem 0.25rem 0.5rem 0.25rem;
+      background-color: #a4a4a4; }
+      .signupSection__form__register:hover {
+        background-color: #b28451; }
 
 .navBar {
   display: grid;
@@ -58,7 +155,7 @@ body {
   grid-area: navBar;
   grid-template-columns: minmax(1rem, 1fr) minmax(min-content, 30rem) 2fr minmax(min-content, 10rem) minmax(min-content, 10rem) minmax(min-content, 10rem) minmax(1rem, 1fr);
   grid-template-areas: ". navBar_logo . navBar_alert navBar_login navBar_signUp .";
-  background-color: #242933; }
+  background-color: #232325; }
   .navBar__logo {
     grid-area: navBar_logo;
     justify-self: center;
