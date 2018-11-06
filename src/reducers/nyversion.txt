@@ -1,0 +1,12 @@
+Problem,
+Dålig strukturering
+T.ex CSS namn konventioner
+
+Nya program som ska användas
+Frontend:
+React + Redux + Apollo + SASS
+-React-router-dom & -axios
+
+Backend: 
+Nodejs + Express + GraphQL + MongoDB + NextJS
+-REST approact

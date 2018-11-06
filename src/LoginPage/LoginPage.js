@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import NavBar from "../components/navBar/navBar";
-import { connect } from "react-redux";
 
 import LoginForm from "../components/loginForm/loginForm";
 
@@ -15,7 +14,9 @@ class LoginPage extends Component {
         <div className="loginSection">
           <LoginForm />
         </div>
-        <div className="footer" />
+        <div className="footer">
+          <Footer />
+        </div>
       </div>
     );
   }

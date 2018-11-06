@@ -26,6 +26,7 @@ class LoginForm extends Component {
           className="loginSection_loginForm_passInput"
           placeholder="Password"
           value={this.state.password}
+          type="password"
           onChange={e => this.setState({ password: e.target.value })}
         />
         <button

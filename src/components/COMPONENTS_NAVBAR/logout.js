@@ -10,7 +10,7 @@ class Logout extends Component {
           onClick={() => {
             this.props.onLogout();
           }}
-          className="fas fa-sign-out-alt"
+          className="fas fa-sign-out-alt navBar_logout_glyph"
         />
       </div>
     );

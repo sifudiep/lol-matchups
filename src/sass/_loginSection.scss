@@ -43,6 +43,19 @@
     &_loginButton {
       grid-area: loginSection_loginForm_loginButton;
       margin-top: 1rem;
+      background-color: $color-foreground-dark;
+      border: 0;
+      box-shadow: $pickSection_box_shadow;
+      border-radius: 0.5rem;
+      outline: none;
+      transition: transform 0.1s 0s;
+      &:hover {
+        box-shadow: $pickSection_box_shadow_elevate;
+        transform: translateY(-0.1rem);
+      }
+      &:active {
+        transform: translateY(-0.1rem);
+      }
     }
 
     &_signUpText {

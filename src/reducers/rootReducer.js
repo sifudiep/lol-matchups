@@ -1,6 +1,5 @@
 import actionVariables from "./actionVariables";
 import axios from "axios";
-import { Redirect } from "react-router-dom";
 
 const rootURL = "http://localhost:3000";
 const URL = {
@@ -96,7 +95,7 @@ const reducer = (state = initialState, action) => {
         window.location.href = URL.home;
       })
       .catch(err => {
-        console.log(`error : ${err}`);
+        alert("Invalid Login!");
       });
   }
 

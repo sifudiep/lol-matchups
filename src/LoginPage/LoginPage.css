@@ -93,19 +93,31 @@ body {
     font-size: 3rem;
     justify-self: start;
     align-self: center; }
+    .navBar_logout_glyph {
+      color: #a4a4a4; }
+      .navBar_logout_glyph:hover {
+        color: #b28451;
+        font-size: 3.25rem; }
   .navBar_accountInfo {
     grid-area: navBar_login;
     font-size: 3rem;
     justify-self: center;
-    align-self: center;
-    color: green; }
+    align-self: center; }
     .navBar_accountInfo_glyph {
-      color: #b28451; }
+      color: #a4a4a4; }
+      .navBar_accountInfo_glyph:hover {
+        color: #b28451;
+        font-size: 3.25rem; }
   .navBar_alert {
     grid-area: navBar_alert;
     font-size: 3rem;
     justify-self: end;
     align-self: center; }
+    .navBar_alert_glyph {
+      color: #a4a4a4; }
+      .navBar_alert_glyph:hover {
+        color: #b28451;
+        font-size: 3.25rem; }
 
 .loginSection {
   grid-area: loginSection;
@@ -130,6 +142,17 @@ body {
       grid-area: loginSection_loginForm_passInput; }
     .loginSection_loginForm_loginButton {
       grid-area: loginSection_loginForm_loginButton;
-      margin-top: 1rem; }
+      margin-top: 1rem;
+      background-color: #b28451;
+      border: 0;
+      box-shadow: 0.1rem 0.1rem 0.5rem 0 black;
+      border-radius: 0.5rem;
+      outline: none;
+      transition: transform 0.1s 0s; }
+      .loginSection_loginForm_loginButton:hover {
+        box-shadow: 0.3rem 0.3rem 0.3rem 0 black;
+        transform: translateY(-0.1rem); }
+      .loginSection_loginForm_loginButton:active {
+        transform: translateY(-0.1rem); }
     .loginSection_loginForm_signUpText {
       grid-area: loginSection_loginForm_signUpText; }

@@ -25,7 +25,6 @@ class NavBar extends Component {
         });
       })
       .catch(err => {
-        console.log(`err: ${err}`);
         this.setState({
           verified: false,
           user: ""

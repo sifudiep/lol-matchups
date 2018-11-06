@@ -62,15 +62,25 @@
     font-size: 3rem;
     justify-self: start;
     align-self: center;
+    &_glyph {
+      color: $color-unhovered-item;
+      &:hover {
+        color: $color-foreground-dark;
+        font-size: 3.25rem;
+      }
+    }
   }
   &_accountInfo {
     grid-area: navBar_login;
     font-size: 3rem;
     justify-self: center;
     align-self: center;
-    color: green;
     &_glyph {
-      color: $color-foreground-dark;
+      color: $color-unhovered-item;
+      &:hover {
+        color: $color-foreground-dark;
+        font-size: 3.25rem;
+      }
     }
   }
   &_alert {
@@ -78,5 +88,12 @@
     font-size: 3rem;
     justify-self: end;
     align-self: center;
+    &_glyph {
+      color: $color-unhovered-item;
+      &:hover {
+        color: $color-foreground-dark;
+        font-size: 3.25rem;
+      }
+    }
   }
 }

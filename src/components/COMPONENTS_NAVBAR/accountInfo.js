@@ -6,7 +6,7 @@ class Alert extends Component {
     return (
       <div className="navBar_accountInfo">
         <Link to="accountPage">
-          <i class="fas fa-user-alt navBar_accountInfo_glyph" />
+          <i className="fas fa-user-alt navBar_accountInfo_glyph" />
         </Link>
       </div>
     );

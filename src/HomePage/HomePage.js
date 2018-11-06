@@ -12,9 +12,6 @@ import "./HomePage.css";
 
 import NavBar from "../components/navBar/navBar";
 
-import { connect } from "react-redux";
-import axios from "axios";
-
 class HomePage extends Component {
   render() {
     return (
