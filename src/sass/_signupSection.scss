@@ -8,9 +8,15 @@
   font-family: $font-primary;
   border: none;
   border-radius: 0.5rem 0 0 0;
-  padding-left: 1rem;
+  padding-left: 2rem;
+  background-color: $color-background-minority;
+  border-bottom-width: 0.1rem;
+  border-bottom-style: solid;
+  border-bottom-color: grey;
+  color: #f0ead6;
   &:focus {
     outline: none;
+    border-bottom-color: $color-foreground-dark;
   }
 }
 
@@ -29,7 +35,7 @@
     ". . .";
   &__form {
     background-color: $color-background-minority;
-    box-shadow: $pickSection-boxShadow;
+    box-shadow: $boxShadow;
     grid-area: signupSection__form;
     display: grid;
     grid-row-gap: 1rem;
@@ -81,6 +87,7 @@
       border-left-width: 0.1rem;
       border-left-color: grey;
       border-left-style: solid;
+      box-shadow: $boxShadow;
       &:focus {
         outline: none;
       }
@@ -118,9 +125,16 @@
       border: none;
       font-size: 2rem;
       border-radius: 0.5rem 0.25rem 0.5rem 0.25rem;
-      background-color: $color-unhovered-item;
+      background-color: $color-foreground-dark;
+      box-shadow: $boxShadow;
+      transition: all 0.2s;
       &:hover {
-        background-color: $color-foreground-dark;
+        transform: translateY(-0.25rem);
+        box-shadow: $boxShadow-elevate;
+      }
+      &:active {
+        outline: none;
+        transform: translateY(0.25rem);
       }
     }
   }

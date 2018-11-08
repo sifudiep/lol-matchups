@@ -21,8 +21,17 @@ $bp-md: 750px;
 $bp-sm: 550px;
 
 // BOX-SHADOWS
-$pickSection-boxShadow: 0.1rem 0.1rem 0.5rem 0 black;
-$pickSection-boxShadow-elevate: 0.3rem 0.3rem 0.3rem 0 black;
+$boxShadow: 0.1rem 0.1rem 1rem 0 black;
+$boxShadow-elevate: 0.3rem 0.3rem 3rem 0 black;
+
+// LINK
+.noLinkStyle {
+  text-decoration: none;
+  color: $color-foreground-dark;
+  &:active {
+    color: $color-foreground;
+  }
+}
 
 *,
 *::before,

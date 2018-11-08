@@ -1,9 +1,20 @@
+.noLinkStyle {
+  text-decoration: none;
+  color: #b28451; }
+  .noLinkStyle:active {
+    color: #c69963; }
+
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
   box-sizing: inherit; }
+
+button:focus,
+a:focus,
+input:focus {
+  outline: none; }
 
 html {
   box-sizing: border-box;
@@ -54,14 +65,19 @@ body {
   grid-area: navBar;
   grid-template-columns: minmax(1rem, 1fr) minmax(min-content, 30rem) 2fr minmax(min-content, 10rem) minmax(min-content, 10rem) minmax(min-content, 10rem) minmax(1rem, 1fr);
   grid-template-areas: ". navBar_logo . navBar_alert navBar_login navBar_signUp .";
-  background-color: #232325; }
+  border-bottom-width: 0.1rem;
+  border-bottom-color: black;
+  border-bottom-style: solid;
+  background-color: #242933; }
   .navBar__logo {
     grid-area: navBar_logo;
     justify-self: center;
     align-self: center; }
     .navBar__logo__text {
       font-size: 3.8rem;
-      font-family: "Niramit", sans-serif; }
+      font-family: "Niramit", sans-serif;
+      text-decoration: none;
+      color: #b28451; }
   .navBar__login {
     grid-area: navBar_login;
     justify-self: end;
@@ -125,14 +141,6 @@ body {
         color: #b28451;
         font-size: 3.25rem; }
 
-@keyframes pickSection_findMatch_button_animation_clicked {
-  0% {
-    transform: translateY(1rem); }
-  50% {
-    transform: translateY(-1rem); }
-  100% {
-    transform: translateY(0); } }
-
 .pickSection {
   display: grid;
   grid-area: pickSection;
@@ -146,7 +154,7 @@ body {
     grid-area: pickSection__champSelect;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(auto-fill, 11rem);
-    box-shadow: 0.1rem 0.1rem 0.5rem 0 black;
+    box-shadow: 0.1rem 0.1rem 1rem 0 black;
     overflow-y: auto;
     background-color: #242933;
     overflow-x: hidden; }
@@ -181,7 +189,7 @@ body {
     overflow-y: auto;
     overflow-x: hidden;
     background-color: #242933;
-    box-shadow: 0.1rem 0.1rem 0.5rem 0 black; }
+    box-shadow: 0.1rem 0.1rem 1rem 0 black; }
     .pickSection__opponentSide__title {
       grid-area: pickSection__opponentSide__title;
       display: flex;
@@ -211,7 +219,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0.1rem 0.1rem 0.5rem 0 black; }
+    box-shadow: 0.1rem 0.1rem 1rem 0 black; }
     .pickSection__userSide__title {
       grid-area: pickSection__userSide__title;
       justify-self: center;
@@ -247,7 +255,7 @@ body {
       font-size: 2rem;
       height: 3.5rem;
       color: #c69963;
-      box-shadow: 0.1rem 0.1rem 0.5rem 0 black; }
+      box-shadow: 0.1rem 0.1rem 1rem 0 black; }
     .pickSection__searchBar__icon {
       grid-area: laneIcons; }
   .pickSection__champion {
@@ -273,17 +281,17 @@ body {
       width: 20rem;
       height: 7rem;
       background-color: #c69963;
-      box-shadow: 0.1rem 0.1rem 0.5rem 0 black;
+      box-shadow: 0.1rem 0.1rem 1rem 0 black;
       border: 0;
       font-size: 3rem;
       font-family: "Niramit", sans-serif;
-      transition: 0.2s 0s; }
-      .pickSection__findMatch__button:focus {
-        outline: 0;
-        animation: pickSection__findMatch__button__animation__clicked 1s; }
+      transition: all 0.2s; }
       .pickSection__findMatch__button:hover {
-        transform: translateY(-0.4rem);
-        box-shadow: 0.3rem 0.3rem 0.3rem 0 black; }
+        transform: translateY(-0.25rem);
+        box-shadow: 0.3rem 0.3rem 3rem 0 black; }
+      .pickSection__findMatch__button:active {
+        outline: none;
+        transform: translateY(0.25rem); }
 
 .footer {
   grid-area: footer;
@@ -291,7 +299,10 @@ body {
   grid-template-columns: minmax(1rem, 1fr) repeat(4, minmax(min-content, 20rem)) minmax(1rem, 1fr);
   grid-template-rows: minmax(1rem, 1fr) minmax(min-content, 10rem) minmax(1rem, 1fr);
   grid-template-areas: ". . . . ." ". footer__business footer__suggestions footer__bugReport footer__reportPlayer ." ". . . . .";
-  background-color: #232325; }
+  background-color: #242933;
+  border-top-width: 0.1rem;
+  border-top-color: black;
+  border-top-style: solid; }
   .footer__business {
     grid-area: footer__business; }
   .footer__suggestions {

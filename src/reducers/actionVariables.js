@@ -6,7 +6,8 @@ const actionVariables = {
   ONCLICKEDLANE: "ONCLICKEDLANE",
   ONLOGIN: "ONLOGIN",
   ONLOGOUT: "ONLOGOUT",
-  ONSIGNUP: "ONSIGNUP"
+  ONSIGNUP: "ONSIGNUP",
+  ONFINDMATCHCLICK: "ONFINDMATCHCLICK"
 };
 
 export default actionVariables;

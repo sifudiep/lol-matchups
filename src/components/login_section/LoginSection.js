@@ -8,7 +8,7 @@ class LoginForm extends Component {
     password: ""
   };
 
-  onLogin = e => {
+  onLocalLogin = e => {
     e.preventDefault();
     this.props.onLogin(this.state);
   };
@@ -34,7 +34,7 @@ class LoginForm extends Component {
           />
           <button
             className="loginSection__loginForm__loginButton"
-            onClick={e => this.onLogin(e)}
+            onClick={e => this.onLocalLogin(e)}
           >
             Submit!
           </button>

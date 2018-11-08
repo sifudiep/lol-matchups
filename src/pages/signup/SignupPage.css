@@ -1,3 +1,9 @@
+.noLinkStyle {
+  text-decoration: none;
+  color: #b28451; }
+  .noLinkStyle:active {
+    color: #c69963; }
+
 *,
 *::before,
 *::after {
@@ -62,7 +68,7 @@ body {
   grid-template-areas: ". . ." ". signupSection__form ." ". . ."; }
   .signupSection__form {
     background-color: #242933;
-    box-shadow: 0.1rem 0.1rem 0.5rem 0 black;
+    box-shadow: 0.1rem 0.1rem 1rem 0 black;
     grid-area: signupSection__form;
     display: grid;
     grid-row-gap: 1rem;
@@ -85,9 +91,15 @@ body {
         font-family: "Nunito", sans-serif;
         border: none;
         border-radius: 0.5rem 0 0 0;
-        padding-left: 1rem; }
+        padding-left: 2rem;
+        background-color: #242933;
+        border-bottom-width: 0.1rem;
+        border-bottom-style: solid;
+        border-bottom-color: grey;
+        color: #f0ead6; }
         .signupSection__form__summonerName__input:focus {
-          outline: none; }
+          outline: none;
+          border-bottom-color: #b28451; }
     .signupSection__form__region {
       grid-area: signupSection__form__region;
       border-radius: 0 0.25rem 0.25rem 0;
@@ -98,7 +110,8 @@ body {
       border: none;
       border-left-width: 0.1rem;
       border-left-color: grey;
-      border-left-style: solid; }
+      border-left-style: solid;
+      box-shadow: 0.1rem 0.1rem 1rem 0 black; }
       .signupSection__form__region:focus {
         outline: none; }
     .signupSection__form__email {
@@ -111,9 +124,15 @@ body {
         font-family: "Nunito", sans-serif;
         border: none;
         border-radius: 0.5rem 0 0 0;
-        padding-left: 1rem; }
+        padding-left: 2rem;
+        background-color: #242933;
+        border-bottom-width: 0.1rem;
+        border-bottom-style: solid;
+        border-bottom-color: grey;
+        color: #f0ead6; }
         .signupSection__form__email__input:focus {
-          outline: none; }
+          outline: none;
+          border-bottom-color: #b28451; }
     .signupSection__form__password {
       font-size: 2.5rem;
       font-family: "Niramit", sans-serif;
@@ -124,9 +143,15 @@ body {
         font-family: "Nunito", sans-serif;
         border: none;
         border-radius: 0.5rem 0 0 0;
-        padding-left: 1rem; }
+        padding-left: 2rem;
+        background-color: #242933;
+        border-bottom-width: 0.1rem;
+        border-bottom-style: solid;
+        border-bottom-color: grey;
+        color: #f0ead6; }
         .signupSection__form__password__input:focus {
-          outline: none; }
+          outline: none;
+          border-bottom-color: #b28451; }
     .signupSection__form__confirmPassword {
       font-size: 2.5rem;
       font-family: "Niramit", sans-serif;
@@ -137,17 +162,29 @@ body {
         font-family: "Nunito", sans-serif;
         border: none;
         border-radius: 0.5rem 0 0 0;
-        padding-left: 1rem; }
+        padding-left: 2rem;
+        background-color: #242933;
+        border-bottom-width: 0.1rem;
+        border-bottom-style: solid;
+        border-bottom-color: grey;
+        color: #f0ead6; }
         .signupSection__form__confirmPassword__input:focus {
-          outline: none; }
+          outline: none;
+          border-bottom-color: #b28451; }
     .signupSection__form__register {
       grid-area: signupSection__form__register;
       border: none;
       font-size: 2rem;
       border-radius: 0.5rem 0.25rem 0.5rem 0.25rem;
-      background-color: #a4a4a4; }
+      background-color: #b28451;
+      box-shadow: 0.1rem 0.1rem 1rem 0 black;
+      transition: all 0.2s; }
       .signupSection__form__register:hover {
-        background-color: #b28451; }
+        transform: translateY(-0.25rem);
+        box-shadow: 0.3rem 0.3rem 3rem 0 black; }
+      .signupSection__form__register:active {
+        outline: none;
+        transform: translateY(0.25rem); }
 
 .navBar {
   display: grid;
@@ -155,14 +192,19 @@ body {
   grid-area: navBar;
   grid-template-columns: minmax(1rem, 1fr) minmax(min-content, 30rem) 2fr minmax(min-content, 10rem) minmax(min-content, 10rem) minmax(min-content, 10rem) minmax(1rem, 1fr);
   grid-template-areas: ". navBar_logo . navBar_alert navBar_login navBar_signUp .";
-  background-color: #232325; }
+  border-bottom-width: 0.1rem;
+  border-bottom-color: black;
+  border-bottom-style: solid;
+  background-color: #242933; }
   .navBar__logo {
     grid-area: navBar_logo;
     justify-self: center;
     align-self: center; }
     .navBar__logo__text {
       font-size: 3.8rem;
-      font-family: "Niramit", sans-serif; }
+      font-family: "Niramit", sans-serif;
+      text-decoration: none;
+      color: #b28451; }
   .navBar__login {
     grid-area: navBar_login;
     justify-self: end;

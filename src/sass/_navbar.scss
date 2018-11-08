@@ -6,8 +6,11 @@
     minmax(1rem, 1fr) minmax(min-content, 30rem) 2fr minmax(min-content, 10rem)
     minmax(min-content, 10rem) minmax(min-content, 10rem) minmax(1rem, 1fr);
   grid-template-areas: ". navBar_logo . navBar_alert navBar_login navBar_signUp .";
+  border-bottom-width: 0.1rem;
+  border-bottom-color: black;
+  border-bottom-style: solid;
 
-  background-color: $color-background-majority;
+  background-color: $color-background-minority;
   &__logo {
     grid-area: navBar_logo;
     justify-self: center;
@@ -15,6 +18,8 @@
     &__text {
       font-size: 3.8rem;
       font-family: $font-special;
+      text-decoration: none;
+      color: $color-foreground-dark;
     }
   }
   &__login {

@@ -19,7 +19,7 @@ class SignupSection extends Component {
   render() {
     return (
       <div className="signupSection">
-        <div className="signupSection__form">
+        <form className="signupSection__form">
           <h1 className="signupSection__form__signupText">Sign up!</h1>
 
           <p className="signupSection__form__summonerName">Summoner name</p>
@@ -70,7 +70,7 @@ class SignupSection extends Component {
           >
             REGISTER
           </button>
-        </div>
+        </form>
       </div>
     );
   }

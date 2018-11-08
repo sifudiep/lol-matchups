@@ -12,7 +12,8 @@ const initialState = {
   searchTerm: "",
   practiceChampionSelected: [],
   opponentChampions: [],
-  jwt: localStorage.getItem("jwt")
+  jwt: localStorage.getItem("jwt"),
+  selectedLane: ""
 };
 
 function RemoveAtIndex(oldArray, index) {
@@ -125,6 +126,18 @@ const reducer = (state = initialState, action) => {
         });
     } else {
       alert("password did not match!");
+    }
+  }
+
+  if (action.type === actionVariables.ONFINDMATCHCLICK) {
+    console.log(action.payLoad);
+    if (!action.payLoad.practiceChampionSelected) {
+      alert("no practice champion selected!");
+    } else if (!action.payLoad.opponentChampions) {
+      alert("no opponent champions selected");
+    } else if (!action.payLoad.selectedLane) {
+      alert("no lane selected!");
+    } else {
     }
   }
 
