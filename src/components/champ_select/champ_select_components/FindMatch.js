@@ -9,7 +9,7 @@ class FindMatch extends React.Component {
         <button
           className="pickSection__findMatch__button"
           onClick={() => {
-            console.log(this.props.onFindMatchClick(this.props));
+            this.props.onFindMatchClick(this.props)
           }}
         >
           Find Match!

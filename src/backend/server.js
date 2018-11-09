@@ -1,11 +1,13 @@
 const loginRoutes = require("./routes/login");
 const signupRoutes = require("./routes/signup");
+const authRoutes = require("./routes/auth");
 const matchMake = require("./routes/matchMake");
-const auth = require("./routes/auth");
+const {User} = require("./models/user");
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const keys = require("./services/keys");
+
 
 mongoose
   .connect(
@@ -27,8 +29,8 @@ app.use(function(req, res, next) {
 app.use(express.json());
 app.use("/api", loginRoutes);
 app.use("/api", signupRoutes);
+app.use("/api", authRoutes);
 app.use("/api", matchMake);
-app.use("/api", auth);
 
 const port = process.env.PORT || 2000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));
