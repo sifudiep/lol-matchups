@@ -8,6 +8,62 @@ const { MatchMakingUser } = require("../models/matchMakingUser");
 const request = require("request");
 const rp = require("request-promise");
 
+function searchMatch(mMUser) {
+  return MatchMakingUser.find({
+    opponentChampions: mMUser.practiceChampionSelected
+  })
+    .then(res => {
+      let MatchedChampions = [];
+      console.log(`res.length : ${res.length}`);
+
+      if (res.length === 0) {
+        mMUser.save();
+      } else {
+        for (let i = 0; i < mMUser.opponentChampions.length; i++) {
+          for (let j = 0; j < res.length; j++) {
+            if (
+              mMUser.opponentChampions[i] === res[j].practiceChampionSelected
+            ) {
+              MatchedChampions.push(res[j]);
+            }
+          }
+        }
+        return MatchedChampions;
+      }
+    })
+    .then(res => {
+      if (res.length > 0) {
+        let MatchedPlayers = [];
+        for (let i = 0; i < res.length; i++) {
+          let rankDifference;
+          if (mMUser.rank > res[i].rank) {
+            rankDifference = mMUser.rank - res[i].rank;
+          } else {
+            rankDifference = res[i].rank - mMUser.rank;
+          }
+
+          if (rankDifference <= 15) {
+            const info = {
+              summonerName: res[i].summonerName,
+              oppponentChampion: res[i].practiceChampionSelected,
+              userChampion: mMUser.practiceChampionSelected,
+              selectedLane: mMUser.selectedLane,
+              rankedStats: `https://app.blitz.gg/lol/profile/${
+                res[i].region
+              }1/${res[i].summonerName}`
+            };
+            MatchedPlayers.push(info);
+          }
+        }
+        return MatchedPlayers;
+      }
+    })
+    .catch(err => {
+      console.log(`err: `);
+      console.log(err);
+    });
+}
+
 router.post("/matchMake", async (req, res) => {
   let verification;
   try {
@@ -35,45 +91,68 @@ router.post("/matchMake", async (req, res) => {
   const rankedSoloQ = rank.data[1];
 
   let tierInNumbers;
+  let divisionInNumbers;
 
   switch (rankedSoloQ.tier) {
     case "BRONZE":
       tierInNumbers = 0;
       break;
     case "SILVER":
-      tierInNumbers = 1;
-      break;
-    case "GOLD":
-      tierInNumbers = 2;
-      break;
-    case "PLATINUM":
-      tierInNumbers = 3;
-      break;
-    case "DIAMOND":
-      tierInNumbers = 4;
-      break;
-    case "MASTER":
       tierInNumbers = 5;
       break;
-    case "CHALLENGER":
-      tierInNumbers = 6;
+    case "GOLD":
+      tierInNumbers = 10;
       break;
+    case "PLATINUM":
+      tierInNumbers = 15;
+      break;
+    case "DIAMOND":
+      tierInNumbers = 20;
+      break;
+    case "MASTER":
+      tierInNumbers = 25;
+      break;
+    case "CHALLENGER":
+      tierInNumbers = 30;
+      break;
+  }
+
+  switch (rankedSoloQ.rank) {
+    case 5:
+      divisionInNumbers = 0;
+      break;
+    case 4:
+      divisionInNumbers = 1;
+      break;
+    case 3:
+      divisionInNumbers = 2;
+      break;
+    case 2:
+      divisionInNumbers = 3;
+      break;
+    case 1:
+      divisionInNumbers = 4;
+      break;
+  }
+
+  let finalOpponentChampions = [];
+  for (let i = 0; i < req.body.opponentChampions.length; i++) {
+    champions = req.body.opponentChampions;
+    finalOpponentChampions.push(champions[i].name);
   }
 
   const matchMakingUser = new MatchMakingUser({
     summonerName: user.summonerName,
     region: user.region,
-    rankDifference: 5,
-    division: rankedSoloQ.rank,
-    tier: tierInNumbers,
-    practiceChampionSelected: req.body.practiceChampionSelected,
-    opponentChampions: req.body.opponentChampions,
+    rank: tierInNumbers + divisionInNumbers,
+    practiceChampionSelected: req.body.practiceChampionSelected[0].name,
+    opponentChampions: finalOpponentChampions,
     selectedLane: req.body.selectedLane
   });
 
-  await matchMakingUser.save();
+  const compatibleSummoner = await searchMatch(matchMakingUser);
 
-  res.status(200).send(matchMakingUser);
+  res.status(200).send(compatibleSummoner);
 });
 
 module.exports = router;

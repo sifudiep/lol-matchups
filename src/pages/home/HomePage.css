@@ -145,17 +145,26 @@ body {
   grid-area: pickSection;
   grid-template-columns: minmax(1rem, 1fr) minmax(min-content, 10rem) minmax(min-content, 20rem) minmax(min-content, 60rem) minmax(1rem, 1.5fr);
   grid-template-rows: 8vh 21vh 4rem 39vh 8vh;
-  grid-template-areas: ". . . pickSection__searchBar ." ". pickSection__userSide__title pickSection__userSide pickSection__champSelect ." ". . . pickSection__champSelect ." ". pickSection__opponentSide__title pickSection__opponentSide pickSection__champSelect ." ". . pickSection__findMatch__button pickSection__champSelect .";
+  grid-template-areas: ". . . pickSection__searchBar ." ". pickSection__userSide__title pickSection__userSide pickSection__champSelect ." ". . pickSection__selectLane pickSection__champSelect ." ". pickSection__opponentSide__title pickSection__opponentSide pickSection__champSelect ." ". . pickSection__findMatch__button pickSection__champSelect .";
   grid-gap: 1rem;
   background-color: #232325; }
-  .pickSection__settingsOverlay {
-    grid-area: pickSection__settingsOverlay;
-    grid-row: 2 / span 1;
-    background-color: black;
-    opacity: 0.2;
-    z-index: 2; }
-    .pickSection__settingsOverlay__settings {
-      background-color: blue; }
+  .pickSection__selectLane {
+    grid-area: pickSection__selectLane;
+    display: grid; }
+    .pickSection__selectLane__button {
+      text-align: center;
+      background-color: #b28451;
+      border: none;
+      font-size: 2rem;
+      font-family: "Niramit", sans-serif;
+      box-shadow: 0.1rem 0.1rem 1rem 0 black;
+      transition: all 0.2s; }
+      .pickSection__selectLane__button:hover {
+        transform: translateY(-0.25rem);
+        box-shadow: 0.3rem 0.3rem 3rem 0 black; }
+      .pickSection__selectLane__button:active {
+        outline: none;
+        transform: translateY(0.25rem); }
   .pickSection__champSelect {
     display: grid;
     grid-area: pickSection__champSelect;

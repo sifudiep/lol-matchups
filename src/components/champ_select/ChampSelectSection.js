@@ -7,6 +7,7 @@ import OpponentSide from "./champ_select_components/OpponentSide";
 import UserSideTitle from "./champ_select_components/UserSideTitle";
 import UserSide from "./champ_select_components/UserSide";
 import FindMatch from "./champ_select_components/FindMatch";
+import SelectLane from "./champ_select_components/SelectLane";
 
 class ChampSelectSection extends Component {
   render() {
@@ -19,6 +20,7 @@ class ChampSelectSection extends Component {
         <OpponentSide />
         <UserSideTitle />
         <UserSide />
+        <SelectLane />
         <FindMatch />
       </div>
     );

@@ -13,7 +13,7 @@ const initialState = {
   practiceChampionSelected: [],
   opponentChampions: [],
   jwt: localStorage.getItem("jwt"),
-  selectedLane: "top"
+  selectedLane: "TOP"
 };
 
 function RemoveAtIndex(oldArray, index) {
@@ -91,8 +91,9 @@ const reducer = (state = initialState, action) => {
         password: action.payLoad.account.password
       })
       .then(res => {
-        const token = res.data;
+        const token = res.data.token;
         localStorage.setItem("jwt", token);
+        localStorage.setItem("summonerName", res.data.summonerName);
         window.location.href = URL.home;
       })
       .catch(err => {
@@ -102,6 +103,7 @@ const reducer = (state = initialState, action) => {
 
   if (action.type === actionVariables.ONLOGOUT) {
     localStorage.removeItem("jwt");
+    localStorage.removeItem("summonerName");
     window.location.href = URL.home;
   }
 
@@ -146,12 +148,19 @@ const reducer = (state = initialState, action) => {
           selectedLane: action.payLoad.state.selectedLane
         })
         .then(res => {
-          alert("Added to queue!");
+          console.log(res);
         })
         .catch(err => {
           alert("Log in to find a match");
         });
     }
+  }
+
+  if (action.type === actionVariables.ONCHANGELANE) {
+    return {
+      ...state,
+      selectedLane: action.payLoad.lane
+    };
   }
 
   return state;

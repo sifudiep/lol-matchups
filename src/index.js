@@ -10,6 +10,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import HomePage from "./pages/home/HomePage";
 import LoginPage from "./pages/login/LoginPage";
 import SignupPage from "./pages/signup/SignupPage";
+import UserPage from "./pages/user/UserPage";
 
 const store = createStore(rootReducer);
 
@@ -20,6 +21,7 @@ ReactDOM.render(
         <Switch>
           <Route path="/login" component={LoginPage} />
           <Route path="/signup" component={SignupPage} />
+          <Route path="/:user" components={UserPage} />
           <Route path="/" component={HomePage} />
         </Switch>
       </div>

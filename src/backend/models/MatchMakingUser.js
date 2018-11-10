@@ -9,20 +9,12 @@ const matchMakingUser = new mongoose.Schema({
     type: String,
     required: true
   },
-  rankDifference: {
-    type: Number,
-    required: true
-  },
-  division: {
-    type: Number,
-    required: true
-  },
-  tier: {
+  rank: {
     type: Number,
     required: true
   },
   practiceChampionSelected: {
-    type: Array,
+    type: String,
     required: true
   },
   opponentChampions: {
@@ -33,7 +25,6 @@ const matchMakingUser = new mongoose.Schema({
     type: String,
     required: true
   }
-
 });
 
 const MatchMakingUser = mongoose.model("MatchMakingUser", matchMakingUser);
