@@ -25,7 +25,7 @@
       ". loginSection__loginForm__accountInput ."
       ". loginSection__loginForm__passInput ."
       ". loginSection__loginForm__loginButton ."
-      ". loginSection__loginForm__signUpText ."
+      ". loginSection__loginForm__signupText ."
       ". . .";
 
     background-color: $color-background-minority;
@@ -88,8 +88,8 @@
       }
     }
 
-    &__signUpText {
-      grid-area: loginSection__loginForm__signUpText;
+    &__signupText {
+      grid-area: loginSection__loginForm__signupText;
     }
   }
 }

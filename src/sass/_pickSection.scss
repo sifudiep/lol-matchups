@@ -2,17 +2,29 @@
   display: grid;
   grid-area: pickSection;
   grid-template-columns:
-    minmax(1rem, 1fr) minmax(min-content, 3rem)
+    minmax(1rem, 1fr) minmax(min-content, 10rem)
     minmax(min-content, 20rem)
     minmax(min-content, 60rem) minmax(1rem, 1.5fr);
-  grid-template-rows: 8vh 18rem 44vh 8vh;
+  grid-template-rows: 8vh 21vh 4rem 39vh 8vh;
   grid-template-areas:
     ". . . pickSection__searchBar ."
     ". pickSection__userSide__title pickSection__userSide pickSection__champSelect ."
+    ". . . pickSection__champSelect ."
     ". pickSection__opponentSide__title pickSection__opponentSide pickSection__champSelect ."
     ". . pickSection__findMatch__button pickSection__champSelect .";
   grid-gap: 1rem;
   background-color: $color-background-majority;
+
+  &__settingsOverlay {
+    grid-area: pickSection__settingsOverlay;
+    grid-row: 2 / span 1;
+    background-color: black;
+    opacity: 0.2;
+    z-index: 2;
+    &__settings {
+      background-color: blue;
+    }
+  }
 
   &__champSelect {
     display: grid;

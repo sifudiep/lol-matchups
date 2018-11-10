@@ -1,13 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
-import _ from "lodash";
 import actionVariables from "../../../reducers/actionVariables";
 
 export class SearchBar extends React.Component {
   render() {
-    const champSearch = _.debounce((term, search) => {
+    const champSearch = (term, search) => {
       search(term);
-    }, 0);
+    };
     return (
       <div className="pickSection__searchBar">
         <input

@@ -137,18 +137,20 @@ const reducer = (state = initialState, action) => {
     } else if (action.payLoad.state.selectedLane === "") {
       alert("no lane selected!");
     } else {
-      axios.post("http://localhost:2000/api/matchMake", {
-        jwt: state.jwt,
-        practiceChampionSelected: action.payLoad.state.practiceChampionSelected,
-        opponentChampions: action.payLoad.state.opponentChampions,
-        selectedLane: action.payLoad.state.selectedLane
-      }).then(res => {
-        console.log(`res:`);
-        console.log(res);
-      }).catch(err => {
-        console.log(`err`);
-        console.log(err);
-      })
+      axios
+        .post("http://localhost:2000/api/matchMake", {
+          jwt: state.jwt,
+          practiceChampionSelected:
+            action.payLoad.state.practiceChampionSelected,
+          opponentChampions: action.payLoad.state.opponentChampions,
+          selectedLane: action.payLoad.state.selectedLane
+        })
+        .then(res => {
+          alert("Added to queue!");
+        })
+        .catch(err => {
+          alert("Log in to find a match");
+        });
     }
   }
 

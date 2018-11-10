@@ -64,11 +64,17 @@ body {
   grid-gap: 0.2rem;
   grid-area: navBar;
   grid-template-columns: minmax(1rem, 1fr) minmax(min-content, 30rem) 2fr minmax(min-content, 10rem) minmax(min-content, 10rem) minmax(min-content, 10rem) minmax(1rem, 1fr);
-  grid-template-areas: ". navBar_logo . navBar_alert navBar_login navBar_signUp .";
+  grid-template-areas: ". navBar_logo . navBar_alert navBar_login navBar_signup .";
   border-bottom-width: 0.1rem;
   border-bottom-color: black;
   border-bottom-style: solid;
   background-color: #242933; }
+  .navBar__linkStyle {
+    color: #a4a4a4; }
+    .navBar__linkStyle:focus {
+      color: #a4a4a4; }
+    .navBar__linkStyle:hover {
+      color: #b28451; }
   .navBar__logo {
     grid-area: navBar_logo;
     justify-self: center;
@@ -94,11 +100,11 @@ body {
       font-weight: bold; }
     .navBar__login__button:hover {
       background-color: #b28451; }
-  .navBar__signUp {
-    grid-area: navBar_signUp;
+  .navBar__signup {
+    grid-area: navBar_signup;
     justify-self: start;
     align-self: center; }
-    .navBar__signUp__button {
+    .navBar__signup__button {
       width: 8rem;
       height: 5rem;
       border-radius: 2px;
@@ -107,29 +113,23 @@ body {
       color: #e5e5e5;
       font-size: 1.5rem;
       font-weight: bold; }
-    .navBar__signUp__button:hover {
+    .navBar__signup__button:hover {
       background-color: #b28451;
       color: #0c3354; }
   .navBar__logout {
-    grid-area: navBar_signUp;
+    grid-area: navBar_signup;
     font-size: 3rem;
     justify-self: start;
     align-self: center; }
     .navBar__logout__glyph {
       color: #a4a4a4; }
       .navBar__logout__glyph:hover {
-        color: #b28451;
-        font-size: 3.25rem; }
+        color: #b28451; }
   .navBar__accountInfo {
     grid-area: navBar_login;
     font-size: 3rem;
     justify-self: center;
     align-self: center; }
-    .navBar__accountInfo__glyph {
-      color: #a4a4a4; }
-      .navBar__accountInfo__glyph:hover {
-        color: #b28451;
-        font-size: 3.25rem; }
   .navBar__alert {
     grid-area: navBar_alert;
     font-size: 3rem;
@@ -138,17 +138,24 @@ body {
     .navBar__alert__glyph {
       color: #a4a4a4; }
       .navBar__alert__glyph:hover {
-        color: #b28451;
-        font-size: 3.25rem; }
+        color: #b28451; }
 
 .pickSection {
   display: grid;
   grid-area: pickSection;
-  grid-template-columns: minmax(1rem, 1fr) minmax(min-content, 3rem) minmax(min-content, 20rem) minmax(min-content, 60rem) minmax(1rem, 1.5fr);
-  grid-template-rows: 8vh 18rem 44vh 8vh;
-  grid-template-areas: ". . . pickSection__searchBar ." ". pickSection__userSide__title pickSection__userSide pickSection__champSelect ." ". pickSection__opponentSide__title pickSection__opponentSide pickSection__champSelect ." ". . pickSection__findMatch__button pickSection__champSelect .";
+  grid-template-columns: minmax(1rem, 1fr) minmax(min-content, 10rem) minmax(min-content, 20rem) minmax(min-content, 60rem) minmax(1rem, 1.5fr);
+  grid-template-rows: 8vh 21vh 4rem 39vh 8vh;
+  grid-template-areas: ". . . pickSection__searchBar ." ". pickSection__userSide__title pickSection__userSide pickSection__champSelect ." ". . . pickSection__champSelect ." ". pickSection__opponentSide__title pickSection__opponentSide pickSection__champSelect ." ". . pickSection__findMatch__button pickSection__champSelect .";
   grid-gap: 1rem;
   background-color: #232325; }
+  .pickSection__settingsOverlay {
+    grid-area: pickSection__settingsOverlay;
+    grid-row: 2 / span 1;
+    background-color: black;
+    opacity: 0.2;
+    z-index: 2; }
+    .pickSection__settingsOverlay__settings {
+      background-color: blue; }
   .pickSection__champSelect {
     display: grid;
     grid-area: pickSection__champSelect;

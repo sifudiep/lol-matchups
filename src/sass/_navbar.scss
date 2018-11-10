@@ -5,12 +5,22 @@
   grid-template-columns:
     minmax(1rem, 1fr) minmax(min-content, 30rem) 2fr minmax(min-content, 10rem)
     minmax(min-content, 10rem) minmax(min-content, 10rem) minmax(1rem, 1fr);
-  grid-template-areas: ". navBar_logo . navBar_alert navBar_login navBar_signUp .";
+  grid-template-areas: ". navBar_logo . navBar_alert navBar_login navBar_signup .";
   border-bottom-width: 0.1rem;
   border-bottom-color: black;
   border-bottom-style: solid;
-
   background-color: $color-background-minority;
+
+  &__linkStyle {
+    color: $color-unhovered-item;
+    &:focus {
+      color: $color-unhovered-item;
+    }
+    &:hover {
+      color: $color-foreground-dark;
+    }
+  }
+
   &__logo {
     grid-area: navBar_logo;
     justify-self: center;
@@ -43,8 +53,8 @@
       background-color: $color-foreground-dark;
     }
   }
-  &__signUp {
-    grid-area: navBar_signUp;
+  &__signup {
+    grid-area: navBar_signup;
     justify-self: start;
     align-self: center;
     &__button {
@@ -63,7 +73,7 @@
     }
   }
   &__logout {
-    grid-area: navBar_signUp;
+    grid-area: navBar_signup;
     font-size: 3rem;
     justify-self: start;
     align-self: center;
@@ -71,7 +81,6 @@
       color: $color-unhovered-item;
       &:hover {
         color: $color-foreground-dark;
-        font-size: 3.25rem;
       }
     }
   }
@@ -81,11 +90,6 @@
     justify-self: center;
     align-self: center;
     &__glyph {
-      color: $color-unhovered-item;
-      &:hover {
-        color: $color-foreground-dark;
-        font-size: 3.25rem;
-      }
     }
   }
   &__alert {
@@ -97,7 +101,6 @@
       color: $color-unhovered-item;
       &:hover {
         color: $color-foreground-dark;
-        font-size: 3.25rem;
       }
     }
   }
