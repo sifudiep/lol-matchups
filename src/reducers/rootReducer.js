@@ -148,10 +148,12 @@ const reducer = (state = initialState, action) => {
           selectedLane: action.payLoad.state.selectedLane
         })
         .then(res => {
-          console.log(res);
+          alert("added to queue!");
         })
         .catch(err => {
-          alert("Log in to find a match");
+          alert(
+            "Not logged in or selected practice champion is already queued for you."
+          );
         });
     }
   }

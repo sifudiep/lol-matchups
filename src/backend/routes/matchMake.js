@@ -9,59 +9,68 @@ const request = require("request");
 const rp = require("request-promise");
 
 function searchMatch(mMUser) {
-  return MatchMakingUser.find({
-    opponentChampions: mMUser.practiceChampionSelected
-  })
-    .then(res => {
-      let MatchedChampions = [];
-      console.log(`res.length : ${res.length}`);
+  const isDuplicate = MatchMakingUser.findOne({
+    summonerName: mMUser.summonerName,
+    practiceChampionSelected: mMUser.practiceChampionSelected
+  });
 
-      if (res.length === 0) {
-        mMUser.save();
-      } else {
-        for (let i = 0; i < mMUser.opponentChampions.length; i++) {
-          for (let j = 0; j < res.length; j++) {
-            if (
-              mMUser.opponentChampions[i] === res[j].practiceChampionSelected
-            ) {
-              MatchedChampions.push(res[j]);
+  if (isDuplicate) {
+    return null;
+  } else {
+    return MatchMakingUser.find({
+      opponentChampions: mMUser.practiceChampionSelected
+    })
+      .then(res => {
+        let MatchedChampions = [];
+        console.log(`res.length : ${res.length}`);
+
+        if (res.length === 0) {
+          mMUser.save();
+        } else {
+          for (let i = 0; i < mMUser.opponentChampions.length; i++) {
+            for (let j = 0; j < res.length; j++) {
+              if (
+                mMUser.opponentChampions[i] === res[j].practiceChampionSelected
+              ) {
+                MatchedChampions.push(res[j]);
+              }
             }
           }
+          return MatchedChampions;
         }
-        return MatchedChampions;
-      }
-    })
-    .then(res => {
-      if (res.length > 0) {
-        let MatchedPlayers = [];
-        for (let i = 0; i < res.length; i++) {
-          let rankDifference;
-          if (mMUser.rank > res[i].rank) {
-            rankDifference = mMUser.rank - res[i].rank;
-          } else {
-            rankDifference = res[i].rank - mMUser.rank;
-          }
+      })
+      .then(res => {
+        if (res.length > 0) {
+          let MatchedPlayers = [];
+          for (let i = 0; i < res.length; i++) {
+            let rankDifference;
+            if (mMUser.rank > res[i].rank) {
+              rankDifference = mMUser.rank - res[i].rank;
+            } else {
+              rankDifference = res[i].rank - mMUser.rank;
+            }
 
-          if (rankDifference <= 15) {
-            const info = {
-              summonerName: res[i].summonerName,
-              oppponentChampion: res[i].practiceChampionSelected,
-              userChampion: mMUser.practiceChampionSelected,
-              selectedLane: mMUser.selectedLane,
-              rankedStats: `https://app.blitz.gg/lol/profile/${
-                res[i].region
-              }1/${res[i].summonerName}`
-            };
-            MatchedPlayers.push(info);
+            if (rankDifference <= 15) {
+              const info = {
+                summonerName: res[i].summonerName,
+                oppponentChampion: res[i].practiceChampionSelected,
+                userChampion: mMUser.practiceChampionSelected,
+                selectedLane: mMUser.selectedLane,
+                rankedStats: `https://app.blitz.gg/lol/profile/${
+                  res[i].region
+                }1/${res[i].summonerName}`
+              };
+              MatchedPlayers.push(info);
+            }
           }
+          return MatchedPlayers;
         }
-        return MatchedPlayers;
-      }
-    })
-    .catch(err => {
-      console.log(`err: `);
-      console.log(err);
-    });
+      })
+      .catch(err => {
+        console.log(`err: `);
+        console.log(err);
+      });
+  }
 }
 
 router.post("/matchMake", async (req, res) => {
@@ -69,7 +78,7 @@ router.post("/matchMake", async (req, res) => {
   try {
     verification = await jwt.verify(req.body.jwt, keys.JWTPrivateKey);
   } catch (err) {
-    res.status(400).send("Key has expired!");
+    res.status(401).send("Key has expired!");
   }
 
   let user = await User.findOne({ _id: verification._id });
@@ -152,7 +161,12 @@ router.post("/matchMake", async (req, res) => {
 
   const compatibleSummoner = await searchMatch(matchMakingUser);
 
-  res.status(200).send(compatibleSummoner);
+  if (compatibleSummoner) {
+    res.status(200).send(compatibleSummoner);
+  } else {
+    res.statusMessage = "Practice champion already exists in players queue";
+    res.status(400).end();
+  }
 });
 
 module.exports = router;

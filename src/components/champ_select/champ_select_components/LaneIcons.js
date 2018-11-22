@@ -6,18 +6,15 @@ import Lane from "./Lane";
 const allLanes = [
   {
     laneName: "top",
-    imgURL:
-      "https://vignette.wikia.nocookie.net/leagueoflegends/images/8/84/Top_Icon.png/revision/latest?cb=20161112025307"
+    imgURL: "https://nerf.lol/assets/images/role/top_icon.png"
   },
   {
     laneName: "mid",
-    imgURL:
-      "https://vignette.wikia.nocookie.net/leagueoflegends/images/7/70/Mid_icon.png/revision/latest?cb=20170515021433"
+    imgURL: "https://nerf.lol/assets/images/role/mid_icon.png"
   },
   {
     laneName: "adc",
-    imgURL:
-      "https://vignette.wikia.nocookie.net/leagueoflegends/images/3/32/Bot_icon.png/revision/latest?cb=20171118085356"
+    imgURL: "https://nerf.lol/assets/images/role/bottom_icon.png"
   }
 ];
 
