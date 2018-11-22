@@ -1,17 +1,18 @@
 .userSection {
   display: grid;
   grid-area: userSection;
+  grid-column-gap: 1rem;
   grid-template-rows: 10vh 70vh 10vh;
   grid-template-columns:
     minmax(min-content, 1fr)
     minmax(min-content, 10rem)
     minmax(min-content, 20rem)
-    minmax(min-content, 30rem)
-    minmax(min-content, 1fr);
+    minmax(min-content, 40rem)
+    minmax(min-content, 2fr);
   background-color: $color-background-majority;
   grid-template-areas:
     ". . . . ."
-    ". userSection__summonerName userSection__menu userSection__menuView ."
+    ". userSection__summonerName userSection__menuSelect userSection__menuView ."
     ". . . . .";
 
   &__summonerName {
@@ -28,14 +29,28 @@
     }
   }
 
-  &__menu {
-    grid-area: userSection__menu;
-  }
+  &__menuSelect {
+    grid-area: userSection__menuSelect;
+    display: grid;
+    grid-template-columns:
+      minmax(min-content, 1fr)
+      minmax(min-content, 15rem)
+      minmax(min-content, 1fr);
+    grid-template-rows:
+      minmax(min-content, 1rem)
+      minmax(min-content, 5rem)
+      minmax(min-content, 5rem)
+      minmax(min-content, 5rem)
+      minmax(min-content, 5rem)
+      minmax(min-content, 5rem);
+    grid-row-gap: 1rem;
 
+    background-color: $color-background-minority;
+    box-shadow: $boxShadow;
+  }
   &__menuView {
     grid-area: userSection__menuView;
-    &__title {
-      grid-area: userSection__menuView__title;
-    }
+    background-color: $color-background-minority;
+    box-shadow: $boxShadow;
   }
 }

@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import MenuSelect from "./user_section_components/menuSelect";
+import MenuView from "./user_section_components/menuView";
 
 class UserSection extends Component {
   render() {
@@ -9,9 +11,8 @@ class UserSection extends Component {
             {localStorage.getItem("summonerName")}
           </p>
         </div>
-        <div className="userSection__menu" />
-        <div className="userSection__menuView" />
-        <div className="userSection__menuView__title" />
+        <MenuSelect />
+        <MenuView />
       </div>
     );
   }
