@@ -85,7 +85,7 @@ body {
   grid-template-rows: 10vh 88vh 10vh;
   grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
   grid-template-areas:
-    "navBar navBar navBar navBar"
+    "navbar navbar navbar navbar"
     "pickSection pickSection pickSection pickSection"
     "footer footer footer footer";
 }
@@ -95,7 +95,7 @@ body {
   grid-template-rows: 10vh 80vh 10vh;
   grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
   grid-template-areas:
-    "navBar navBar navBar navBar"
+    "navbar navbar navbar navbar"
     "loginSection loginSection loginSection loginSection"
     "footer footer footer footer";
 }
@@ -105,7 +105,16 @@ body {
   grid-template-rows: 10vh 80vh 10vh;
   grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
   grid-template-areas:
-    "navBar navBar navBar navBar"
+    "navbar navbar navbar navbar"
     "signupSection signupSection signupSection signupSection"
     "footer footer footer footer";
+}
+
+.userPage__container {
+  display: grid;
+  grid-template-rows: 10vh 90vh;
+  grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
+  grid-template-areas:
+    "navbar navbar navbar navbar"
+    "userSection userSection userSection userSection";
 }

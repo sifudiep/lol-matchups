@@ -10,7 +10,7 @@ import AccountInfo from "./navbar_components/AccountInfo";
 import Logout from "./navbar_components/Logout";
 import Alert from "./navbar_components/Alert";
 
-class NavBar extends Component {
+class Navbar extends Component {
   state = {
     verified: false,
     user: ""
@@ -36,7 +36,7 @@ class NavBar extends Component {
   render() {
     if (this.state.verified) {
       return (
-        <div className="navBar">
+        <div className="navbar">
           <Logo />
           <Alert />
           <AccountInfo />
@@ -45,7 +45,7 @@ class NavBar extends Component {
       );
     } else {
       return (
-        <div className="navBar">
+        <div className="navbar">
           <Logo />
           <Signup />
           <Login />
@@ -61,4 +61,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(NavBar);
+export default connect(mapStateToProps)(Navbar);

@@ -4,20 +4,13 @@ import { Link } from "react-router-dom";
 class Alert extends Component {
   render() {
     return (
-      <div className="navBar__accountInfo">
-        <Link
-          to={"user/" + localStorage.getItem("summonerName")}
-          className="navBar__linkStyle"
-        >
-          <i className="fas fa-user-alt navBar__accountInfo_glyph" />
+      <div className="navbar__accountInfo">
+        <Link to="/user" className="navbar__linkStyle">
+          <i className="fas fa-user-alt navbar__accountInfo_glyph" />
         </Link>
       </div>
     );
   }
 }
-
-const mapStateToProps = state => {
-  return {};
-};
 
 export default Alert;

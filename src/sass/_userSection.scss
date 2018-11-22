@@ -1,0 +1,41 @@
+.userSection {
+  display: grid;
+  grid-area: userSection;
+  grid-template-rows: 10vh 70vh 10vh;
+  grid-template-columns:
+    minmax(min-content, 1fr)
+    minmax(min-content, 10rem)
+    minmax(min-content, 20rem)
+    minmax(min-content, 30rem)
+    minmax(min-content, 1fr);
+  background-color: $color-background-majority;
+  grid-template-areas:
+    ". . . . ."
+    ". userSection__summonerName userSection__menu userSection__menuView ."
+    ". . . . .";
+
+  &__summonerName {
+    grid-area: userSection__summonerName;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    &__text {
+      grid-area: userSection__summonerName__text;
+      font-size: 6rem;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-family: $font-special;
+    }
+  }
+
+  &__menu {
+    grid-area: userSection__menu;
+  }
+
+  &__menuView {
+    grid-area: userSection__menuView;
+    &__title {
+      grid-area: userSection__menuView__title;
+    }
+  }
+}

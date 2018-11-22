@@ -3,8 +3,8 @@ import React, { Component } from "react";
 class Alert extends Component {
   render() {
     return (
-      <div className="navBar__alert">
-        <i className="fas fa-bell navBar__alert__glyph" />
+      <div className="navbar__alert">
+        <i className="fas fa-bell navbar__alert__glyph" />
       </div>
     );
   }

@@ -1,202 +1,284 @@
 .noLinkStyle {
   text-decoration: none;
-  color: #b28451; }
-  .noLinkStyle:active {
-    color: #c69963; }
+  color: #b28451;
+}
+.noLinkStyle:active {
+  color: #c69963;
+}
 
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
-  box-sizing: inherit; }
+  box-sizing: inherit;
+}
 
 button:focus,
 a:focus,
 input:focus {
-  outline: none; }
+  outline: none;
+}
 
 html {
   box-sizing: border-box;
-  font-size: 62.5%; }
-  @media only screen and (max-width: 750px) {
-    html {
-      font-size: 50%; } }
-  @media only screen and (max-width: 550px) {
-    html {
-      font-size: 40%; } }
+  font-size: 62.5%;
+}
+@media only screen and (max-width: 750px) {
+  html {
+    font-size: 50%;
+  }
+}
+@media only screen and (max-width: 550px) {
+  html {
+    font-size: 40%;
+  }
+}
 
 body {
   font-family: "Nunito", sans-serif;
   color: #c69963;
   font-weight: 300;
   line-height: 1.6;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+}
 
 ::-webkit-scrollbar {
   width: 0.5rem;
-  background-color: #27282b; }
+  background-color: #27282b;
+}
 
 ::-webkit-scrollbar-thumb {
   background-color: #b28451;
-  border-radius: 3px; }
+  border-radius: 3px;
+}
 
 .homePage__container {
   display: grid;
   grid-template-rows: 10vh 88vh 10vh;
   grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
-  grid-template-areas: "navBar navBar navBar navBar" "pickSection pickSection pickSection pickSection" "footer footer footer footer"; }
+  grid-template-areas:
+    "navbar navbar navbar navbar"
+    "pickSection pickSection pickSection pickSection"
+    "footer footer footer footer";
+}
 
 .loginPage__container {
   display: grid;
   grid-template-rows: 10vh 80vh 10vh;
   grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
-  grid-template-areas: "navBar navBar navBar navBar" "loginSection loginSection loginSection loginSection" "footer footer footer footer"; }
+  grid-template-areas:
+    "navbar navbar navbar navbar"
+    "loginSection loginSection loginSection loginSection"
+    "footer footer footer footer";
+}
 
 .signupPage__container {
   display: grid;
   grid-template-rows: 10vh 80vh 10vh;
   grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
-  grid-template-areas: "navBar navBar navBar navBar" "signupSection signupSection signupSection signupSection" "footer footer footer footer"; }
+  grid-template-areas:
+    "navbar navbar navbar navbar"
+    "signupSection signupSection signupSection signupSection"
+    "footer footer footer footer";
+}
 
-.navBar {
+.userPage__container {
+  display: grid;
+  grid-template-rows: 10vh 90vh;
+  grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
+  grid-template-areas:
+    "navbar navbar navbar navbar"
+    "userSection userSection userSection userSection";
+}
+
+.navbar {
   display: grid;
   grid-gap: 0.2rem;
-  grid-area: navBar;
-  grid-template-columns: minmax(1rem, 1fr) minmax(min-content, 30rem) 2fr minmax(min-content, 10rem) minmax(min-content, 10rem) minmax(min-content, 10rem) minmax(1rem, 1fr);
-  grid-template-areas: ". navBar_logo . navBar_alert navBar_login navBar_signup .";
+  grid-area: navbar;
+  grid-template-columns: minmax(1rem, 1fr) minmax(min-content, 30rem) 2fr minmax(
+      min-content,
+      10rem
+    ) minmax(min-content, 10rem) minmax(min-content, 10rem) minmax(1rem, 1fr);
+  grid-template-areas: ". navbar_logo . navbar_alert navbar_login navbar_signup .";
   border-bottom-width: 0.1rem;
   border-bottom-color: black;
   border-bottom-style: solid;
-  background-color: #242933; }
-  .navBar__linkStyle {
-    color: #a4a4a4; }
-    .navBar__linkStyle:focus {
-      color: #a4a4a4; }
-    .navBar__linkStyle:hover {
-      color: #b28451; }
-  .navBar__logo {
-    grid-area: navBar_logo;
-    justify-self: center;
-    align-self: center; }
-    .navBar__logo__text {
-      font-size: 3.8rem;
-      font-family: "Niramit", sans-serif;
-      text-decoration: none;
-      color: #b28451; }
-  .navBar__login {
-    grid-area: navBar_login;
-    justify-self: end;
-    align-self: center; }
-    .navBar__login__button {
-      width: 6rem;
-      height: 5rem;
-      border-radius: 2px;
-      border-radius: 2px;
-      background-color: #e5e5e5;
-      border: 0;
-      color: #1671ac;
-      font-size: 1.5rem;
-      font-weight: bold; }
-    .navBar__login__button:hover {
-      background-color: #b28451; }
-  .navBar__signup {
-    grid-area: navBar_signup;
-    justify-self: start;
-    align-self: center; }
-    .navBar__signup__button {
-      width: 8rem;
-      height: 5rem;
-      border-radius: 2px;
-      background-color: #1671ac;
-      border: 0;
-      color: #e5e5e5;
-      font-size: 1.5rem;
-      font-weight: bold; }
-    .navBar__signup__button:hover {
-      background-color: #b28451;
-      color: #0c3354; }
-  .navBar__logout {
-    grid-area: navBar_signup;
-    font-size: 3rem;
-    justify-self: start;
-    align-self: center; }
-    .navBar__logout__glyph {
-      color: #a4a4a4; }
-      .navBar__logout__glyph:hover {
-        color: #b28451; }
-  .navBar__accountInfo {
-    grid-area: navBar_login;
-    font-size: 3rem;
-    justify-self: center;
-    align-self: center; }
-  .navBar__alert {
-    grid-area: navBar_alert;
-    font-size: 3rem;
-    justify-self: end;
-    align-self: center; }
-    .navBar__alert__glyph {
-      color: #a4a4a4; }
-      .navBar__alert__glyph:hover {
-        color: #b28451; }
+  background-color: #242933;
+}
+.navbar__linkStyle {
+  color: #a4a4a4;
+}
+.navbar__linkStyle:focus {
+  color: #a4a4a4;
+}
+.navbar__linkStyle:hover {
+  color: #b28451;
+}
+.navbar__logo {
+  grid-area: navbar_logo;
+  justify-self: center;
+  align-self: center;
+}
+.navbar__logo__text {
+  font-size: 3.8rem;
+  font-family: "Niramit", sans-serif;
+  text-decoration: none;
+  color: #b28451;
+}
+.navbar__login {
+  grid-area: navbar_login;
+  justify-self: end;
+  align-self: center;
+}
+.navbar__login__button {
+  width: 6rem;
+  height: 5rem;
+  border-radius: 2px;
+  border-radius: 2px;
+  background-color: #e5e5e5;
+  border: 0;
+  color: #1671ac;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.navbar__login__button:hover {
+  background-color: #b28451;
+}
+.navbar__signup {
+  grid-area: navbar_signup;
+  justify-self: start;
+  align-self: center;
+}
+.navbar__signup__button {
+  width: 8rem;
+  height: 5rem;
+  border-radius: 2px;
+  background-color: #1671ac;
+  border: 0;
+  color: #e5e5e5;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.navbar__signup__button:hover {
+  background-color: #b28451;
+  color: #0c3354;
+}
+.navbar__logout {
+  grid-area: navbar_signup;
+  font-size: 3rem;
+  justify-self: start;
+  align-self: center;
+}
+.navbar__logout__glyph {
+  color: #a4a4a4;
+}
+.navbar__logout__glyph:hover {
+  color: #b28451;
+}
+.navbar__accountInfo {
+  grid-area: navbar_login;
+  font-size: 3rem;
+  justify-self: center;
+  align-self: center;
+}
+.navbar__alert {
+  grid-area: navbar_alert;
+  font-size: 3rem;
+  justify-self: end;
+  align-self: center;
+}
+.navbar__alert__glyph {
+  color: #a4a4a4;
+}
+.navbar__alert__glyph:hover {
+  color: #b28451;
+}
 
 .loginSection {
   grid-area: loginSection;
   display: grid;
-  grid-template-columns: minmax(1rem, 1fr) minmax(min-content, 40rem) minmax(1rem, 1fr);
+  grid-template-columns: minmax(1rem, 1fr) minmax(min-content, 40rem) minmax(
+      1rem,
+      1fr
+    );
   grid-template-rows: 20vh 50vh 25vh;
-  grid-template-areas: ". . ." ". loginForm ." ". . .";
-  background-color: #232325; }
-  .loginSection__loginForm {
-    display: grid;
-    grid-area: loginForm;
-    grid-template-columns: minmax(1rem, 1fr) minmax(min-content, 30rem) minmax(1rem, 1fr);
-    grid-template-rows: 3vh 10vh 5vh 5vh 5vh 3vh 3vh;
-    grid-template-areas: ". . ." ". loginSection__loginForm__loginText ." ". loginSection__loginForm__accountInput ." ". loginSection__loginForm__passInput ." ". loginSection__loginForm__loginButton ." ". loginSection__loginForm__signupText ." ". . .";
-    background-color: #242933;
-    box-shadow: 0.1rem 0.1rem 1rem 0 black; }
-    .loginSection__loginForm__loginText {
-      grid-area: loginSection__loginForm__loginText;
-      text-align: center;
-      align-self: center;
-      font-size: 4rem;
-      font-family: "Niramit", sans-serif; }
-    .loginSection__loginForm__accountInput {
-      grid-area: loginSection__loginForm__accountInput;
-      font-size: 2rem;
-      border-radius: 0.5rem 0.5rem 0 0;
-      border: none;
-      border-bottom-style: solid;
-      border-bottom-width: 0.1rem;
-      border-bottom-color: grey;
-      padding-left: 1rem;
-      box-shadow: 0.1rem 0.1rem 1rem 0 black; }
-      .loginSection__loginForm__accountInput:focus {
-        outline: none; }
-    .loginSection__loginForm__passInput {
-      grid-area: loginSection__loginForm__passInput;
-      border-radius: 0 0 0.5rem 0.5rem;
-      border: none;
-      padding-left: 1rem;
-      font-size: 2rem;
-      box-shadow: 0.1rem 0.1rem 1rem 0 black; }
-      .loginSection__loginForm__passInput:focus {
-        outline: none; }
-    .loginSection__loginForm__loginButton {
-      grid-area: loginSection__loginForm__loginButton;
-      margin-top: 1rem;
-      background-color: #b28451;
-      border: 0;
-      font-size: 2rem;
-      box-shadow: 0.1rem 0.1rem 1rem 0 black;
-      border-radius: 0.5rem;
-      outline: none;
-      transition: all 0.2s; }
-      .loginSection__loginForm__loginButton:hover {
-        transform: translateY(-0.25rem);
-        box-shadow: 0.3rem 0.3rem 3rem 0 black; }
-      .loginSection__loginForm__loginButton:active {
-        outline: none;
-        transform: translateY(0.25rem); }
-    .loginSection__loginForm__signupText {
-      grid-area: loginSection__loginForm__signupText; }
+  grid-template-areas:
+    ". . ."
+    ". loginForm ."
+    ". . .";
+  background-color: #232325;
+}
+.loginSection__loginForm {
+  display: grid;
+  grid-area: loginForm;
+  grid-template-columns: minmax(1rem, 1fr) minmax(min-content, 30rem) minmax(
+      1rem,
+      1fr
+    );
+  grid-template-rows: 3vh 10vh 5vh 5vh 5vh 3vh 3vh;
+  grid-template-areas:
+    ". . ."
+    ". loginSection__loginForm__loginText ."
+    ". loginSection__loginForm__accountInput ."
+    ". loginSection__loginForm__passInput ."
+    ". loginSection__loginForm__loginButton ."
+    ". loginSection__loginForm__signupText ."
+    ". . .";
+  background-color: #242933;
+  box-shadow: 0.1rem 0.1rem 1rem 0 black;
+}
+.loginSection__loginForm__loginText {
+  grid-area: loginSection__loginForm__loginText;
+  text-align: center;
+  align-self: center;
+  font-size: 4rem;
+  font-family: "Niramit", sans-serif;
+}
+.loginSection__loginForm__accountInput {
+  grid-area: loginSection__loginForm__accountInput;
+  font-size: 2rem;
+  border-radius: 0.5rem 0.5rem 0 0;
+  border: none;
+  border-bottom-style: solid;
+  border-bottom-width: 0.1rem;
+  border-bottom-color: grey;
+  padding-left: 1rem;
+  box-shadow: 0.1rem 0.1rem 1rem 0 black;
+}
+.loginSection__loginForm__accountInput:focus {
+  outline: none;
+}
+.loginSection__loginForm__passInput {
+  grid-area: loginSection__loginForm__passInput;
+  border-radius: 0 0 0.5rem 0.5rem;
+  border: none;
+  padding-left: 1rem;
+  font-size: 2rem;
+  box-shadow: 0.1rem 0.1rem 1rem 0 black;
+}
+.loginSection__loginForm__passInput:focus {
+  outline: none;
+}
+.loginSection__loginForm__loginButton {
+  grid-area: loginSection__loginForm__loginButton;
+  margin-top: 1rem;
+  background-color: #b28451;
+  border: 0;
+  font-size: 2rem;
+  box-shadow: 0.1rem 0.1rem 1rem 0 black;
+  border-radius: 0.5rem;
+  outline: none;
+  transition: all 0.2s;
+}
+.loginSection__loginForm__loginButton:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: 0.3rem 0.3rem 3rem 0 black;
+}
+.loginSection__loginForm__loginButton:active {
+  outline: none;
+  transform: translateY(0.25rem);
+}
+.loginSection__loginForm__signupText {
+  grid-area: loginSection__loginForm__signupText;
+}

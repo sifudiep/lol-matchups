@@ -1,11 +1,11 @@
-.navBar {
+.navbar {
   display: grid;
   grid-gap: 0.2rem;
-  grid-area: navBar;
+  grid-area: navbar;
   grid-template-columns:
     minmax(1rem, 1fr) minmax(min-content, 30rem) 2fr minmax(min-content, 10rem)
     minmax(min-content, 10rem) minmax(min-content, 10rem) minmax(1rem, 1fr);
-  grid-template-areas: ". navBar_logo . navBar_alert navBar_login navBar_signup .";
+  grid-template-areas: ". navbar_logo . navbar_alert navbar_login navbar_signup .";
   border-bottom-width: 0.1rem;
   border-bottom-color: black;
   border-bottom-style: solid;
@@ -22,7 +22,7 @@
   }
 
   &__logo {
-    grid-area: navBar_logo;
+    grid-area: navbar_logo;
     justify-self: center;
     align-self: center;
     &__text {
@@ -33,7 +33,7 @@
     }
   }
   &__login {
-    grid-area: navBar_login;
+    grid-area: navbar_login;
     justify-self: end;
     align-self: center;
 
@@ -54,7 +54,7 @@
     }
   }
   &__signup {
-    grid-area: navBar_signup;
+    grid-area: navbar_signup;
     justify-self: start;
     align-self: center;
     &__button {
@@ -73,7 +73,7 @@
     }
   }
   &__logout {
-    grid-area: navBar_signup;
+    grid-area: navbar_signup;
     font-size: 3rem;
     justify-self: start;
     align-self: center;
@@ -85,7 +85,7 @@
     }
   }
   &__accountInfo {
-    grid-area: navBar_login;
+    grid-area: navbar_login;
     font-size: 3rem;
     justify-self: center;
     align-self: center;
@@ -93,7 +93,7 @@
     }
   }
   &__alert {
-    grid-area: navBar_alert;
+    grid-area: navbar_alert;
     font-size: 3rem;
     justify-self: end;
     align-self: center;

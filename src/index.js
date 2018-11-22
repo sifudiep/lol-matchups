@@ -21,7 +21,7 @@ ReactDOM.render(
         <Switch>
           <Route path="/login" component={LoginPage} />
           <Route path="/signup" component={SignupPage} />
-          <Route path="/:user" components={UserPage} />
+          <Route path="/user" component={UserPage} />
           <Route path="/" component={HomePage} />
         </Switch>
       </div>

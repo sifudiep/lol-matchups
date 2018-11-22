@@ -5,12 +5,12 @@ import actionVariables from "../../../../reducers/actionVariables";
 class Logout extends Component {
   render() {
     return (
-      <div className="navBar__logout">
+      <div className="navbar__logout">
         <i
           onClick={() => {
             this.props.onLogout();
           }}
-          className="fas fa-sign-out-alt navBar__logout__glyph"
+          className="fas fa-sign-out-alt navbar__logout__glyph"
         />
       </div>
     );
