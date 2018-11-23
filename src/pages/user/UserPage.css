@@ -151,7 +151,7 @@ body {
   grid-area: userSection;
   grid-column-gap: 1rem;
   grid-template-rows: 10vh 70vh 10vh;
-  grid-template-columns: minmax(min-content, 1fr) minmax(min-content, 10rem) minmax(min-content, 20rem) minmax(min-content, 40rem) minmax(min-content, 2fr);
+  grid-template-columns: minmax(min-content, 2.5fr) minmax(min-content, 10rem) minmax(min-content, 20rem) minmax(min-content, 40rem) minmax(min-content, 3fr);
   background-color: #232325;
   grid-template-areas: ". . . . ." ". userSection__summonerName userSection__menuSelect userSection__menuView ." ". . . . ."; }
   .userSection__summonerName {
@@ -168,11 +168,33 @@ body {
   .userSection__menuSelect {
     grid-area: userSection__menuSelect;
     display: grid;
-    grid-template-columns: minmax(min-content, 1fr) minmax(min-content, 15rem) minmax(min-content, 1fr);
-    grid-template-rows: minmax(min-content, 1rem) minmax(min-content, 5rem) minmax(min-content, 5rem) minmax(min-content, 5rem) minmax(min-content, 5rem) minmax(min-content, 5rem);
-    grid-row-gap: 1rem;
+    grid-template-rows: 2rem 50vh;
+    justify-content: center;
+    grid-template-areas: "." "userSection__menuSelect__items";
     background-color: #242933;
     box-shadow: 0.1rem 0.1rem 1rem 0 black; }
+    .userSection__menuSelect__items {
+      grid-area: userSection__menuSelect__items;
+      display: grid;
+      grid-template-columns: minmax(min-content, 18rem);
+      grid-template-rows: repeat(auto-fit, 4rem);
+      grid-row-gap: 1rem; }
+      .userSection__menuSelect__items__item {
+        box-shadow: 0.1rem 0.1rem 1rem 0 black;
+        background-color: #b28451;
+        transition: transform 0.1s 0s; }
+        .userSection__menuSelect__items__item:hover {
+          transform: translateY(-0.25rem);
+          box-shadow: 0.3rem 0.3rem 3rem 0 black; }
+        .userSection__menuSelect__items__item:active {
+          outline: none;
+          transform: translateY(0.25rem); }
+        .userSection__menuSelect__items__item__text {
+          font-size: 2rem;
+          text-align: center;
+          color: #242933;
+          font-family: "Niramit", sans-serif;
+          font-weight: bold; }
   .userSection__menuView {
     grid-area: userSection__menuView;
     background-color: #242933;

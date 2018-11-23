@@ -4,11 +4,11 @@
   grid-column-gap: 1rem;
   grid-template-rows: 10vh 70vh 10vh;
   grid-template-columns:
-    minmax(min-content, 1fr)
+    minmax(min-content, 2.5fr)
     minmax(min-content, 10rem)
     minmax(min-content, 20rem)
     minmax(min-content, 40rem)
-    minmax(min-content, 2fr);
+    minmax(min-content, 3fr);
   background-color: $color-background-majority;
   grid-template-areas:
     ". . . . ."
@@ -32,18 +32,38 @@
   &__menuSelect {
     grid-area: userSection__menuSelect;
     display: grid;
-    grid-template-columns:
-      minmax(min-content, 1fr)
-      minmax(min-content, 15rem)
-      minmax(min-content, 1fr);
-    grid-template-rows:
-      minmax(min-content, 1rem)
-      minmax(min-content, 5rem)
-      minmax(min-content, 5rem)
-      minmax(min-content, 5rem)
-      minmax(min-content, 5rem)
-      minmax(min-content, 5rem);
-    grid-row-gap: 1rem;
+    grid-template-rows: 2rem 50vh;
+    justify-content: center;
+    grid-template-areas:
+      "."
+      "userSection__menuSelect__items";
+    &__items {
+      grid-area: userSection__menuSelect__items;
+      display: grid;
+      grid-template-columns: minmax(min-content, 18rem);
+      grid-template-rows: repeat(auto-fit, 4rem);
+      grid-row-gap: 1rem;
+      &__item {
+        box-shadow: $boxShadow;
+        background-color: $color-foreground-dark;
+        transition: transform 0.1s 0s;
+        &:hover {
+          transform: translateY(-0.25rem);
+          box-shadow: $boxShadow-elevate;
+        }
+        &:active {
+          outline: none;
+          transform: translateY(0.25rem);
+        }
+        &__text {
+          font-size: 2rem;
+          text-align: center;
+          color: $color-background-minority;
+          font-family: $font-special;
+          font-weight: bold;
+        }
+      }
+    }
 
     background-color: $color-background-minority;
     box-shadow: $boxShadow;
