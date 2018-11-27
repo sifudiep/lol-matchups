@@ -9,6 +9,9 @@ class MenuSelectItem extends Component {
           className="userSection__menuSelect__items__item userSection__menuSelect__items__item__clicked"
           onClick={() => {
             this.props.clicked(this.props.itemName);
+            if (this.props.extraDispatch) {
+              this.props.extraDispatch();
+            }
           }}
         >
           <p className="userSection__menuSelect__items__item__text">
@@ -22,6 +25,9 @@ class MenuSelectItem extends Component {
           className="userSection__menuSelect__items__item"
           onClick={() => {
             this.props.clicked(this.props.itemName);
+            if (this.props.extraDispatch) {
+              this.props.extraDispatch();
+            }
           }}
         >
           <p className="userSection__menuSelect__items__item__text">

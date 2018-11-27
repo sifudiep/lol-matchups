@@ -15,6 +15,7 @@ class MenuSelect extends Component {
           <MenuSelectItem
             itemName="New Matches"
             clicked={this.props.onCHANGEMENUVIEW}
+            extraDispatch={this.props.onRETRIEVEMATCHES}
           />
           <MenuSelectItem
             itemName="Match History"
@@ -32,6 +33,11 @@ const mapDispatchToProps = dispatch => {
       dispatch({
         type: actionVariables.ONCHANGEMENUVIEW,
         payLoad: { name: view }
+      });
+    },
+    onRETRIEVEMATCHES: matches => {
+      dispatch({
+        type: actionVariables.ONRETRIEVEMATCHES
       });
     }
   };

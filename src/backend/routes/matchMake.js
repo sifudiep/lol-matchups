@@ -223,24 +223,13 @@ router.post("/matchMake", async (req, res) => {
           } else {
             console.log(`duplicate of matchmade`);
           }
+
+          if (err) {
+            console.log(`E R R O R : `);
+            console.log(err);
+          }
         }
       );
-
-      // const compatibleSummoner = await MatchMakingUser.find({
-      //   summonerName: compatibleSummoners[i].summonerName,
-      //   practiceChampionselected:
-      //     compatibleSummoners[i].practiceChampionSelected
-      // });
-
-      // compatibleSummoner.delete();
-
-      // console.log(compatibleSummoners[i]);
-      // console.log(`compatibleSummoners.rank: ${compatibleSummoners[i].rank}`);
-      // console.log(
-      //   `compatibleSummoners.practiceChampionSelected: ${
-      //     compatibleSummoners[i].practiceChampionSelected
-      //   }`
-      // );
     }
     res.status(200).send(compatibleSummoners);
   }

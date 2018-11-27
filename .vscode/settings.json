@@ -1,0 +1,7 @@
+{
+  "LineCount.excludes": [
+    "**/.vscode/**",
+    "**/node_modules/**",
+    "**/allChamps.js/**"
+  ]
+}

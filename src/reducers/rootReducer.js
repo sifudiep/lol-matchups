@@ -174,11 +174,26 @@ const reducer = (state = initialState, action) => {
   }
 
   if (action.type === actionVariables.ONCHANGEMENUVIEW) {
-    console.log(action.payLoad.name);
     return {
       ...state,
       menuView: action.payLoad.name
     };
+  }
+
+  if (action.type === actionVariables.ONRETRIEVEMATCHES) {
+    console.log(`testing onretrievematches reducer`);
+    axios
+      .get("http://localhost:2000/api/retrieveMatches", {
+        summonerName: localStorage.getItem("summonerName")
+      })
+      .then(res => {
+        console.log(`response from retrieveMatches:`);
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(`err`);
+        console.log(err);
+      });
   }
 
   return state;
