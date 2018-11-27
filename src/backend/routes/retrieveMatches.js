@@ -1,24 +1,37 @@
 const mongoose = require("mongoose");
 const express = require("express");
-const jwt = require("jsonwebtoken");
 const router = express.Router();
+const jwt = require("jsonwebtoken");
+const keys = require("../services/keys");
 const rp = require("request-promise");
 const { MatchMade } = require("../models/MatchMade");
 
-router.get("/retrieveMatches", (req, res) => {
+router.post("/retrieveMatches", async (req, res) => {
+  let verification;
+  try {
+    verification = await jwt.verify(req.body.jwt, keys.JWTPrivateKey);
+  } catch (err) {
+    res.status(401).send("Key has expired... probably");
+  }
   let matches = [];
-  console.log(req.body);
-  MatchMade.find({ summonerName: req.body.summonerName }, (err, match) => {
+  MatchMade.find({}, (err, allMatches) => {
     if (err) {
       console.log(`err`);
       console.log(err);
     } else {
-      matches.push(match);
-      console.log(`pushed a match ! :`);
-      console.log(match);
+      for (let i = 0; i < allMatches.length; i++) {
+        const match = allMatches[i];
+        if (
+          match.summonerOne.summonerName === req.body.summonerName ||
+          match.summonerTwo.summonerName === req.body.summonerName
+        ) {
+          console.log(`match: ${match}`);
+          matches.push(match);
+        }
+      }
+      res.status(200).send(matches);
     }
   });
-  res.send({ matches });
 });
 
 module.exports = router;

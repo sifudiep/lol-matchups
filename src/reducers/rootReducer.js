@@ -183,8 +183,9 @@ const reducer = (state = initialState, action) => {
   if (action.type === actionVariables.ONRETRIEVEMATCHES) {
     console.log(`testing onretrievematches reducer`);
     axios
-      .get("http://localhost:2000/api/retrieveMatches", {
-        summonerName: localStorage.getItem("summonerName")
+      .post("http://localhost:2000/api/retrieveMatches", {
+        summonerName: localStorage.getItem("summonerName"),
+        jwt: localStorage.getItem("jwt")
       })
       .then(res => {
         console.log(`response from retrieveMatches:`);
