@@ -5619,7 +5619,8 @@ allChampProperties.forEach(champ => {
     name: champ.name,
     iconURL: champ.icon,
     searchName: champ.id,
-    lane: champ.lane
+    lane: champ.lane,
+    id: champ.key
   });
 });
 

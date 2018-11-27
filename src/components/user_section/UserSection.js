@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import MenuSelect from "./user_section_components/menuSelect";
-import MenuView from "./user_section_components/menuView";
+import MenuSelect from "./user_section_components/MenuSelect";
+import MenuView from "./user_section_components/MenuView";
 
 class UserSection extends Component {
   render() {

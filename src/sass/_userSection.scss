@@ -15,6 +15,9 @@
     ". userSection__summonerName userSection__menuSelect userSection__menuView ."
     ". . . . .";
 
+  &__match {
+  }
+
   &__summonerName {
     grid-area: userSection__summonerName;
     display: flex;
@@ -27,6 +30,14 @@
       transform: rotate(180deg);
       font-family: $font-special;
     }
+  }
+
+  &__matchItem {
+    display: grid;
+    grid-template-columns:
+      minmax(min-content, 1fr)
+      minmax(min-content, 30rem)
+      minmax(min-content, 1fr);
   }
 
   &__menuSelect {
@@ -42,18 +53,21 @@
       display: grid;
       grid-template-columns: minmax(min-content, 18rem);
       grid-template-rows: repeat(auto-fit, 4rem);
-      grid-row-gap: 1rem;
+      grid-row-gap: 1.5rem;
       &__item {
         box-shadow: $boxShadow;
-        background-color: $color-foreground-dark;
+        background-color: grey;
         transition: transform 0.1s 0s;
+        outline: none;
+        border: none;
         &:hover {
-          transform: translateY(-0.25rem);
+          transform: translateY(-0.1rem);
           box-shadow: $boxShadow-elevate;
+          background-color: $color-foreground-dark;
         }
         &:active {
           outline: none;
-          transform: translateY(0.25rem);
+          transform: translateY(0.1rem);
         }
         &__text {
           font-size: 2rem;
@@ -61,6 +75,10 @@
           color: $color-background-minority;
           font-family: $font-special;
           font-weight: bold;
+        }
+
+        &__clicked {
+          background-color: $color-foreground-dark;
         }
       }
     }
@@ -72,5 +90,28 @@
     grid-area: userSection__menuView;
     background-color: $color-background-minority;
     box-shadow: $boxShadow;
+    display: grid;
+    grid-template-rows: 2rem 65vh;
+    grid-template-columns:
+      minmax(min-content, 1fr)
+      minmax(min-content, 35rem)
+      minmax(min-content, 1fr);
+    grid-template-areas:
+      ". . ."
+      ". view .";
+
+    &__accountSettings {
+      grid-area: view;
+    }
+
+    &__newMatches {
+      grid-area: view;
+      grid-template-columns: minmax(min-content, 35rem);
+      grid-template-rows: repeat(auto-fit, 6rem);
+    }
+
+    &__matchHistory {
+      grid-area: view;
+    }
   }
 }

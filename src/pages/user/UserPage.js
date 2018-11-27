@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 
 import Navbar from "../../components/reuse/navbar/Navbar";
 import UserSection from "../../components/user_section/UserSection";

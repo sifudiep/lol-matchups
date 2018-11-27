@@ -89,7 +89,7 @@ body {
       font-size: 3.8rem;
       font-family: "Niramit", sans-serif;
       text-decoration: none;
-      color: #b28451; }
+      color: #c69963; }
   .navbar__login {
     grid-area: navbar_login;
     justify-self: end;
@@ -165,6 +165,9 @@ body {
       writing-mode: vertical-rl;
       transform: rotate(180deg);
       font-family: "Niramit", sans-serif; }
+  .userSection__matchItem {
+    display: grid;
+    grid-template-columns: minmax(min-content, 1fr) minmax(min-content, 30rem) minmax(min-content, 1fr); }
   .userSection__menuSelect {
     grid-area: userSection__menuSelect;
     display: grid;
@@ -178,27 +181,44 @@ body {
       display: grid;
       grid-template-columns: minmax(min-content, 18rem);
       grid-template-rows: repeat(auto-fit, 4rem);
-      grid-row-gap: 1rem; }
+      grid-row-gap: 1.5rem; }
       .userSection__menuSelect__items__item {
         box-shadow: 0.1rem 0.1rem 1rem 0 black;
-        background-color: #b28451;
-        transition: transform 0.1s 0s; }
+        background-color: grey;
+        transition: transform 0.1s 0s;
+        outline: none;
+        border: none; }
         .userSection__menuSelect__items__item:hover {
-          transform: translateY(-0.25rem);
-          box-shadow: 0.3rem 0.3rem 3rem 0 black; }
+          transform: translateY(-0.1rem);
+          box-shadow: 0.3rem 0.3rem 3rem 0 black;
+          background-color: #b28451; }
         .userSection__menuSelect__items__item:active {
           outline: none;
-          transform: translateY(0.25rem); }
+          transform: translateY(0.1rem); }
         .userSection__menuSelect__items__item__text {
           font-size: 2rem;
           text-align: center;
           color: #242933;
           font-family: "Niramit", sans-serif;
           font-weight: bold; }
+        .userSection__menuSelect__items__item__clicked {
+          background-color: #b28451; }
   .userSection__menuView {
     grid-area: userSection__menuView;
     background-color: #242933;
-    box-shadow: 0.1rem 0.1rem 1rem 0 black; }
+    box-shadow: 0.1rem 0.1rem 1rem 0 black;
+    display: grid;
+    grid-template-rows: 2rem 65vh;
+    grid-template-columns: minmax(min-content, 1fr) minmax(min-content, 35rem) minmax(min-content, 1fr);
+    grid-template-areas: ". . ." ". view ."; }
+    .userSection__menuView__accountSettings {
+      grid-area: view; }
+    .userSection__menuView__newMatches {
+      grid-area: view;
+      grid-template-columns: minmax(min-content, 35rem);
+      grid-template-rows: repeat(auto-fit, 6rem); }
+    .userSection__menuView__matchHistory {
+      grid-area: view; }
 
 .footer {
   grid-area: footer;

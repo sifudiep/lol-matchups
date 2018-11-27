@@ -5,27 +5,30 @@ const keys = require("../services/keys");
 const jwt = require("jsonwebtoken");
 const { User, validate } = require("../models/user");
 const { MatchMakingUser } = require("../models/matchMakingUser");
+const { MatchMade } = require("../models/MatchMade");
 const request = require("request");
 const rp = require("request-promise");
 
-function searchMatch(mMUser) {
-  const isDuplicate = MatchMakingUser.findOne({
-    summonerName: mMUser.summonerName,
-    practiceChampionSelected: mMUser.practiceChampionSelected
-  });
+async function searchMatch(mMUser) {
+  let isDuplicate;
+  try {
+    isDuplicate = await MatchMakingUser.find({
+      summonerName: mMUser.summonerName,
+      practiceChampionSelected: mMUser.practiceChampionSelected
+    });
+  } catch (err) {
+    return "Duplicate";
+  }
 
-  if (isDuplicate) {
-    return null;
-  } else {
+  if (isDuplicate.length === 0) {
     return MatchMakingUser.find({
       opponentChampions: mMUser.practiceChampionSelected
     })
       .then(res => {
         let MatchedChampions = [];
-        console.log(`res.length : ${res.length}`);
-
         if (res.length === 0) {
           mMUser.save();
+          return MatchedChampions;
         } else {
           for (let i = 0; i < mMUser.opponentChampions.length; i++) {
             for (let j = 0; j < res.length; j++) {
@@ -51,25 +54,33 @@ function searchMatch(mMUser) {
             }
 
             if (rankDifference <= 15) {
-              const info = {
-                summonerName: res[i].summonerName,
-                oppponentChampion: res[i].practiceChampionSelected,
-                userChampion: mMUser.practiceChampionSelected,
-                selectedLane: mMUser.selectedLane,
-                rankedStats: `https://app.blitz.gg/lol/profile/${
-                  res[i].region
-                }1/${res[i].summonerName}`
-              };
-              MatchedPlayers.push(info);
+              if (res[i].selectedLane === mMUser.selectedLane) {
+                const info = {
+                  summonerName: res[i].summonerName,
+                  opponentChampions: res[i].opponentChampions,
+                  userChampion: res[i].practiceChampionSelected,
+                  selectedLane: res[i].selectedLane,
+                  rankedStats: `https://app.blitz.gg/lol/profile/${
+                    res[i].region
+                  }1/${res[i].summonerName}`,
+                  rank: res[i].rank,
+                  practiceChampionSelected: res[i].practiceChampionSelected
+                };
+                MatchedPlayers.push(info);
+              }
             }
           }
           return MatchedPlayers;
+        } else {
+          return "Added champion to queue.";
         }
       })
       .catch(err => {
         console.log(`err: `);
         console.log(err);
       });
+  } else {
+    return "Duplicate";
   }
 }
 
@@ -81,20 +92,36 @@ router.post("/matchMake", async (req, res) => {
     res.status(401).send("Key has expired!");
   }
 
-  let user = await User.findOne({ _id: verification._id });
+  let user;
+  try {
+    user = await User.findOne({ _id: verification._id });
+  } catch (err) {
+    res.status(400).send("Did not find user.");
+  }
 
-  let summonerJSON = await rp(
-    `https://blitz.iesdev.com/api/lolapi/euw1/accounts/name/${
-      user.summonerName
-    }?force=true`
-  );
+  let summonerJSON;
+  try {
+    summonerJSON = await rp(
+      `https://blitz.iesdev.com/api/lolapi/euw1/accounts/name/${
+        user.summonerName
+      }?force=true`
+    );
+  } catch (err) {
+    console.log(err);
+  }
 
   let summoner = JSON.parse(summonerJSON);
   let summonerID = summoner.data.id;
 
-  let rankJSON = await rp(
-    `https://blitz.iesdev.com/api/lolapi/euw1/league_positions/${summonerID}?force=true`
-  );
+  let rankJSON;
+  try {
+    rankJSON = await rp(
+      `https://blitz.iesdev.com/api/lolapi/euw1/league_positions/${summonerID}?force=true`
+    );
+  } catch (err) {
+    console.log(err);
+  }
+
   let rank = JSON.parse(rankJSON);
 
   const rankedSoloQ = rank.data[1];
@@ -159,13 +186,63 @@ router.post("/matchMake", async (req, res) => {
     selectedLane: req.body.selectedLane
   });
 
-  const compatibleSummoner = await searchMatch(matchMakingUser);
+  let compatibleSummoners;
+  try {
+    compatibleSummoners = await searchMatch(matchMakingUser);
+  } catch (err) {
+    console.log(err);
+  }
 
-  if (compatibleSummoner) {
-    res.status(200).send(compatibleSummoner);
-  } else {
-    res.statusMessage = "Practice champion already exists in players queue";
-    res.status(400).end();
+  if (Array.isArray(compatibleSummoners) && compatibleSummoners.length > 0) {
+    let matchMade;
+    for (let i = 0; i < compatibleSummoners.length; i++) {
+      matchMade = new MatchMade({
+        summonerOne: {
+          summonerName: matchMakingUser.summonerName,
+          rank: matchMakingUser.rank,
+          practiceChampionSelected: matchMakingUser.practiceChampionSelected,
+          selectedLane: matchMakingUser.selectedLane
+        },
+        summonerTwo: {
+          summonerName: compatibleSummoners[i].summonerName,
+          rank: compatibleSummoners[i].rank,
+          practiceChampionSelected:
+            compatibleSummoners[i].practiceChampionSelected,
+          selectedLane: compatibleSummoners[i].selectedLane
+        }
+      });
+
+      MatchMade.find(
+        {
+          summonerOne: matchMade.summonerOne,
+          summonerTwo: matchMade.summonerTwo
+        },
+        (err, match) => {
+          if (match.length === 0 && Array.isArray(match)) {
+            matchMade.save();
+          } else {
+            console.log(`duplicate of matchmade`);
+          }
+        }
+      );
+
+      // const compatibleSummoner = await MatchMakingUser.find({
+      //   summonerName: compatibleSummoners[i].summonerName,
+      //   practiceChampionselected:
+      //     compatibleSummoners[i].practiceChampionSelected
+      // });
+
+      // compatibleSummoner.delete();
+
+      // console.log(compatibleSummoners[i]);
+      // console.log(`compatibleSummoners.rank: ${compatibleSummoners[i].rank}`);
+      // console.log(
+      //   `compatibleSummoners.practiceChampionSelected: ${
+      //     compatibleSummoners[i].practiceChampionSelected
+      //   }`
+      // );
+    }
+    res.status(200).send(compatibleSummoners);
   }
 });
 

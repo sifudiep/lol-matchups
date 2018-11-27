@@ -13,7 +13,8 @@ const initialState = {
   practiceChampionSelected: [],
   opponentChampions: [],
   jwt: localStorage.getItem("jwt"),
-  selectedLane: "TOP"
+  selectedLane: "TOP",
+  menuView: "New Matches"
 };
 
 function RemoveAtIndex(oldArray, index) {
@@ -148,7 +149,14 @@ const reducer = (state = initialState, action) => {
           selectedLane: action.payLoad.state.selectedLane
         })
         .then(res => {
-          alert("added to queue!");
+          console.log(res);
+          if (res.data === "Duplicate") {
+            alert(
+              "Selected practice champion already exists in your matchmaking queue."
+            );
+          } else {
+            alert("added to queue!");
+          }
         })
         .catch(err => {
           alert(
@@ -162,6 +170,14 @@ const reducer = (state = initialState, action) => {
     return {
       ...state,
       selectedLane: action.payLoad.lane
+    };
+  }
+
+  if (action.type === actionVariables.ONCHANGEMENUVIEW) {
+    console.log(action.payLoad.name);
+    return {
+      ...state,
+      menuView: action.payLoad.name
     };
   }
 

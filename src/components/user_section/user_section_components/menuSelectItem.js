@@ -1,13 +1,42 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
-export default class menuSelectItem extends Component {
+class MenuSelectItem extends Component {
   render() {
-    return (
-      <div className="userSection__menuSelect__items__item">
-        <p className="userSection__menuSelect__items__item__text">
-          {this.props.itemName}
-        </p>
-      </div>
-    );
+    if (this.props.itemName === this.props.menuView) {
+      return (
+        <button
+          className="userSection__menuSelect__items__item userSection__menuSelect__items__item__clicked"
+          onClick={() => {
+            this.props.clicked(this.props.itemName);
+          }}
+        >
+          <p className="userSection__menuSelect__items__item__text">
+            {this.props.itemName}
+          </p>
+        </button>
+      );
+    } else {
+      return (
+        <button
+          className="userSection__menuSelect__items__item"
+          onClick={() => {
+            this.props.clicked(this.props.itemName);
+          }}
+        >
+          <p className="userSection__menuSelect__items__item__text">
+            {this.props.itemName}
+          </p>
+        </button>
+      );
+    }
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    menuView: state.menuView
+  };
+};
+
+export default connect(mapStateToProps)(MenuSelectItem);
