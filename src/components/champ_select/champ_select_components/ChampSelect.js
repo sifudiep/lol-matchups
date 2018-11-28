@@ -58,7 +58,7 @@ class ChampSelect extends React.Component {
     const JSXSortedChampList = sortedChampList.map(champ => {
       // returns every single object object in the array as jsx
       for (let i = 0; i < this.props.opponentChampions.length; i++) {
-        // clicked champions turn gets _picked added to their classname
+        // clicked champions turn gets --picked added to their classname
         const element = this.props.opponentChampions[i];
         if (champ.name === element.name) {
           return (

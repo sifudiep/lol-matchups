@@ -154,6 +154,10 @@ body {
   grid-template-columns: minmax(min-content, 2.5fr) minmax(min-content, 10rem) minmax(min-content, 20rem) minmax(min-content, 40rem) minmax(min-content, 3fr);
   background-color: #232325;
   grid-template-areas: ". . . . ." ". userSection__summonerName userSection__menuSelect userSection__menuView ." ". . . . ."; }
+  .userSection__match {
+    display: grid;
+    grid-template-columns: minmax(min-content, 10rem) minmax(min-content, 5rem) minmax(min-content, 10rem);
+    grid-template-rows: 15rem; }
   .userSection__summonerName {
     grid-area: userSection__summonerName;
     display: flex;

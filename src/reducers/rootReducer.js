@@ -24,7 +24,6 @@ function RemoveAtIndex(oldArray, index) {
       newArray.push(oldArray[i]);
     }
   }
-
   return newArray;
 }
 
@@ -178,23 +177,6 @@ const reducer = (state = initialState, action) => {
       ...state,
       menuView: action.payLoad.name
     };
-  }
-
-  if (action.type === actionVariables.ONRETRIEVEMATCHES) {
-    console.log(`testing onretrievematches reducer`);
-    axios
-      .post("http://localhost:2000/api/retrieveMatches", {
-        summonerName: localStorage.getItem("summonerName"),
-        jwt: localStorage.getItem("jwt")
-      })
-      .then(res => {
-        console.log(`response from retrieveMatches:`);
-        console.log(res);
-      })
-      .catch(err => {
-        console.log(`err`);
-        console.log(err);
-      });
   }
 
   return state;

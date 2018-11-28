@@ -16,6 +16,12 @@
     ". . . . .";
 
   &__match {
+    display: grid;
+    grid-template-columns:
+      minmax(min-content, 10rem)
+      minmax(min-content, 5rem)
+      minmax(min-content, 10rem);
+    grid-template-rows: 15rem;
   }
 
   &__summonerName {
