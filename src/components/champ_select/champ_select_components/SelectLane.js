@@ -10,6 +10,8 @@ class SelectLane extends Component {
   render() {
     function changeLane(lane, that) {
       switch (lane) {
+        default:
+          break;
         case "TOP":
           that.setState({ selectedLane: "MID" });
           that.props.onLaneChange("MID");

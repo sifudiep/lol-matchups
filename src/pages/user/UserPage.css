@@ -151,26 +151,28 @@ body {
   grid-area: userSection;
   grid-column-gap: 1rem;
   grid-template-rows: 10vh 70vh 10vh;
-  grid-template-columns: minmax(min-content, 2.5fr) minmax(min-content, 10rem) minmax(min-content, 20rem) minmax(min-content, 40rem) minmax(min-content, 3fr);
+  grid-template-columns: minmax(min-content, 2.5fr) minmax(min-content, 10rem) minmax(min-content, 20rem) minmax(min-content, 50rem) minmax(min-content, 3fr);
   background-color: #232325;
   grid-template-areas: ". . . . ." ". userSection__summonerName userSection__menuSelect userSection__menuView ." ". . . . ."; }
   .userSection__matchItem {
     display: grid;
-    grid-template-columns: 14rem 5rem 14rem;
+    grid-template-columns: 4rem 14rem 5rem 14rem 4rem;
     grid-template-rows: 2rem 8rem 2rem;
-    grid-template-areas: ". userSection__matchItem__lane ." "userSection__matchItem__summonerOne userSection__matchItem__versus userSection__matchItem__summonerTwo" ". . .";
+    grid-template-areas: ". . userSection__matchItem__lane . ." ". userSection__matchItem__summonerOne userSection__matchItem__versus userSection__matchItem__summonerTwo ." ". . . . .";
     background-color: #232325;
     box-shadow: 0.1rem 0.1rem 1rem 0 black; }
     .userSection__matchItem__lane {
       grid-area: userSection__matchItem__lane;
       align-self: end;
       justify-self: center;
-      font-size: 1.5rem; }
+      font-size: 1.5rem;
+      font-weight: bold; }
     .userSection__matchItem__versus {
       grid-area: userSection__matchItem__versus;
       align-self: center;
       justify-self: center;
-      font-size: 1.3rem; }
+      font-size: 1.3rem;
+      font-weight: bold; }
     .userSection__matchItem__summonerOne {
       display: grid;
       grid-area: userSection__matchItem__summonerOne;
@@ -183,11 +185,12 @@ body {
       .userSection__matchItem__summonerOne__rank {
         grid-area: userSection__matchItem__summonerOne__rank;
         writing-mode: vertical-rl;
-        font-size: 1.2rem;
+        font-size: 1.6rem;
         font-family: "Niramit", sans-serif;
         transform: rotate(180deg);
         text-align: center;
-        justify-self: end; }
+        justify-self: end;
+        font-weight: bold; }
     .userSection__matchItem__summonerTwo {
       display: grid;
       grid-area: userSection__matchItem__summonerTwo;
@@ -200,11 +203,12 @@ body {
       .userSection__matchItem__summonerTwo__rank {
         grid-area: userSection__matchItem__summonerTwo__rank;
         writing-mode: vertical-rl;
-        font-size: 1.2rem;
+        font-size: 1.6rem;
         font-family: "Niramit", sans-serif;
         transform: rotate(180deg);
         text-align: center;
-        justify-self: end; }
+        justify-self: end;
+        font-weight: bold; }
   .userSection__summonerName {
     grid-area: userSection__summonerName;
     display: flex;

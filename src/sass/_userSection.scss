@@ -1,10 +1,11 @@
 @mixin matchItem__rank {
   writing-mode: vertical-rl;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   font-family: $font-special;
   transform: rotate(180deg);
   text-align: center;
   justify-self: end;
+  font-weight: bold;
 }
 
 @mixin matchItem__championIcon {
@@ -20,7 +21,7 @@
     minmax(min-content, 2.5fr)
     minmax(min-content, 10rem)
     minmax(min-content, 20rem)
-    minmax(min-content, 40rem)
+    minmax(min-content, 50rem)
     minmax(min-content, 3fr);
   background-color: $color-background-majority;
   grid-template-areas:
@@ -30,12 +31,12 @@
 
   &__matchItem {
     display: grid;
-    grid-template-columns: 14rem 5rem 14rem;
+    grid-template-columns: 4rem 14rem 5rem 14rem 4rem;
     grid-template-rows: 2rem 8rem 2rem;
     grid-template-areas:
-      ". userSection__matchItem__lane ."
-      "userSection__matchItem__summonerOne userSection__matchItem__versus userSection__matchItem__summonerTwo"
-      ". . .";
+      ". . userSection__matchItem__lane . ."
+      ". userSection__matchItem__summonerOne userSection__matchItem__versus userSection__matchItem__summonerTwo ."
+      ". . . . .";
     background-color: $color-background-majority;
     box-shadow: $boxShadow;
 
@@ -44,6 +45,7 @@
       align-self: end;
       justify-self: center;
       font-size: 1.5rem;
+      font-weight: bold;
     }
 
     &__versus {
@@ -51,6 +53,7 @@
       align-self: center;
       justify-self: center;
       font-size: 1.3rem;
+      font-weight: bold;
     }
 
     &__summonerOne {

@@ -7,6 +7,8 @@ import NewMatchesView from "./NewMatchesView";
 class MenuView extends Component {
   render() {
     switch (this.props.menuView) {
+      default:
+        break;
       case "Account Settings":
         console.log(this.props.menuView);
         return (

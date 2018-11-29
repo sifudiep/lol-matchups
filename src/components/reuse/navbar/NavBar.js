@@ -9,26 +9,26 @@ import Login from "./navbar_components/Login";
 import AccountInfo from "./navbar_components/AccountInfo";
 import Logout from "./navbar_components/Logout";
 import Alert from "./navbar_components/Alert";
+import actionVariables from "../../../reducers/actionVariables";
 
 class Navbar extends Component {
   state = {
-    verified: "",
-    user: ""
+    verified: ""
   };
 
   componentDidMount() {
     axios
       .post("http://localhost:2000/api/auth", { jwt: this.props.jwt })
       .then(res => {
+        this.props.onVERIFY("verified");
         this.setState({
-          verified: "verified",
-          user: res.data._id
+          verified: "verified"
         });
       })
       .catch(err => {
+        this.props.onVERIFY("unverified");
         this.setState({
-          verified: "unverified",
-          user: ""
+          verified: "unverified"
         });
       });
   }
@@ -67,4 +67,17 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(Navbar);
+const mapDispatchToProps = dispatch => {
+  return {
+    onVERIFY: verified =>
+      dispatch({
+        type: actionVariables.ONVERIFY,
+        payLoad: { verified: verified }
+      })
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Navbar);

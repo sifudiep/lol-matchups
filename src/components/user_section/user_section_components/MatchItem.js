@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 
 class MatchItem extends Component {
   calculateRank(rankInput) {
@@ -20,6 +19,8 @@ class MatchItem extends Component {
     }
 
     switch (tier) {
+      default:
+        break;
       case 0:
         tier = "Bronze";
         break;
@@ -28,6 +29,7 @@ class MatchItem extends Component {
         break;
       case 2:
         tier = "Gold";
+        break;
       case 3:
         tier = "Platinum";
         break;
@@ -52,6 +54,7 @@ class MatchItem extends Component {
           <img
             className="userSection__matchItem__summonerOne__championIcon"
             src={this.props.S1_imgURL}
+            alt={this.props.S1_practiceChampionSelected}
           />
           <p className="userSection__matchItem__summonerOne__rank">
             {this.calculateRank(this.props.S1_rank)}
@@ -61,6 +64,7 @@ class MatchItem extends Component {
           <img
             className="userSection__matchItem__summonerTwo__championIcon"
             src={this.props.S2_imgURL}
+            alt={this.props.S2_practiceChampionSelected}
           />
           <p className="userSection__matchItem__summonerTwo__rank">
             {this.calculateRank(this.props.S2_rank)}
