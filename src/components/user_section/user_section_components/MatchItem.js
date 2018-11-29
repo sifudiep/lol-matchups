@@ -28,7 +28,6 @@ class MatchItem extends Component {
         break;
       case 2:
         tier = "Gold";
-        break;
       case 3:
         tier = "Platinum";
         break;
@@ -43,6 +42,12 @@ class MatchItem extends Component {
   render() {
     return (
       <div className="userSection__matchItem">
+        <p className="userSection__matchItem__lane">
+          {this.props.S1_lane === this.props.S2_lane
+            ? this.props.S1_lane
+            : "error"}
+        </p>
+        <p className="userSection__matchItem__versus">VS.</p>
         <div className="userSection__matchItem__summonerOne">
           <img
             className="userSection__matchItem__summonerOne__championIcon"
@@ -51,22 +56,14 @@ class MatchItem extends Component {
           <p className="userSection__matchItem__summonerOne__rank">
             {this.calculateRank(this.props.S1_rank)}
           </p>
-
-          <p className="userSection__matchItem__summonerOne__lane">
-            {this.props.S1_lane}
-          </p>
         </div>
         <div className="userSection__matchItem__summonerTwo">
           <img
             className="userSection__matchItem__summonerTwo__championIcon"
-            src={this.calculateRank(this.props.S2_imgURL)}
+            src={this.props.S2_imgURL}
           />
           <p className="userSection__matchItem__summonerTwo__rank">
-            {this.props.S2_rank}
-          </p>
-
-          <p className="userSection__matchItem__summonerTwo__lane">
-            {this.props.S2_lane}
+            {this.calculateRank(this.props.S2_rank)}
           </p>
         </div>
       </div>

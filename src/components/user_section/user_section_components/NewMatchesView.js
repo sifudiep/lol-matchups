@@ -14,9 +14,6 @@ class NewMatchesView extends Component {
         jwt: localStorage.getItem("jwt")
       })
       .then(res => {
-        console.log("RESPONSE OF RETRIEVEMATCHES :");
-        console.log(res);
-
         this.setState({
           matches: res.data
         });
@@ -36,21 +33,42 @@ class NewMatchesView extends Component {
       );
     } else {
       const matches = this.state.matches.map(match => {
-        return (
-          <Match
-            S1_imgURL={`http://ddragon.leagueoflegends.com/cdn/8.11.1/img/champion/${
-              match.summonerOne.practiceChampionSelected
-            }.png`}
-            S1_rank={match.summonerOne.rank}
-            S1_lane={match.summonerOne.selectedLane}
-            S2_imgURL={`http://ddragon.leagueoflegends.com/cdn/8.11.1/img/champion/${
-              match.summonerTwo.practiceChampionSelected
-            }.png`}
-            S2_rank={match.summonerTwo.rank}
-            S2_lane={match.summonerTwo.selectedLane}
-            key={match._id}
-          />
-        );
+        if (
+          match.summonerOne.summonerName ===
+          localStorage.getItem("summonerName")
+        ) {
+          return (
+            <Match
+              S1_imgURL={`http://ddragon.leagueoflegends.com/cdn/8.11.1/img/champion/${
+                match.summonerOne.practiceChampionSelected
+              }.png`}
+              S1_rank={match.summonerOne.rank}
+              S1_lane={match.summonerOne.selectedLane}
+              S2_imgURL={`http://ddragon.leagueoflegends.com/cdn/8.11.1/img/champion/${
+                match.summonerTwo.practiceChampionSelected
+              }.png`}
+              S2_rank={match.summonerTwo.rank}
+              S2_lane={match.summonerTwo.selectedLane}
+              key={match._id}
+            />
+          );
+        } else {
+          return (
+            <Match
+              S2_imgURL={`http://ddragon.leagueoflegends.com/cdn/8.11.1/img/champion/${
+                match.summonerOne.practiceChampionSelected
+              }.png`}
+              S2_rank={match.summonerOne.rank}
+              S2_lane={match.summonerOne.selectedLane}
+              S1_imgURL={`http://ddragon.leagueoflegends.com/cdn/8.11.1/img/champion/${
+                match.summonerTwo.practiceChampionSelected
+              }.png`}
+              S1_rank={match.summonerTwo.rank}
+              S1_lane={match.summonerTwo.selectedLane}
+              key={match._id}
+            />
+          );
+        }
       });
       return <div className="userSection__menuView__newMatches">{matches}</div>;
     }

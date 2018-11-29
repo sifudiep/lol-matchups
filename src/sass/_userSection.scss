@@ -1,3 +1,16 @@
+@mixin matchItem__rank {
+  writing-mode: vertical-rl;
+  font-size: 1.2rem;
+  font-family: $font-special;
+  transform: rotate(180deg);
+  text-align: center;
+  justify-self: end;
+}
+
+@mixin matchItem__championIcon {
+  width: 8rem;
+}
+
 .userSection {
   display: grid;
   grid-area: userSection;
@@ -18,48 +31,58 @@
   &__matchItem {
     display: grid;
     grid-template-columns: 14rem 5rem 14rem;
-    grid-template-rows: 2rem 6rem 2rem;
+    grid-template-rows: 2rem 8rem 2rem;
     grid-template-areas:
-      ". . ."
-      "userSection__matchItem__summonerOne . userSection__matchItem__summonerTwo"
+      ". userSection__matchItem__lane ."
+      "userSection__matchItem__summonerOne userSection__matchItem__versus userSection__matchItem__summonerTwo"
       ". . .";
     background-color: $color-background-majority;
     box-shadow: $boxShadow;
 
+    &__lane {
+      grid-area: userSection__matchItem__lane;
+      align-self: end;
+      justify-self: center;
+      font-size: 1.5rem;
+    }
+
+    &__versus {
+      grid-area: userSection__matchItem__versus;
+      align-self: center;
+      justify-self: center;
+      font-size: 1.3rem;
+    }
+
     &__summonerOne {
       display: grid;
       grid-area: userSection__matchItem__summonerOne;
-      grid-template-columns: 1rem 3rem 6rem 3rem;
+      grid-template-columns: 1rem 3rem 6rem;
       grid-column-gap: 0.2rem;
-      grid-template-areas: ". userSection__matchItem__summonerOne__rank userSection__matchItem__summonerOne__championIcon userSection__matchItem__summonerOne__lane";
+      grid-template-areas: ". userSection__matchItem__summonerOne__rank userSection__matchItem__summonerOne__championIcon";
       &__championIcon {
         grid-area: userSection__matchItem__summonerOne__championIcon;
-        width: 6rem;
+        @include matchItem__championIcon();
       }
       &__rank {
         grid-area: userSection__matchItem__summonerOne__rank;
-      }
-      &__lane {
-        grid-area: userSection__matchItem__summonerOne__lane;
+        @include matchItem__rank();
       }
     }
 
     &__summonerTwo {
       display: grid;
       grid-area: userSection__matchItem__summonerTwo;
-      grid-template-columns: 1rem 3rem 6rem 3rem;
+      grid-template-columns: 1rem 3rem 6rem;
       grid-column-gap: 0.2rem;
-      grid-template-areas: ". userSection__matchItem__summonerTwo__lane userSection__matchItem__summonerTwo__championIcon userSection__matchItem__summonerTwo__rank";
+      grid-template-areas: ". userSection__matchItem__summonerTwo__rank userSection__matchItem__summonerTwo__championIcon";
 
       &__championIcon {
         grid-area: userSection__matchItem__summonerTwo__championIcon;
-        width: 6rem;
+        @include matchItem__championIcon();
       }
       &__rank {
         grid-area: userSection__matchItem__summonerTwo__rank;
-      }
-      &__lane {
-        grid-area: userSection__matchItem__summonerTwo__lane;
+        @include matchItem__rank();
       }
     }
   }
@@ -145,8 +168,8 @@
     &__newMatches {
       grid-area: view;
       display: grid;
-      grid-template-columns: minmax(min-content, 35rem);
-      grid-template-rows: repeat(auto-fill, 10rem);
+      grid-template-columns: minmax(min-content, 35em);
+      grid-template-rows: repeat(auto-fill, 12rem);
       grid-row-gap: 2rem;
     }
 
