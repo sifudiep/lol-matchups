@@ -6,7 +6,7 @@ class MenuSelectItem extends Component {
     if (this.props.itemName === this.props.menuView) {
       return (
         <button
-          className="userSection__menuSelect__items__item userSection__menuSelect__items__item__clicked"
+          className="userSection__menuSelect__items__item userSection__menuSelect__items__item--clicked"
           onClick={() => {
             this.props.clicked(this.props.itemName);
             if (this.props.extraDispatch) {

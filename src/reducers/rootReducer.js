@@ -15,7 +15,7 @@ const initialState = {
   jwt: localStorage.getItem("jwt"),
   selectedLane: "TOP",
   menuView: "Account Settings",
-  verified: false
+  verified: ""
 };
 
 function RemoveAtIndex(oldArray, index) {
@@ -181,7 +181,6 @@ const reducer = (state = initialState, action) => {
   }
 
   if (action.type === actionVariables.ONVERIFY) {
-    console.log(`ONVERIFY PAYLAOD: ${action.payLoad.verified}`);
     return {
       ...state,
       verified: action.payLoad.verified

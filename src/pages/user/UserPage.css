@@ -158,9 +158,27 @@ body {
     display: grid;
     grid-template-columns: 4rem 14rem 5rem 14rem 4rem;
     grid-template-rows: 2rem 8rem 2rem;
-    grid-template-areas: ". . userSection__matchItem__lane . ." ". userSection__matchItem__summonerOne userSection__matchItem__versus userSection__matchItem__summonerTwo ." ". . . . .";
+    grid-template-areas: "userSection__matchItem__accept . userSection__matchItem__lane . userSection__matchItem__decline" "userSection__matchItem__accept userSection__matchItem__summonerOne userSection__matchItem__versus userSection__matchItem__summonerTwo userSection__matchItem__decline" "userSection__matchItem__accept . . . userSection__matchItem__decline";
     background-color: #232325;
     box-shadow: 0.1rem 0.1rem 1rem 0 black; }
+    .userSection__matchItem__accept {
+      grid-area: userSection__matchItem__accept;
+      border: none;
+      font-size: 2rem;
+      transition: transform 0.1s 0s;
+      background-color: #0a8300; }
+      .userSection__matchItem__accept:hover {
+        transform: scale(1.05);
+        box-shadow: 0.3rem 0.3rem 3rem 0 black; }
+    .userSection__matchItem__decline {
+      grid-area: userSection__matchItem__decline;
+      border: none;
+      font-size: 2rem;
+      transition: transform 0.1s 0s;
+      background-color: #a50606; }
+      .userSection__matchItem__decline:hover {
+        transform: scale(1.05);
+        box-shadow: 0.3rem 0.3rem 3rem 0 black; }
     .userSection__matchItem__lane {
       grid-area: userSection__matchItem__lane;
       align-self: end;
@@ -253,7 +271,7 @@ body {
           color: #242933;
           font-family: "Niramit", sans-serif;
           font-weight: bold; }
-        .userSection__menuSelect__items__item__clicked {
+        .userSection__menuSelect__items__item--clicked {
           background-color: #b28451; }
   .userSection__menuView {
     grid-area: userSection__menuView;

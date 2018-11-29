@@ -44,6 +44,12 @@ class MatchItem extends Component {
   render() {
     return (
       <div className="userSection__matchItem">
+        <button className="userSection__matchItem__accept">
+          <i class="fa fa-check" />
+        </button>
+        <button className="userSection__matchItem__decline">
+          <i class="fa fa-times" />
+        </button>
         <p className="userSection__matchItem__lane">
           {this.props.S1_lane === this.props.S2_lane
             ? this.props.S1_lane
