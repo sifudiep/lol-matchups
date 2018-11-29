@@ -15,13 +15,53 @@
     ". userSection__summonerName userSection__menuSelect userSection__menuView ."
     ". . . . .";
 
-  &__match {
+  &__matchItem {
     display: grid;
-    grid-template-columns:
-      minmax(min-content, 10rem)
-      minmax(min-content, 5rem)
-      minmax(min-content, 10rem);
-    grid-template-rows: 15rem;
+    grid-template-columns: 14rem 5rem 14rem;
+    grid-template-rows: 2rem 6rem 2rem;
+    grid-template-areas:
+      ". . ."
+      "userSection__matchItem__summonerOne . userSection__matchItem__summonerTwo"
+      ". . .";
+    background-color: $color-background-majority;
+    box-shadow: $boxShadow;
+
+    &__summonerOne {
+      display: grid;
+      grid-area: userSection__matchItem__summonerOne;
+      grid-template-columns: 1rem 3rem 6rem 3rem;
+      grid-column-gap: 0.2rem;
+      grid-template-areas: ". userSection__matchItem__summonerOne__rank userSection__matchItem__summonerOne__championIcon userSection__matchItem__summonerOne__lane";
+      &__championIcon {
+        grid-area: userSection__matchItem__summonerOne__championIcon;
+        width: 6rem;
+      }
+      &__rank {
+        grid-area: userSection__matchItem__summonerOne__rank;
+      }
+      &__lane {
+        grid-area: userSection__matchItem__summonerOne__lane;
+      }
+    }
+
+    &__summonerTwo {
+      display: grid;
+      grid-area: userSection__matchItem__summonerTwo;
+      grid-template-columns: 1rem 3rem 6rem 3rem;
+      grid-column-gap: 0.2rem;
+      grid-template-areas: ". userSection__matchItem__summonerTwo__lane userSection__matchItem__summonerTwo__championIcon userSection__matchItem__summonerTwo__rank";
+
+      &__championIcon {
+        grid-area: userSection__matchItem__summonerTwo__championIcon;
+        width: 6rem;
+      }
+      &__rank {
+        grid-area: userSection__matchItem__summonerTwo__rank;
+      }
+      &__lane {
+        grid-area: userSection__matchItem__summonerTwo__lane;
+      }
+    }
   }
 
   &__summonerName {
@@ -36,14 +76,6 @@
       transform: rotate(180deg);
       font-family: $font-special;
     }
-  }
-
-  &__matchItem {
-    display: grid;
-    grid-template-columns:
-      minmax(min-content, 1fr)
-      minmax(min-content, 30rem)
-      minmax(min-content, 1fr);
   }
 
   &__menuSelect {
@@ -112,8 +144,10 @@
 
     &__newMatches {
       grid-area: view;
+      display: grid;
       grid-template-columns: minmax(min-content, 35rem);
-      grid-template-rows: repeat(auto-fit, 6rem);
+      grid-template-rows: repeat(auto-fill, 10rem);
+      grid-row-gap: 2rem;
     }
 
     &__matchHistory {

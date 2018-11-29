@@ -14,7 +14,7 @@ const initialState = {
   opponentChampions: [],
   jwt: localStorage.getItem("jwt"),
   selectedLane: "TOP",
-  menuView: "New Matches"
+  menuView: "Account Settings"
 };
 
 function RemoveAtIndex(oldArray, index) {

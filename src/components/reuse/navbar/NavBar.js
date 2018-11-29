@@ -12,7 +12,7 @@ import Alert from "./navbar_components/Alert";
 
 class Navbar extends Component {
   state = {
-    verified: false,
+    verified: "",
     user: ""
   };
 
@@ -21,20 +21,20 @@ class Navbar extends Component {
       .post("http://localhost:2000/api/auth", { jwt: this.props.jwt })
       .then(res => {
         this.setState({
-          verified: true,
+          verified: "verified",
           user: res.data._id
         });
       })
       .catch(err => {
         this.setState({
-          verified: false,
+          verified: "unverified",
           user: ""
         });
       });
   }
 
   render() {
-    if (this.state.verified) {
+    if (this.state.verified === "verified") {
       return (
         <div className="navbar">
           <Logo />
@@ -43,12 +43,18 @@ class Navbar extends Component {
           <Logout />
         </div>
       );
-    } else {
+    } else if (this.state.verified === "unverified") {
       return (
         <div className="navbar">
           <Logo />
           <Signup />
           <Login />
+        </div>
+      );
+    } else {
+      return (
+        <div className="navbar">
+          <Logo />
         </div>
       );
     }

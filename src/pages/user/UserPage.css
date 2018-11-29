@@ -154,10 +154,39 @@ body {
   grid-template-columns: minmax(min-content, 2.5fr) minmax(min-content, 10rem) minmax(min-content, 20rem) minmax(min-content, 40rem) minmax(min-content, 3fr);
   background-color: #232325;
   grid-template-areas: ". . . . ." ". userSection__summonerName userSection__menuSelect userSection__menuView ." ". . . . ."; }
-  .userSection__match {
+  .userSection__matchItem {
     display: grid;
-    grid-template-columns: minmax(min-content, 10rem) minmax(min-content, 5rem) minmax(min-content, 10rem);
-    grid-template-rows: 15rem; }
+    grid-template-columns: 14rem 5rem 14rem;
+    grid-template-rows: 2rem 6rem 2rem;
+    grid-template-areas: ". . ." "userSection__matchItem__summonerOne . userSection__matchItem__summonerTwo" ". . .";
+    background-color: #232325;
+    box-shadow: 0.1rem 0.1rem 1rem 0 black; }
+    .userSection__matchItem__summonerOne {
+      display: grid;
+      grid-area: userSection__matchItem__summonerOne;
+      grid-template-columns: 1rem 3rem 6rem 3rem;
+      grid-column-gap: 0.2rem;
+      grid-template-areas: ". userSection__matchItem__summonerOne__rank userSection__matchItem__summonerOne__championIcon userSection__matchItem__summonerOne__lane"; }
+      .userSection__matchItem__summonerOne__championIcon {
+        grid-area: userSection__matchItem__summonerOne__championIcon;
+        width: 6rem; }
+      .userSection__matchItem__summonerOne__rank {
+        grid-area: userSection__matchItem__summonerOne__rank; }
+      .userSection__matchItem__summonerOne__lane {
+        grid-area: userSection__matchItem__summonerOne__lane; }
+    .userSection__matchItem__summonerTwo {
+      display: grid;
+      grid-area: userSection__matchItem__summonerTwo;
+      grid-template-columns: 1rem 3rem 6rem 3rem;
+      grid-column-gap: 0.2rem;
+      grid-template-areas: ". userSection__matchItem__summonerTwo__lane userSection__matchItem__summonerTwo__championIcon userSection__matchItem__summonerTwo__rank"; }
+      .userSection__matchItem__summonerTwo__championIcon {
+        grid-area: userSection__matchItem__summonerTwo__championIcon;
+        width: 6rem; }
+      .userSection__matchItem__summonerTwo__rank {
+        grid-area: userSection__matchItem__summonerTwo__rank; }
+      .userSection__matchItem__summonerTwo__lane {
+        grid-area: userSection__matchItem__summonerTwo__lane; }
   .userSection__summonerName {
     grid-area: userSection__summonerName;
     display: flex;
@@ -169,9 +198,6 @@ body {
       writing-mode: vertical-rl;
       transform: rotate(180deg);
       font-family: "Niramit", sans-serif; }
-  .userSection__matchItem {
-    display: grid;
-    grid-template-columns: minmax(min-content, 1fr) minmax(min-content, 30rem) minmax(min-content, 1fr); }
   .userSection__menuSelect {
     grid-area: userSection__menuSelect;
     display: grid;
@@ -219,8 +245,10 @@ body {
       grid-area: view; }
     .userSection__menuView__newMatches {
       grid-area: view;
+      display: grid;
       grid-template-columns: minmax(min-content, 35rem);
-      grid-template-rows: repeat(auto-fit, 6rem); }
+      grid-template-rows: repeat(auto-fill, 10rem);
+      grid-row-gap: 2rem; }
     .userSection__menuView__matchHistory {
       grid-area: view; }
 
