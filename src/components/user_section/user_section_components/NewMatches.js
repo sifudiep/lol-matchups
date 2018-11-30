@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Match from "./MatchItem";
 import axios from "axios";
 
-class NewMatchesView extends Component {
+class NewMatches extends Component {
   state = {
     matches: []
   };
@@ -77,4 +77,4 @@ class NewMatchesView extends Component {
   }
 }
 
-export default NewMatchesView;
+export default NewMatches;

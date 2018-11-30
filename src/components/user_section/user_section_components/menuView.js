@@ -1,33 +1,42 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import AccountSettingsView from "./AccountSettingsView";
-import MatchHistoryView from "./MatchHistoryView";
-import NewMatchesView from "./NewMatchesView";
+import AccountSettings from "./AccountSettings";
+import MatchHistory from "./MatchHistory";
+import NewMatches from "./NewMatches";
+import ChampQueue from "./ChampQueue";
+import USV from "./UserSectionVariables";
 
 class MenuView extends Component {
   render() {
     switch (this.props.menuView) {
       default:
         break;
-      case "Account Settings":
+      case USV.AccountSettings:
         console.log(this.props.menuView);
         return (
           <div className="userSection__menuView">
-            <AccountSettingsView />
+            <AccountSettings />
           </div>
         );
-      case "New Matches":
+      case USV.ChampionQueue:
         console.log(this.props.menuView);
         return (
           <div className="userSection__menuView">
-            <NewMatchesView />
+            <ChampQueue />
           </div>
         );
-      case "Match History":
+      case USV.NewMatches:
         console.log(this.props.menuView);
         return (
           <div className="userSection__menuView">
-            <MatchHistoryView />
+            <NewMatches />
+          </div>
+        );
+      case USV.MatchHistory:
+        console.log(this.props.menuView);
+        return (
+          <div className="userSection__menuView">
+            <MatchHistory />
           </div>
         );
     }

@@ -13,6 +13,10 @@ class MenuSelect extends Component {
             clicked={this.props.onCHANGEMENUVIEW}
           />
           <MenuSelectItem
+            itemName="Champion Queue"
+            clicked={this.props.onCHANGEMENUVIEW}
+          />
+          <MenuSelectItem
             itemName="New Matches"
             clicked={this.props.onCHANGEMENUVIEW}
             extraDispatch={this.props.onRETRIEVEMATCHES}
