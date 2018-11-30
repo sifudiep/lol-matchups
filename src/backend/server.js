@@ -3,6 +3,7 @@ const signup = require("./routes/signup");
 const auth = require("./routes/auth");
 const matchMake = require("./routes/matchMake");
 const retrieveMatches = require("./routes/retrieveMatches");
+const newMatchResponse = require("./routes/newMatchResponse");
 const { User } = require("./models/user");
 const express = require("express");
 const app = express();
@@ -32,6 +33,7 @@ app.use("/api", signup);
 app.use("/api", auth);
 app.use("/api", matchMake);
 app.use("/api", retrieveMatches);
+app.use("/api", newMatchResponse);
 
 const port = process.env.PORT || 2000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));

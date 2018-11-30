@@ -44,12 +44,14 @@ class NewMatchesView extends Component {
               }.png`}
               S1_rank={match.summonerOne.rank}
               S1_lane={match.summonerOne.selectedLane}
+              S1_status={match.summonerOne}
               S2_imgURL={`http://ddragon.leagueoflegends.com/cdn/8.11.1/img/champion/${
                 match.summonerTwo.practiceChampionSelected
               }.png`}
               S2_rank={match.summonerTwo.rank}
               S2_lane={match.summonerTwo.selectedLane}
               key={match._id}
+              matchId={match._id}
             />
           );
         } else {

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 class MatchItem extends Component {
   calculateRank(rankInput) {
@@ -41,14 +42,41 @@ class MatchItem extends Component {
     return `${tier} ${division}`;
   }
 
+  sendResponse(response, matchId) {
+    axios
+      .post("http://localhost:2000/api/newMatchResponse", {
+        response,
+        matchId,
+        summonerName: localStorage.getItem("summonerName")
+      })
+      .then(res => {
+        console.log("success!");
+        console.log(res);
+      })
+      .catch(err => {
+        console.log("failed!");
+        console.log(err);
+      });
+  }
+
   render() {
     return (
       <div className="userSection__matchItem">
-        <button className="userSection__matchItem__accept">
-          <i class="fa fa-check" />
+        <button
+          className="userSection__matchItem__accept"
+          onClick={() => {
+            this.sendResponse("true", this.props.matchId);
+          }}
+        >
+          <i className="fa fa-check" />
         </button>
-        <button className="userSection__matchItem__decline">
-          <i class="fa fa-times" />
+        <button
+          className="userSection__matchItem__decline"
+          onClick={() => {
+            this.sendResponse("false", this.props.matchId);
+          }}
+        >
+          <i className="fa fa-times" />
         </button>
         <p className="userSection__matchItem__lane">
           {this.props.S1_lane === this.props.S2_lane

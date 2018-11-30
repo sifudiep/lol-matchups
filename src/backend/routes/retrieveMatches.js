@@ -3,7 +3,6 @@ const express = require("express");
 const router = express.Router();
 const jwt = require("jsonwebtoken");
 const keys = require("../services/keys");
-const rp = require("request-promise");
 const { MatchMade } = require("../models/MatchMade");
 
 router.post("/retrieveMatches", async (req, res) => {

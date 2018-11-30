@@ -6,14 +6,14 @@ const matchMade = new mongoose.Schema({
     rank: { type: Number, required: true },
     practiceChampionSelected: { type: String, required: true },
     selectedLane: { type: String, required: true },
-    Accept: { type: Boolean, required: true, default: false }
+    accept: { type: String, required: true, default: "" }
   },
   summonerTwo: {
     summonerName: { type: String, required: true },
     rank: { type: Number, required: true },
     practiceChampionSelected: { type: String, required: true },
     selectedLane: { type: String, required: true },
-    Accept: { type: Boolean, required: true, default: false }
+    accept: { type: String, required: true, default: "" }
   }
 });
 
