@@ -189,6 +189,7 @@ router.post("/matchMake", async (req, res) => {
   let compatibleSummoners;
   try {
     compatibleSummoners = await searchMatch(matchMakingUser);
+    console.log("compatible summoner wnet throguh tho!");
   } catch (err) {
     console.log(err);
   }
@@ -196,40 +197,52 @@ router.post("/matchMake", async (req, res) => {
   if (Array.isArray(compatibleSummoners) && compatibleSummoners.length > 0) {
     let matchMade;
     for (let i = 0; i < compatibleSummoners.length; i++) {
-      matchMade = new MatchMade({
-        summonerOne: {
-          summonerName: matchMakingUser.summonerName,
-          rank: matchMakingUser.rank,
-          practiceChampionSelected: matchMakingUser.practiceChampionSelected,
-          selectedLane: matchMakingUser.selectedLane
-        },
-        summonerTwo: {
-          summonerName: compatibleSummoners[i].summonerName,
-          rank: compatibleSummoners[i].rank,
-          practiceChampionSelected:
-            compatibleSummoners[i].practiceChampionSelected,
-          selectedLane: compatibleSummoners[i].selectedLane
-        }
-      });
-
-      MatchMade.find(
-        {
-          summonerOne: matchMade.summonerOne,
-          summonerTwo: matchMade.summonerTwo
-        },
-        (err, match) => {
-          if (match.length === 0 && Array.isArray(match)) {
-            matchMade.save();
-          } else {
-            console.log(`duplicate of matchmade`);
+      if (
+        matchMakingUser.summonerName === compatibleSummoners[i].summonerName &&
+        compatibleSummoners.length === 1
+      ) {
+        matchMakingUser.save();
+      } else {
+        matchMade = new MatchMade({
+          summonerOne: {
+            summonerName: matchMakingUser.summonerName,
+            rank: matchMakingUser.rank,
+            practiceChampionSelected: matchMakingUser.practiceChampionSelected,
+            selectedLane: matchMakingUser.selectedLane,
+            accept: ""
+          },
+          summonerTwo: {
+            summonerName: compatibleSummoners[i].summonerName,
+            rank: compatibleSummoners[i].rank,
+            practiceChampionSelected:
+              compatibleSummoners[i].practiceChampionSelected,
+            selectedLane: compatibleSummoners[i].selectedLane,
+            accept: ""
           }
-
-          if (err) {
-            console.log(`E R R O R : `);
-            console.log(err);
+        });
+        MatchMade.find(
+          {
+            summonerOne: matchMade.summonerOne,
+            summonerTwo: matchMade.summonerTwo
+          },
+          (err, match) => {
+            if (match.length === 0 && Array.isArray(match)) {
+              if (
+                !matchMade.summonerOne.summonerName ===
+                matchMade.summonerTwo.summonerName
+              ) {
+                matchMade.save();
+              }
+            } else {
+              console.log(`duplicate of matchmade`);
+            }
+            if (err) {
+              console.log(`E R R O R : `);
+              console.log(err);
+            }
           }
-        }
-      );
+        );
+      }
     }
     res.status(200).send(compatibleSummoners);
   }

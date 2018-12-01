@@ -24,7 +24,6 @@ router.post("/retrieveMatches", async (req, res) => {
           match.summonerOne.summonerName === req.body.summonerName ||
           match.summonerTwo.summonerName === req.body.summonerName
         ) {
-          console.log(`match: ${match}`);
           matches.push(match);
         }
       }

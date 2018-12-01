@@ -10,10 +10,6 @@ class MenuSelect extends Component {
       <div className="userSection__menuSelect">
         <div className="userSection__menuSelect__items">
           <MenuSelectItem
-            itemName={USV.AccountSettings}
-            clicked={this.props.onCHANGEMENUVIEW}
-          />
-          <MenuSelectItem
             itemName={USV.ChampionQueue}
             clicked={this.props.onCHANGEMENUVIEW}
           />
@@ -23,7 +19,7 @@ class MenuSelect extends Component {
             extraDispatch={this.props.onRETRIEVEMATCHES}
           />
           <MenuSelectItem
-            itemName={USV.MatchHistory}
+            itemName={USV.ReadyMatches}
             clicked={this.props.onCHANGEMENUVIEW}
           />
         </div>

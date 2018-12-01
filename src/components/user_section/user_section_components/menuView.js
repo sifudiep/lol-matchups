@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import AccountSettings from "./AccountSettings";
-import MatchHistory from "./MatchHistory";
 import NewMatches from "./NewMatches";
 import ChampQueue from "./ChampQueue";
+import ReadyMatches from "./ReadyMatches";
 import USV from "./UserSectionVariables";
 
 class MenuView extends Component {
@@ -11,12 +10,6 @@ class MenuView extends Component {
     switch (this.props.menuView) {
       default:
         break;
-      case USV.AccountSettings:
-        return (
-          <div className="userSection__menuView">
-            <AccountSettings />
-          </div>
-        );
       case USV.ChampionQueue:
         return (
           <div className="userSection__menuView">
@@ -29,10 +22,10 @@ class MenuView extends Component {
             <NewMatches />
           </div>
         );
-      case USV.MatchHistory:
+      case USV.ReadyMatches:
         return (
           <div className="userSection__menuView">
-            <MatchHistory />
+            <ReadyMatches />
           </div>
         );
     }

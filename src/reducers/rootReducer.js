@@ -1,5 +1,6 @@
 import actionVariables from "./actionVariables";
 import axios from "axios";
+import USV from "../components/user_section/user_section_components/UserSectionVariables";
 
 const rootURL = "http://localhost:3000";
 const URL = {
@@ -14,7 +15,7 @@ const initialState = {
   opponentChampions: [],
   jwt: localStorage.getItem("jwt"),
   selectedLane: "TOP",
-  menuView: "Account Settings",
+  menuView: USV.ChampionQueue,
   verified: ""
 };
 
