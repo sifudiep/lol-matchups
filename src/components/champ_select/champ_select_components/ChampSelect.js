@@ -60,7 +60,10 @@ class ChampSelect extends React.Component {
       for (let i = 0; i < this.props.opponentChampions.length; i++) {
         // clicked champions turn gets --picked added to their classname
         const element = this.props.opponentChampions[i];
-        if (champ.name === element.name) {
+        if (
+          champ.name === element.name ||
+          this.props.opponentChampions.length === 8
+        ) {
           return (
             <Champ
               imgClassNick="pickSection__champSelect__img--picked"

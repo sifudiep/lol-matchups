@@ -165,20 +165,26 @@ body {
       grid-area: userSection__matchItem__accept;
       border: none;
       font-size: 2rem;
-      transition: transform 0.1s 0s;
+      transition: transform 0.2s 0s;
       background-color: #0a8300; }
       .userSection__matchItem__accept:hover {
         transform: scale(1.05);
         box-shadow: 0.3rem 0.3rem 3rem 0 black; }
+      .userSection__matchItem__accept:active {
+        transform: scale(0.95);
+        box-shadow: 0.1rem 0.1rem 1rem 0 black; }
     .userSection__matchItem__decline {
       grid-area: userSection__matchItem__decline;
       border: none;
       font-size: 2rem;
-      transition: transform 0.1s 0s;
+      transition: transform 0.2s 0s;
       background-color: #a50606; }
       .userSection__matchItem__decline:hover {
         transform: scale(1.05);
         box-shadow: 0.3rem 0.3rem 3rem 0 black; }
+      .userSection__matchItem__decline:active {
+        transform: scale(0.95);
+        box-shadow: 0.1rem 0.1rem 1rem 0 black; }
     .userSection__matchItem__lane {
       grid-area: userSection__matchItem__lane;
       align-self: end;
@@ -279,20 +285,54 @@ body {
     box-shadow: 0.1rem 0.1rem 1rem 0 black;
     display: grid;
     grid-template-rows: 2rem 65vh;
-    grid-template-columns: minmax(min-content, 1fr) minmax(min-content, 35rem) minmax(min-content, 1fr);
+    grid-template-columns: minmax(min-content, 1fr) minmax(min-content, 45rem) minmax(min-content, 1fr);
     grid-template-areas: ". . ." ". view ."; }
     .userSection__menuView__accountSettings {
       grid-area: view; }
     .userSection__menuView__newMatches {
       grid-area: view;
       display: grid;
-      grid-template-columns: minmax(min-content, 35em);
+      grid-template-columns: minmax(min-content, 35rem);
       grid-template-rows: repeat(auto-fill, 12rem);
       grid-row-gap: 2rem; }
     .userSection__menuView__matchHistory {
       grid-area: view; }
     .userSection__menuView__champQueue {
-      grid-area: view; }
+      grid-area: view;
+      display: grid;
+      grid-template-columns: minmax(min-content, 44rem);
+      grid-template-rows: repeat(auto-fill, 13rem);
+      grid-row-gap: 2rem; }
+      .userSection__menuView__champQueue__object {
+        display: grid;
+        grid-template-columns: 1rem 10rem 3rem 20rem 5rem 5rem;
+        grid-template-rows: 1rem 11rem 1rem;
+        grid-template-areas: ". . . . . userSection__menuView__champQueue__object__delete" ". userSection__menuView__champQueue__object__practiceChampionImg . userSection__menuView__champQueue__object__opponents . userSection__menuView__champQueue__object__delete" ". . . . . userSection__menuView__champQueue__object__delete";
+        background-color: #232325;
+        box-shadow: 0.1rem 0.1rem 1rem 0 black; }
+        .userSection__menuView__champQueue__object__delete {
+          grid-area: userSection__menuView__champQueue__object__delete;
+          border: none;
+          font-size: 2rem;
+          transition: transform 0.2s 0s;
+          background-color: #a50606; }
+          .userSection__menuView__champQueue__object__delete:hover {
+            transform: scale(1.05);
+            box-shadow: 0.3rem 0.3rem 3rem 0 black; }
+          .userSection__menuView__champQueue__object__delete:active {
+            transform: scale(0.95);
+            box-shadow: 0.1rem 0.1rem 1rem 0 black; }
+        .userSection__menuView__champQueue__object__practiceChampionImg {
+          grid-area: userSection__menuView__champQueue__object__practiceChampionImg;
+          width: 11rem; }
+        .userSection__menuView__champQueue__object__opponents {
+          grid-area: userSection__menuView__champQueue__object__opponents;
+          display: grid;
+          grid-template-columns: repeat(4, 5rem);
+          grid-template-rows: repeat(autofill, 4rem);
+          grid-gap: 1rem; }
+          .userSection__menuView__champQueue__object__opponents__img {
+            width: 5rem; }
 
 .footer {
   grid-area: footer;

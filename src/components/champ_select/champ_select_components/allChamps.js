@@ -679,7 +679,7 @@ const allChampProperties = [
     lane: ["top"],
     id: "chogath",
     key: "31",
-    name: "Cho'Gath",
+    name: "Chogath",
     title: "the Terror of the Void",
     tags: ["Tank", "Mage"],
     stats: {
@@ -879,7 +879,7 @@ const allChampProperties = [
     lane: ["top"],
     id: "drmundo",
     key: "36",
-    name: "Dr. Mundo",
+    name: "DrMundo",
     title: "the Madman of Zaun",
     tags: ["Fighter", "Tank"],
     stats: {

@@ -15,11 +15,15 @@
 @mixin matchItem__buttonDefaults {
   border: none;
   font-size: 2rem;
-  transition: transform 0.1s 0s;
+  transition: transform 0.2s 0s;
 
   &:hover {
     transform: scale(1.05);
     box-shadow: $boxShadow-elevate;
+  }
+  &:active {
+    transform: scale(0.95);
+    box-shadow: $boxShadow;
   }
 }
 
@@ -54,13 +58,13 @@
     &__accept {
       grid-area: userSection__matchItem__accept;
       @include matchItem__buttonDefaults();
-      background-color: #0a8300;
+      background-color: $color-accept;
     }
 
     &__decline {
       grid-area: userSection__matchItem__decline;
       @include matchItem__buttonDefaults();
-      background-color: #a50606;
+      background-color: $color-decline;
     }
 
     &__lane {
@@ -181,7 +185,7 @@
     grid-template-rows: 2rem 65vh;
     grid-template-columns:
       minmax(min-content, 1fr)
-      minmax(min-content, 35rem)
+      minmax(min-content, 45rem)
       minmax(min-content, 1fr);
     grid-template-areas:
       ". . ."
@@ -194,7 +198,7 @@
     &__newMatches {
       grid-area: view;
       display: grid;
-      grid-template-columns: minmax(min-content, 35em);
+      grid-template-columns: minmax(min-content, 35rem);
       grid-template-rows: repeat(auto-fill, 12rem);
       grid-row-gap: 2rem;
     }
@@ -205,6 +209,41 @@
 
     &__champQueue {
       grid-area: view;
+      display: grid;
+      grid-template-columns: minmax(min-content, 44rem);
+      grid-template-rows: repeat(auto-fill, 13rem);
+      grid-row-gap: 2rem;
+      &__object {
+        display: grid;
+        grid-template-columns: 1rem 10rem 3rem 20rem 5rem 5rem;
+        grid-template-rows: 1rem 11rem 1rem;
+        grid-template-areas:
+          ". . . . . userSection__menuView__champQueue__object__delete"
+          ". userSection__menuView__champQueue__object__practiceChampionImg . userSection__menuView__champQueue__object__opponents . userSection__menuView__champQueue__object__delete"
+          ". . . . . userSection__menuView__champQueue__object__delete";
+
+        background-color: $color-background-majority;
+        box-shadow: $boxShadow;
+        &__delete {
+          grid-area: userSection__menuView__champQueue__object__delete;
+          @include matchItem__buttonDefaults();
+          background-color: $color-decline;
+        }
+        &__practiceChampionImg {
+          grid-area: userSection__menuView__champQueue__object__practiceChampionImg;
+          width: 11rem;
+        }
+        &__opponents {
+          grid-area: userSection__menuView__champQueue__object__opponents;
+          display: grid;
+          grid-template-columns: repeat(4, 5rem);
+          grid-template-rows: repeat(autofill, 4rem);
+          grid-gap: 1rem;
+          &__img {
+            width: 5rem;
+          }
+        }
+      }
     }
   }
 }
