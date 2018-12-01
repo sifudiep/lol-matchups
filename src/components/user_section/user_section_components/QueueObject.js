@@ -29,7 +29,12 @@ export default class QueueObject extends Component {
           {opponentChampions}
         </div>
 
-        <button className="userSection__menuView__champQueue__object__delete">
+        <button
+          className="userSection__menuView__champQueue__object__delete"
+          onClick={() => {
+            this.props.deleteQueueObject(this.props.matchId);
+          }}
+        >
           <i className="fa fa-times" />
         </button>
       </div>

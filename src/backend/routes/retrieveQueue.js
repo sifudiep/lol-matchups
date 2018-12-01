@@ -1,8 +1,5 @@
-const mongoose = require("mongoose");
 const express = require("express");
 const router = express.Router();
-const jwt = require("jsonwebtoken");
-const keys = require("../services/keys");
 const { MatchMakingUser } = require("../models/matchMakingUser");
 
 router.post("/retrieveQueue", (req, res) => {

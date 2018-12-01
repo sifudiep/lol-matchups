@@ -12,28 +12,24 @@ class MenuView extends Component {
       default:
         break;
       case USV.AccountSettings:
-        console.log(this.props.menuView);
         return (
           <div className="userSection__menuView">
             <AccountSettings />
           </div>
         );
       case USV.ChampionQueue:
-        console.log(this.props.menuView);
         return (
           <div className="userSection__menuView">
             <ChampQueue />
           </div>
         );
       case USV.NewMatches:
-        console.log(this.props.menuView);
         return (
           <div className="userSection__menuView">
             <NewMatches />
           </div>
         );
       case USV.MatchHistory:
-        console.log(this.props.menuView);
         return (
           <div className="userSection__menuView">
             <MatchHistory />

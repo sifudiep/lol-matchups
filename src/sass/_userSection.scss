@@ -213,6 +213,9 @@
       grid-template-columns: minmax(min-content, 44rem);
       grid-template-rows: repeat(auto-fill, 13rem);
       grid-row-gap: 2rem;
+      overflow: scroll;
+      overflow-x: hidden;
+      border: none;
       &__object {
         display: grid;
         grid-template-columns: 1rem 10rem 3rem 20rem 5rem 5rem;

@@ -26,11 +26,7 @@ class NewMatches extends Component {
 
   render() {
     if (this.state.matches.length === 0) {
-      return (
-        <div className="userSection__menuView__newMatches">
-          <p>Loading...</p>
-        </div>
-      );
+      return <div className="userSection__menuView__newMatches" />;
     } else {
       const matches = this.state.matches.map(match => {
         if (

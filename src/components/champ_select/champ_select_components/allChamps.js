@@ -321,7 +321,7 @@ const allChampProperties = [
     lane: ["mid"],
     id: "aurelionsol",
     key: "136",
-    name: "Aurelion Sol",
+    name: "AurelionSol",
     title: "The Star Forger",
     tags: ["Mage", "Fighter"],
     stats: {
@@ -1476,7 +1476,7 @@ const allChampProperties = [
     lane: ["mid", "top", "adc"],
     id: "heimerdinger",
     key: "74",
-    name: "Heimerdinger",
+    name: "Heimer",
     title: "the Revered Inventor",
     tags: ["Mage", "Support"],
     stats: {
@@ -1676,7 +1676,7 @@ const allChampProperties = [
     lane: ["top"],
     id: "jarvaniv",
     key: "59",
-    name: "Jarvan IV",
+    name: "JarvanIV",
     title: "the Exemplar of Demacia",
     tags: ["Tank", "Fighter"],
     stats: {
@@ -1873,7 +1873,7 @@ const allChampProperties = [
     lane: ["adc"],
     id: "kaisa",
     key: "145",
-    name: "Kai'Sa",
+    name: "Kaisa",
     title: "Daughter of the Void",
     tags: ["Marksman"],
     stats: {
@@ -2232,7 +2232,7 @@ const allChampProperties = [
     lane: [],
     id: "khazix",
     key: "121",
-    name: "Kha'Zix",
+    name: "Khazix",
     title: "the Voidreaver",
     tags: ["Assassin", "Fighter"],
     stats: {
@@ -2351,7 +2351,7 @@ const allChampProperties = [
     lane: ["adc"],
     id: "kogmaw",
     key: "96",
-    name: "Kog'Maw",
+    name: "KogMaw",
     title: "the Mouth of the Abyss",
     tags: ["Marksman", "Mage"],
     stats: {
@@ -2431,7 +2431,7 @@ const allChampProperties = [
     lane: [],
     id: "leesin",
     key: "64",
-    name: "Lee Sin",
+    name: "LeeSin",
     title: "the Blind Monk",
     tags: ["Fighter", "Assassin"],
     stats: {
@@ -2789,7 +2789,7 @@ const allChampProperties = [
     lane: [],
     id: "masteryi",
     key: "11",
-    name: "Master Yi",
+    name: "MasterYi",
     title: "the Wuju Bladesman",
     tags: ["Assassin", "Fighter"],
     stats: {
@@ -2829,7 +2829,7 @@ const allChampProperties = [
     lane: ["adc"],
     id: "missfortune",
     key: "21",
-    name: "Miss Fortune",
+    name: "MissFortune",
     title: "the Bounty Hunter",
     tags: ["Marksman"],
     stats: {
@@ -3584,7 +3584,7 @@ const allChampProperties = [
     lane: [],
     id: "reksai",
     key: "421",
-    name: "Rek'Sai",
+    name: "RekSai",
     title: "the Void Burrower",
     tags: ["Fighter"],
     stats: {
@@ -4300,7 +4300,7 @@ const allChampProperties = [
     lane: ["top"],
     id: "tahmkench",
     key: "223",
-    name: "Tahm Kench",
+    name: "TahmKench",
     title: "the River King",
     tags: ["Support", "Tank"],
     stats: {
@@ -4660,7 +4660,7 @@ const allChampProperties = [
     lane: ["mid"],
     id: "twistedfate",
     key: "4",
-    name: "Twisted Fate",
+    name: "TwistedFate",
     title: "the Card Master",
     tags: ["Mage"],
     stats: {
@@ -5258,7 +5258,7 @@ const allChampProperties = [
     lane: [],
     id: "xinzhao",
     key: "5",
-    name: "Xin Zhao",
+    name: "XinZhao",
     title: "the Seneschal of Demacia",
     tags: ["Fighter", "Assassin"],
     stats: {
