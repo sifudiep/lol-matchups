@@ -64,6 +64,7 @@ class NewMatches extends Component {
               S1_rank={match.summonerTwo.rank}
               S1_lane={match.summonerTwo.selectedLane}
               key={match._id}
+              matchId={match._id}
             />
           );
         }

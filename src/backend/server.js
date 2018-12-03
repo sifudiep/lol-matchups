@@ -6,6 +6,7 @@ const retrieveMatches = require("./routes/retrieveMatches");
 const newMatchResponse = require("./routes/newMatchResponse");
 const retrieveQueue = require("./routes/retrieveQueue");
 const deleteChampQueueObject = require("./routes/deleteChampQueueObject");
+const retrieveReadyMatches = require("./routes/retrieveReadyMatches");
 const { User } = require("./models/user");
 const express = require("express");
 const app = express();
@@ -38,6 +39,7 @@ app.use("/api", retrieveMatches);
 app.use("/api", newMatchResponse);
 app.use("/api", retrieveQueue);
 app.use("/api", deleteChampQueueObject);
+app.use("/api", retrieveReadyMatches);
 
 const port = process.env.PORT || 2000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));

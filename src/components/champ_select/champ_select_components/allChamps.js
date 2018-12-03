@@ -1476,7 +1476,7 @@ const allChampProperties = [
     lane: ["mid", "top", "adc"],
     id: "heimerdinger",
     key: "74",
-    name: "Heimer",
+    name: "Heimerdinger",
     title: "the Revered Inventor",
     tags: ["Mage", "Support"],
     stats: {
@@ -2391,7 +2391,7 @@ const allChampProperties = [
     lane: ["mid"],
     id: "leblanc",
     key: "7",
-    name: "LeBlanc",
+    name: "Leblanc",
     title: "the Deceiver",
     tags: ["Assassin", "Mage"],
     stats: {

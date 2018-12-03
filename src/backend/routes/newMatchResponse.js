@@ -8,7 +8,6 @@ router.post("/newMatchResponse", async (req, res) => {
   console.log(req.body);
   MatchMade.findById(req.body.matchId, (err, match) => {
     if (err) return err;
-
     if (match.summonerOne.summonerName === req.body.summonerName) {
       if (
         match.summonerTwo.accept === "false" ||

@@ -8,6 +8,7 @@ const { MatchMakingUser } = require("../models/matchMakingUser");
 const { MatchMade } = require("../models/MatchMade");
 const request = require("request");
 const rp = require("request-promise");
+const MS = require("../services/MessageStrings");
 
 async function searchMatch(mMUser) {
   let isDuplicate;
@@ -17,7 +18,7 @@ async function searchMatch(mMUser) {
       practiceChampionSelected: mMUser.practiceChampionSelected
     });
   } catch (err) {
-    return "Duplicate";
+    return MS.Duplicate;
   }
 
   if (isDuplicate.length === 0) {
@@ -28,7 +29,7 @@ async function searchMatch(mMUser) {
         let MatchedChampions = [];
         if (res.length === 0) {
           mMUser.save();
-          return MatchedChampions;
+          return MS.AddedToQueue;
         } else {
           for (let i = 0; i < mMUser.opponentChampions.length; i++) {
             for (let j = 0; j < res.length; j++) {
@@ -43,7 +44,9 @@ async function searchMatch(mMUser) {
         }
       })
       .then(res => {
-        if (res.length > 0) {
+        if (res === MS.AddedToQueue) {
+          return MS.AddedToQueue;
+        } else {
           let MatchedPlayers = [];
           for (let i = 0; i < res.length; i++) {
             let rankDifference;
@@ -71,8 +74,6 @@ async function searchMatch(mMUser) {
             }
           }
           return MatchedPlayers;
-        } else {
-          return "Added champion to queue.";
         }
       })
       .catch(err => {
@@ -80,7 +81,7 @@ async function searchMatch(mMUser) {
         console.log(err);
       });
   } else {
-    return "Duplicate";
+    return MS.Duplicate;
   }
 }
 
@@ -189,18 +190,27 @@ router.post("/matchMake", async (req, res) => {
   let compatibleSummoners;
   try {
     compatibleSummoners = await searchMatch(matchMakingUser);
-    console.log("compatible summoner wnet throguh tho!");
   } catch (err) {
     console.log(err);
   }
 
+  let matchMade;
+
+  if (compatibleSummoners === MS.Duplicate) {
+    res.status(200).send(MS.Duplicate);
+  }
+
+  if (compatibleSummoners === MS.AddedToQueue) {
+    res.status(200).send(MS.AddedToQueue);
+  }
+
   if (Array.isArray(compatibleSummoners) && compatibleSummoners.length > 0) {
-    let matchMade;
     for (let i = 0; i < compatibleSummoners.length; i++) {
       if (
         matchMakingUser.summonerName === compatibleSummoners[i].summonerName &&
         compatibleSummoners.length === 1
       ) {
+        res.status(200).send(MS.AddedToQueue);
         matchMakingUser.save();
       } else {
         matchMade = new MatchMade({
@@ -209,7 +219,7 @@ router.post("/matchMake", async (req, res) => {
             rank: matchMakingUser.rank,
             practiceChampionSelected: matchMakingUser.practiceChampionSelected,
             selectedLane: matchMakingUser.selectedLane,
-            accept: ""
+            accept: "undefined"
           },
           summonerTwo: {
             summonerName: compatibleSummoners[i].summonerName,
@@ -217,9 +227,10 @@ router.post("/matchMake", async (req, res) => {
             practiceChampionSelected:
               compatibleSummoners[i].practiceChampionSelected,
             selectedLane: compatibleSummoners[i].selectedLane,
-            accept: ""
+            accept: "undefined"
           }
         });
+        console.log(matchMade);
         MatchMade.find(
           {
             summonerOne: matchMade.summonerOne,
@@ -228,8 +239,10 @@ router.post("/matchMake", async (req, res) => {
           (err, match) => {
             if (match.length === 0 && Array.isArray(match)) {
               if (
-                !matchMade.summonerOne.summonerName ===
-                matchMade.summonerTwo.summonerName
+                !(
+                  matchMade.summonerOne.summonerName ===
+                  matchMade.summonerTwo.summonerName
+                )
               ) {
                 matchMade.save();
               }

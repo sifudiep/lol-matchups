@@ -13,7 +13,7 @@ const matchMade = new mongoose.Schema({
     rank: { type: Number, required: true },
     practiceChampionSelected: { type: String, required: true },
     selectedLane: { type: String, required: true },
-    accept: { type: String }
+    accept: { type: String, required: true, default: "undefined" }
   }
 });
 

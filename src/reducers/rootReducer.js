@@ -1,6 +1,7 @@
 import actionVariables from "./actionVariables";
 import axios from "axios";
 import USV from "../components/user_section/user_section_components/UserSectionVariables";
+import MS from "../backend/services/MessageStrings";
 
 const rootURL = "http://localhost:3000";
 const URL = {
@@ -138,8 +139,6 @@ const reducer = (state = initialState, action) => {
       alert("no practice champion selected!");
     } else if (action.payLoad.state.opponentChampions.length === 0) {
       alert("no opponent champions selected");
-    } else if (action.payLoad.state.selectedLane === "") {
-      alert("no lane selected!");
     } else {
       axios
         .post("http://localhost:2000/api/matchMake", {
@@ -150,19 +149,20 @@ const reducer = (state = initialState, action) => {
           selectedLane: action.payLoad.state.selectedLane
         })
         .then(res => {
-          console.log(res);
-          if (res.data === "Duplicate") {
+          if (res.data === MS.Duplicate) {
             alert(
               "Selected practice champion already exists in your matchmaking queue."
             );
-          } else {
+          }
+          if (res.data === MS.AddedToQueue) {
             alert("added to queue!");
+          }
+          if (res.data === MS.FoundMatch) {
+            alert("Found Match!");
           }
         })
         .catch(err => {
-          alert(
-            "Not logged in or selected practice champion is already queued for you."
-          );
+          alert("Not logged in");
         });
     }
   }
