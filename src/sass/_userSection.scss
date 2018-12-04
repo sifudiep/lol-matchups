@@ -8,6 +8,16 @@
   font-weight: bold;
 }
 
+@mixin matchItem__name {
+  writing-mode: vertical-rl;
+  font-size: 2rem;
+  font-family: $font-special;
+  transform: rotate(180deg);
+  text-align: center;
+  justify-self: end;
+  font-weight: bold;
+}
+
 @mixin matchItem__championIcon {
   width: 8rem;
 }
@@ -25,6 +35,12 @@
     transform: scale(0.95);
     box-shadow: $boxShadow;
   }
+}
+
+@mixin matchItem__buttonDefaults--noAnimation {
+  border: none;
+  font-size: 2rem;
+  transition: transform 0.2s 0s;
 }
 
 .userSection {
@@ -61,10 +77,28 @@
       background-color: $color-accept;
     }
 
+    &__accept--noAnimation {
+      grid-area: userSection__matchItem__accept;
+      @include matchItem__buttonDefaults--noAnimation();
+      background-color: $color-accept;
+    }
+
     &__decline {
       grid-area: userSection__matchItem__decline;
       @include matchItem__buttonDefaults();
       background-color: $color-decline;
+    }
+
+    &__pending {
+      grid-area: userSection__matchItem__decline;
+      @include matchItem__buttonDefaults--noAnimation();
+      background-color: $color-pending;
+    }
+
+    &__enemyAccept {
+      grid-area: userSection__matchItem__decline;
+      @include matchItem__buttonDefaults--noAnimation();
+      background-color: $color-accept;
     }
 
     &__lane {
@@ -97,6 +131,10 @@
         grid-area: userSection__matchItem__summonerOne__rank;
         @include matchItem__rank();
       }
+      &__name {
+        grid-area: userSection__matchItem__summonerOne__rank;
+        @include matchItem__name();
+      }
     }
 
     &__summonerTwo {
@@ -113,6 +151,10 @@
       &__rank {
         grid-area: userSection__matchItem__summonerTwo__rank;
         @include matchItem__rank();
+      }
+      &__name {
+        grid-area: userSection__matchItem__summonerTwo__rank;
+        @include matchItem__name();
       }
     }
   }
@@ -255,8 +297,6 @@
       grid-row-gap: 2rem;
       overflow: scroll;
       overflow-x: hidden;
-      &__object {
-      }
     }
   }
 }

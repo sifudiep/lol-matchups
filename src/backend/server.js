@@ -13,6 +13,8 @@ const app = express();
 const mongoose = require("mongoose");
 const keys = require("./services/keys");
 
+require("./prod")(app);
+
 mongoose
   .connect(
     "mongodb://sifudiep:t3mppass@ds247223.mlab.com:47223/lol-matchups-users",

@@ -173,6 +173,12 @@ body {
       .userSection__matchItem__accept:active {
         transform: scale(0.95);
         box-shadow: 0.1rem 0.1rem 1rem 0 black; }
+    .userSection__matchItem__accept--noAnimation {
+      grid-area: userSection__matchItem__accept;
+      border: none;
+      font-size: 2rem;
+      transition: transform 0.2s 0s;
+      background-color: #0a8300; }
     .userSection__matchItem__decline {
       grid-area: userSection__matchItem__decline;
       border: none;
@@ -185,6 +191,18 @@ body {
       .userSection__matchItem__decline:active {
         transform: scale(0.95);
         box-shadow: 0.1rem 0.1rem 1rem 0 black; }
+    .userSection__matchItem__pending {
+      grid-area: userSection__matchItem__decline;
+      border: none;
+      font-size: 2rem;
+      transition: transform 0.2s 0s;
+      background-color: #555555; }
+    .userSection__matchItem__enemyAccept {
+      grid-area: userSection__matchItem__decline;
+      border: none;
+      font-size: 2rem;
+      transition: transform 0.2s 0s;
+      background-color: #0a8300; }
     .userSection__matchItem__lane {
       grid-area: userSection__matchItem__lane;
       align-self: end;
@@ -215,6 +233,15 @@ body {
         text-align: center;
         justify-self: end;
         font-weight: bold; }
+      .userSection__matchItem__summonerOne__name {
+        grid-area: userSection__matchItem__summonerOne__rank;
+        writing-mode: vertical-rl;
+        font-size: 2rem;
+        font-family: "Niramit", sans-serif;
+        transform: rotate(180deg);
+        text-align: center;
+        justify-self: end;
+        font-weight: bold; }
     .userSection__matchItem__summonerTwo {
       display: grid;
       grid-area: userSection__matchItem__summonerTwo;
@@ -228,6 +255,15 @@ body {
         grid-area: userSection__matchItem__summonerTwo__rank;
         writing-mode: vertical-rl;
         font-size: 1.6rem;
+        font-family: "Niramit", sans-serif;
+        transform: rotate(180deg);
+        text-align: center;
+        justify-self: end;
+        font-weight: bold; }
+      .userSection__matchItem__summonerTwo__name {
+        grid-area: userSection__matchItem__summonerTwo__rank;
+        writing-mode: vertical-rl;
+        font-size: 2rem;
         font-family: "Niramit", sans-serif;
         transform: rotate(180deg);
         text-align: center;
