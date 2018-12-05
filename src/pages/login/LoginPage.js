@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 import Navbar from "../../components/reuse/navbar/Navbar";
 import LoginSection from "../../components/login_section/LoginSection";
-import Footer from "../../components/reuse/footer/Footer";
 import "./LoginPage.css";
 
 class LoginPage extends Component {
@@ -11,7 +10,6 @@ class LoginPage extends Component {
       <div className="loginPage__container">
         <Navbar />
         <LoginSection />
-        <Footer />
       </div>
     );
   }

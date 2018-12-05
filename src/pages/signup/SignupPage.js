@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 import Navbar from "../../components/reuse/navbar/Navbar";
 import SignupSection from "../../components/signup_section/SignupSection";
-import Footer from "../../components/reuse/footer/Footer";
 import "./SignupPage.css";
 
 class SignupPage extends Component {
@@ -11,7 +10,6 @@ class SignupPage extends Component {
       <div className="signupPage__container">
         <Navbar />
         <SignupSection />
-        <Footer />
       </div>
     );
   }
