@@ -85,6 +85,10 @@ async function searchMatch(mMUser) {
   }
 }
 
+// MatchMake verificates user with JWT, gets summoner information by blitz api,
+// compares queueobjects for a match, if match, adds to matchMake database.
+// If summoner doesn't find match, then add queueobject to queue and wait for
+// another summoner to match with the former summoner.
 router.post("/matchMake", async (req, res) => {
   let verification;
   try {
