@@ -196,8 +196,8 @@ body {
   display: grid;
   grid-gap: 0.2rem;
   grid-area: navbar;
-  grid-template-columns: minmax(1rem, 1fr) minmax(min-content, 30rem) 2fr minmax(min-content, 10rem) minmax(min-content, 10rem) minmax(min-content, 10rem) minmax(1rem, 1fr);
-  grid-template-areas: ". navbar_logo . navbar_alert navbar_login navbar_signup .";
+  grid-template-columns: minmax(1rem, 1fr) minmax(min-content, 30rem) 2fr minmax(min-content, 10rem) minmax(min-content, 10rem) minmax(1rem, 1fr);
+  grid-template-areas: ". navbar_logo . navbar_login navbar_signup .";
   border-bottom-width: 0.1rem;
   border-bottom-color: black;
   border-bottom-style: solid;
@@ -263,12 +263,3 @@ body {
     font-size: 3rem;
     justify-self: center;
     align-self: center; }
-  .navbar__alert {
-    grid-area: navbar_alert;
-    font-size: 3rem;
-    justify-self: end;
-    align-self: center; }
-    .navbar__alert__glyph {
-      color: #a4a4a4; }
-      .navbar__alert__glyph:hover {
-        color: #b28451; }

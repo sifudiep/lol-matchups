@@ -8,7 +8,6 @@ import Login from "./navbar_components/Login";
 
 import AccountInfo from "./navbar_components/AccountInfo";
 import Logout from "./navbar_components/Logout";
-import Alert from "./navbar_components/Alert";
 import actionVariables from "../../../reducers/actionVariables";
 
 class Navbar extends Component {
@@ -38,7 +37,6 @@ class Navbar extends Component {
       return (
         <div className="navbar">
           <Logo />
-          <Alert />
           <AccountInfo />
           <Logout />
         </div>
