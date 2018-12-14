@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import actionVariables from "../../../../reducers/actionVariables";
 
 class Logout extends Component {
+  // Render method runs everytime state updates. 
   render() {
     return (
       <div className="navbar__logout">
@@ -16,6 +17,8 @@ class Logout extends Component {
     );
   }
 }
+
+// Dispatch is accessible with props, (Dispatch is used for changing the redux state and sending api requests)
 const mapDispatchToProps = dispatch => {
   return {
     onLogout: () => {
@@ -26,6 +29,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
+// Connects mapDispatchToProps to class.
 export default connect(
   null,
   mapDispatchToProps

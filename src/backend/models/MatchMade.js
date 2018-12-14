@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 
+// Schema for a match, containing two users. 
+
 const matchMade = new mongoose.Schema({
   summonerOne: {
     summonerName: { type: String, required: true },

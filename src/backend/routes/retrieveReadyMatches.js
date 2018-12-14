@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { MatchMade } = require("../models/MatchMade");
 
+// Retrieves all accepted matches for a specific user. 
 router.post("/retrieveReadyMatches", (req, res) => {
   let finalMatches = [];
   MatchMade.find({}, (err, matches) => {

@@ -1,6 +1,7 @@
 import React from "react";
 
 class Lane extends React.Component {
+  // Render method runs everytime state updates. 
   render() {
     return (
       <img

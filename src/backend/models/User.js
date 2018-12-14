@@ -3,6 +3,8 @@ const Joi = require("joi");
 const mongoose = require("mongoose");
 const keys = require("../services/keys");
 
+// Schema for a registered user object.
+
 const userSchema = new mongoose.Schema({
   summonerName: {
     type: String,

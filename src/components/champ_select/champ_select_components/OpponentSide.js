@@ -4,6 +4,7 @@ import Champ from "./Champ";
 import actionVariables from "../../../reducers/actionVariables";
 
 class OpponentSide extends React.Component {
+  // Render method runs everytime state updates. 
   render() {
     const JSXList = this.props.opponentChampions.map(champ => {
       return (
@@ -21,12 +22,14 @@ class OpponentSide extends React.Component {
   }
 }
 
+// Takes state properties from the redux state and uses them in props.
 const mapStateToProps = state => {
   return {
     opponentChampions: state.opponentChampions
   };
 };
 
+// Dispatch is accessible with props, (Dispatch is used for changing the redux state and sending api requests)
 const mapDispatchToProps = dispatch => {
   return {
     onOSChampionClick: champ => {
@@ -38,6 +41,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
+// Connects mapDispatchToProps and mapStateToProps to class.
 export default connect(
   mapStateToProps,
   mapDispatchToProps

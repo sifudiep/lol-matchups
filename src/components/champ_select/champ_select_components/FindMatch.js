@@ -3,6 +3,7 @@ import actionVariables from "../../../reducers/actionVariables";
 import { connect } from "react-redux";
 
 class FindMatch extends React.Component {
+  // Render method runs everytime state updates. 
   render() {
     return (
       <div className="pickSection__findMatch">
@@ -19,6 +20,7 @@ class FindMatch extends React.Component {
   }
 }
 
+// Takes state properties from the redux state and uses them in props.
 const mapStateToProps = state => {
   return {
     opponentChampions: state.opponentChampions,
@@ -27,6 +29,7 @@ const mapStateToProps = state => {
   };
 };
 
+// Dispatch is accessible with props, (Dispatch is used for changing the redux state and sending api requests)
 const mapDispatchToProps = dispatch => {
   return {
     onFindMatchClick: state => {
@@ -38,6 +41,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
+// Connects mapDispatchToProps and mapStateToProps to class.
 export default connect(
   mapStateToProps,
   mapDispatchToProps

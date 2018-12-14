@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { MatchMade } = require("../models/MatchMade");
 
+// Retrieves all matches that have been matched for a specific user.
 router.post("/retrieveMatches", (req, res) => {
   let matches = [];
   MatchMade.find({}, (err, allMatches) => {

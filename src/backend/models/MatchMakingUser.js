@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 
+// Schema for a user in matchMaking object.
+
 const matchMakingUser = new mongoose.Schema({
   summonerName: {
     type: String,

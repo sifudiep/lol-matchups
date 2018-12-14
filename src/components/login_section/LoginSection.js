@@ -13,6 +13,7 @@ class LoginForm extends Component {
     this.props.onLogin(this.state);
   };
 
+  // Render method runs everytime state updates. 
   render() {
     return (
       <div className="loginSection">
@@ -44,6 +45,7 @@ class LoginForm extends Component {
   }
 }
 
+// Dispatch is accessible with props, (Dispatch is used for changing the redux state and sending api requests)
 const mapDispatchToProps = dispatch => {
   return {
     onLogin: account =>
@@ -54,6 +56,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
+// Connects mapDispatchToProps to class.
 export default connect(
   null,
   mapDispatchToProps

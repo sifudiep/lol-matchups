@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const mongoose = require("mongoose");
 const { MatchMade } = require("../models/MatchMade");
 
+// Checks response from both users, if one declines, remove that match.
 router.post("/newMatchResponse", async (req, res) => {
   console.log(`newMatchResponse called`);
   console.log(req.body);

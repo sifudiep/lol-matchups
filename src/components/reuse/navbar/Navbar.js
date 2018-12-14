@@ -15,6 +15,7 @@ class Navbar extends Component {
     verified: ""
   };
 
+  // Runs the code on startup.
   componentDidMount() {
     axios
       .post("http://localhost:2000/api/auth", { jwt: this.props.jwt })
@@ -32,6 +33,7 @@ class Navbar extends Component {
       });
   }
 
+  // Render method runs everytime state updates. 
   render() {
     if (this.state.verified === "verified") {
       return (
@@ -59,12 +61,14 @@ class Navbar extends Component {
   }
 }
 
+// Takes state properties from the redux state and uses them in props.
 function mapStateToProps(state) {
   return {
     jwt: state.jwt
   };
 }
 
+// Dispatch is accessible with props, (Dispatch is used for changing the redux state and sending api requests)
 const mapDispatchToProps = dispatch => {
   return {
     onVERIFY: verified =>
@@ -75,6 +79,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
+// Connects mapDispatchToProps and mapStateToProps to class.
 export default connect(
   mapStateToProps,
   mapDispatchToProps

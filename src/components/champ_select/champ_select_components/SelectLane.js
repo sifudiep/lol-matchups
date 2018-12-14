@@ -7,6 +7,7 @@ class SelectLane extends Component {
     selectedLane: "TOP"
   };
 
+  // Render method runs everytime state updates. 
   render() {
     function changeLane(lane, that) {
       switch (lane) {
@@ -39,6 +40,7 @@ class SelectLane extends Component {
   }
 }
 
+// Dispatch is accessible with props, (Dispatch is used for changing the redux state and sending api requests)
 const mapDispatchToProps = dispatch => {
   return {
     onLaneChange: lane =>
@@ -49,6 +51,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
+// Connects mapDispatchToProps and mapStateToProps to class.
 export default connect(
   null,
   mapDispatchToProps

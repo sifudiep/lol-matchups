@@ -19,6 +19,7 @@ const allLanes = [
 ];
 
 class LaneIcons extends React.Component {
+  // Render method runs everytime state updates. 
   render() {
     const JSXLanesArray = allLanes.map(lane => {
       if (this.props.searchTerm === lane.laneName) {
@@ -47,12 +48,14 @@ class LaneIcons extends React.Component {
   }
 }
 
+// Takes state properties from the redux state and uses them in props.
 const mapStateToProps = state => {
   return {
     searchTerm: state.searchTerm
   };
 };
 
+// Dispatch is accessible with props, (Dispatch is used for changing the redux state and sending api requests)
 const mapDispatchToProps = dispatch => {
   return {
     clickedLane: lane => {
@@ -66,6 +69,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
+// Connects mapDispatchToProps and mapStateToProps to class.
 export default connect(
   mapStateToProps,
   mapDispatchToProps

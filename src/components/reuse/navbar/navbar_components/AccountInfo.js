@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 class Alert extends Component {
+  // Render method runs everytime state updates. 
   render() {
     return (
       <div className="navbar__accountInfo">

@@ -243,9 +243,9 @@ body {
         transform: rotate(180deg);
         font-family: "Niramit", sans-serif; }
     .pickSection__userSide__img {
-      width: 12rem;
-      height: 12rem;
-      margin-top: 3rem; }
+      width: 10rem;
+      height: 10rem;
+      margin-top: 2rem; }
       .pickSection__userSide__img:hover {
         box-shadow: 0 0 0 0.25rem #c69963;
         filter: grayscale(100%); }

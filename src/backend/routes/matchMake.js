@@ -1,14 +1,15 @@
-const mongoose = require("mongoose");
 const express = require("express");
 const router = express.Router();
 const keys = require("../services/keys");
 const jwt = require("jsonwebtoken");
-const { User, validate } = require("../models/user");
+const { User } = require("../models/user");
 const { MatchMakingUser } = require("../models/matchMakingUser");
 const { MatchMade } = require("../models/MatchMade");
-const request = require("request");
 const rp = require("request-promise");
 const MS = require("../services/MessageStrings");
+
+// Searches for a match between two users, 
+// one of the users being a parameter and the other found through MatchMakingUser database.
 
 async function searchMatch(mMUser) {
   let isDuplicate;

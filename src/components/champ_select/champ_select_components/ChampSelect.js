@@ -53,6 +53,7 @@ class ChampSelect extends React.Component {
     }
   }
 
+  // Render method runs everytime state updates. 
   render() {
     const sortedChampList = this.sortChampList(this.props.searchTerm);
     const JSXSortedChampList = sortedChampList.map(champ => {
@@ -93,6 +94,7 @@ class ChampSelect extends React.Component {
   }
 }
 
+// Takes state properties from the redux state and uses them in props.
 const mapStateToProps = state => {
   return {
     searchTerm: state.searchTerm,
@@ -102,6 +104,7 @@ const mapStateToProps = state => {
   };
 };
 
+// Dispatch is accessible with props, (Dispatch is used for changing the redux state and sending api requests)
 const mapDispatchToProps = dispatch => {
   return {
     onCSChampionClick: champ => {
@@ -113,6 +116,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
+// Connects mapDispatchToProps and mapStateToProps to class.
 export default connect(
   mapStateToProps,
   mapDispatchToProps

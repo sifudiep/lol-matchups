@@ -4,6 +4,7 @@ import MenuSelect from "./user_section_components/MenuSelect";
 import MenuView from "./user_section_components/MenuView";
 
 class UserSection extends Component {
+  // Render method runs everytime state updates. 
   render() {
     if (this.props.verified === "verified") {
       return (
@@ -33,10 +34,13 @@ class UserSection extends Component {
   }
 }
 
+// Takes state properties from the redux state and uses them in props.
 const mapStateToProps = state => {
   return {
     verified: state.verified
   };
 };
+
+// Connects mapStateToProps to class.
 
 export default connect(mapStateToProps)(UserSection);

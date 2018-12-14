@@ -10,6 +10,7 @@ import FindMatch from "./champ_select_components/FindMatch";
 import SelectLane from "./champ_select_components/SelectLane";
 
 class ChampSelectSection extends Component {
+  // Render method runs everytime state updates. 
   render() {
     return (
       <div className="pickSection">
