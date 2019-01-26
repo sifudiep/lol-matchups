@@ -7,7 +7,7 @@ class ReadyMatchesObject extends Component {
       if (this.props.S2_accept === "true") {
         console.log(`2`);
         return (
-          <div className="userSection__matchItem">
+          <div className="userSection__matchItem" >
             <button className="userSection__matchItem__accept--noAnimation">
               <i className="fa fa-check" />
             </button>
@@ -66,7 +66,7 @@ class ReadyMatchesObject extends Component {
       } else if (this.props.S2_accept === "undefined") {
         console.log(`3`);
         return (
-          <div className="userSection__matchItem">
+          <div className="userSection__matchItem" >
             <button className="userSection__matchItem__accept--noAnimation">
               <i className="fa fa-check" />
             </button>
@@ -117,7 +117,7 @@ class ReadyMatchesObject extends Component {
       if (this.props.S1_accept === "true") {
         console.log(`5`);
         return (
-          <div className="userSection__matchItem">
+          <div className="userSection__matchItem" >
             <button className="userSection__matchItem__accept--noAnimation">
               <i className="fa fa-check" />
             </button>
@@ -176,7 +176,7 @@ class ReadyMatchesObject extends Component {
       } else if (this.props.S1_accept === "undefined") {
         console.log(`6`);
         return (
-          <div className="userSection__matchItem">
+          <div className="userSection__matchItem" >
             <button className="userSection__matchItem__accept--noAnimation">
               <i className="fa fa-check" />
             </button>

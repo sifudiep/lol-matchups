@@ -24,7 +24,7 @@ class ReadyMatches extends Component {
   render() {
     const readyMatches = this.state.matches.map(match => {
       return (
-        <div>
+        <div key={match._id}>
           <ReadyMatchesObject
             S1_champion={match.summonerOne.practiceChampionSelected}
             S1_summonerName={match.summonerOne.summonerName}
@@ -34,7 +34,7 @@ class ReadyMatches extends Component {
             S2_summonerName={match.summonerTwo.summonerName}
             S2_accept={match.summonerTwo.accept}
             S2_rank={match.summonerTwo.rank}
-            key={match._id}
+            uniqueKey={match._id}
           />
         </div>
       );

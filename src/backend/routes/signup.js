@@ -7,11 +7,12 @@ const router = express.Router();
 
 // Signup user
 router.post("/signup", async (req, res) => {
+  console.log(req.body)
   const { error } = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
   let user = await User.findOne({ email: req.body.email });
-  if (user) return res.status(400).send("User already registered.");
+  if (user) return res.send("Email used");
 
   user = new User({
     summonerName: req.body.summonerName,
@@ -20,11 +21,16 @@ router.post("/signup", async (req, res) => {
     region: req.body.region,
     active: req.body.active
   });
+
   const salt = await bcrypt.genSalt(10);
   user.password = await bcrypt.hash(user.password, salt);
-  await user.save();
 
-  const token = user.generateAuthToken();
+  try {
+    await user.save();    
+  } catch (err) {
+    console.log("user.save");
+  }
+
   return res.send(user);
 });
 

@@ -7,6 +7,7 @@ const router = express.Router();
 
 // Login user with email and username.
 router.post("/login", async (req, res) => {
+  console.log("LOGIN ROUTE!")
   const { error } = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 

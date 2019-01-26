@@ -122,13 +122,14 @@ const reducer = (state = initialState, action) => {
           active: false
         })
         .then(res => {
-          window.location.href = URL.home;
-          alert("successful register!");
+          if (res.data == "Email used") {
+            alert("Email is already taken.")
+          } else {
+            window.location.href = URL.home;
+            alert("successful register!");
+          }
         })
-        .catch(err => {
-          console.log(`err: `);
-          console.log(err);
-        });
+
     } else {
       alert("password did not match!");
     }
