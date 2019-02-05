@@ -122,7 +122,7 @@ const reducer = (state = initialState, action) => {
           active: false
         })
         .then(res => {
-          if (res.data == "Email used") {
+          if (res.data === "Email used") {
             alert("Email is already taken.")
           } else {
             window.location.href = URL.home;
