@@ -130,50 +130,53 @@ router.post("/matchMake", async (req, res) => {
 
   let rank = JSON.parse(rankJSON);
 
-  const rankedSoloQ = rank.data[1];
+  const rankedSoloQ = rank.data[0];
 
   let tierInNumbers;
   let divisionInNumbers;
 
   switch (rankedSoloQ.tier) {
-    case "BRONZE":
+    case "IRON":
       tierInNumbers = 0;
       break;
+    case "BRONZE":
+      tierInNumbers = 4;
+      break;
     case "SILVER":
-      tierInNumbers = 5;
+      tierInNumbers = 8;
       break;
     case "GOLD":
-      tierInNumbers = 10;
+      tierInNumbers = 12;
       break;
     case "PLATINUM":
-      tierInNumbers = 15;
+      tierInNumbers = 16;
       break;
     case "DIAMOND":
       tierInNumbers = 20;
       break;
     case "MASTER":
-      tierInNumbers = 25;
+      tierInNumbers = 24;
+      break;
+    case "GRANDMASTER":
+      tierInNumbers = 30;
       break;
     case "CHALLENGER":
-      tierInNumbers = 30;
+      tierInNumbers = 36;
       break;
   }
 
   switch (rankedSoloQ.rank) {
-    case 5:
+    case 4:
       divisionInNumbers = 0;
       break;
-    case 4:
+    case 3:
       divisionInNumbers = 1;
       break;
-    case 3:
+    case 2:
       divisionInNumbers = 2;
       break;
-    case 2:
-      divisionInNumbers = 3;
-      break;
     case 1:
-      divisionInNumbers = 4;
+      divisionInNumbers = 3;
       break;
   }
 
